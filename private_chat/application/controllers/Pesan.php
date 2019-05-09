@@ -45,6 +45,46 @@ class Pesan extends CI_Controller {
 		);
 		$this->load->view('index', $data);
     }
+
+    function PesanTerkirim()
+	{
+        $where = array(
+            'pengirim' => $this->session->userdata('id'),
+            'status'    => '1',
+        );
+        $tblPesan = $this->TabelPesan->whereAnd($where)->result();
+
+		$data = array(
+			'title'		=> 'Pesan Terkirim',
+			'content' 	=> 'Pesan/pesan_terkirim/content',
+			'css' 		=> 'Pesan/pesan_terkirim/css',
+			'modal' 	=> 'Pesan/pesan_terkirim/modal',
+            'javascript'=> 'Pesan/pesan_terkirim/javascript',
+            
+            'tblPesan'   => $tblPesan,
+		);
+		$this->load->view('index', $data);
+    }
+
+    function DraftPesan()
+	{
+        $where = array(
+            'pengirim' => $this->session->userdata('id'),
+            'status'    => '0',
+        );
+        $tblPesan = $this->TabelPesan->whereAnd($where)->result();
+
+		$data = array(
+			'title'		=> 'Draft Pesan',
+			'content' 	=> 'Pesan/draft_pesan/content',
+			'css' 		=> 'Pesan/draft_pesan/css',
+			'modal' 	=> 'Pesan/draft_pesan/modal',
+            'javascript'=> 'Pesan/draft_pesan/javascript',
+            
+            'tblPesan'   => $tblPesan,
+		);
+		$this->load->view('index', $data);
+    }
     
     function Kirim(){
         $data = array(
