@@ -46,6 +46,12 @@
                     <p>Dashboard</p>
                 </a>
             </li>
+            <li class="">
+                <a href="<?=base_url()?>Pesan">
+                    <i class="material-icons">add</i>
+                    <p>Buat Pesan</p>
+                </a>
+            </li>
             <?php if($this->session->userdata('client') == TRUE){ ?>
                 <li>
                     <a data-toggle="collapse" href="#pesan">
