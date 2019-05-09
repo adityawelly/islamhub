@@ -46,13 +46,13 @@
                     <p>Dashboard</p>
                 </a>
             </li>
-            <li class="">
-                <a href="<?=base_url()?>Pesan">
-                    <i class="material-icons">add</i>
-                    <p>Buat Pesan</p>
-                </a>
-            </li>
             <?php if($this->session->userdata('client') == TRUE){ ?>
+                <li class="">
+                    <a href="<?=base_url()?>Pesan">
+                        <i class="material-icons">add</i>
+                        <p>Buat Pesan</p>
+                    </a>
+                </li>
                 <li>
                     <a data-toggle="collapse" href="#pesan">
                         <i class="material-icons">receipt</i>
@@ -63,50 +63,35 @@
                     <div class="collapse" id="pesan">
                         <ul class="nav">
                             <li>
-                                <a href="<?=base_url('Tiket/TiketMasuk')?>">Pesan Masuk</a>
+                                <a href="<?=base_url('Pesan/PesanMasuk')?>">Pesan Masuk</a>
                             </li>
                             <li>
-                                <a href="<?=base_url('Tiket/DaftarTiket')?>">Pesan Terkirim</a>
+                                <a href="<?=base_url('Pesan/PesanTerkirim')?>">Pesan Terkirim</a>
                             </li>
                             <li>
-                                <a href="<?=base_url('Tiket/DaftarTiket')?>">Draft Pesan</a>
+                                <a href="<?=base_url('Pesan/DraftPesan')?>">Draft Pesan</a>
                             </li>
                         </ul>
                     </div>
                 </li>
                 <?php }else if($this->session->userdata('pakar') == TRUE){ ?>
                 <li>
-                    <a data-toggle="collapse" href="#tiket">
+                    <a data-toggle="collapse" href="#pesan">
                         <i class="material-icons">receipt</i>
-                        <p>Tiket
+                        <p>Pesan
                             <b class="caret"></b>
                         </p>
                     </a>
-                    <div class="collapse" id="tiket">
+                    <div class="collapse" id="pesan">
                         <ul class="nav">
                             <li>
-                                <a href="<?=base_url('Tiket/TiketMasuk')?>">Tiket Masuk</a>
+                                <a href="<?=base_url('Pesan/PesanMasuk')?>">Pesan Masuk</a>
                             </li>
                             <li>
-                                <a href="<?=base_url('Tiket/DaftarTiket')?>">Daftar Tiket</a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li>
-                    <a data-toggle="collapse" href="#biodata">
-                        <i class="material-icons">people</i>
-                        <p>Biodata
-                            <b class="caret"></b>
-                        </p>
-                    </a>
-                    <div class="collapse" id="biodata">
-                        <ul class="nav">
-                            <li>
-                                <a href="<?=base_url('Staff/')?>">Staff</a>
+                                <a href="<?=base_url('Pesan/PesanTerkirim')?>">Pesan Terkirim</a>
                             </li>
                             <li>
-                                <a href="<?=base_url('Mahasiswa/')?>">Mahasiswa</a>
+                                <a href="<?=base_url('Pesan/DraftPesan')?>">Draft Pesan</a>
                             </li>
                         </ul>
                     </div>

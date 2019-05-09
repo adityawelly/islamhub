@@ -37,7 +37,7 @@ class Login extends CI_Controller {
 						'logged' 		=> TRUE,
 						'pakar'			=> FALSE,
 						'client'			=> TRUE,
-                        'id_client'		=> $tabelLogin->id_client,
+                        'id'		=> $tabelLogin->id_client,
 						'email'		=> $tabelLogin->email,
 						'nama'		=> $tabelLogin->nama,
                     );
@@ -56,7 +56,7 @@ class Login extends CI_Controller {
 						'logged' 		=> TRUE, 
 						'pakar'			=> TRUE,
 						'client'			=> FALSE,
-                        'id_client'		=> $tabelLogin->id_client,
+                        'id'		=> $tabelLogin->id_pakar,
 						'email'		=> $tabelLogin->email,
 						'nama'		=> $tabelLogin->nama,
                     );
