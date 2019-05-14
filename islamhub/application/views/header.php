@@ -32,10 +32,10 @@
                                 </div>
                             </div>
                         </div>
-                        <a class="nav-item btn tombol" href="http://localhost/islamhub/video/">Videos</a>
-                        <a class="nav-item btn tombol1" href="http://localhost/islamhub/buku/">Books</a>
-                        <a class="nav-item btn tombol1" href="http://localhost/islamhub/Dashboard/">Private Consult</a>
-                        <a class="nav-item btn tombol1" href="http://localhost/islamhub/Forum/">Forum</a>
+                        <a class="nav-item btn tombol" href="<?=base_url()?>video">Videos</a>
+                        <a class="nav-item btn tombol1" href="<?=base_url()?>buku/">Books</a>
+                        <a class="nav-item btn tombol1" href="<?=base_url()?>Dashboard/">Private Consult</a>
+                        <a class="nav-item btn tombol1" href="<?=base_url()?>Forum/">Forum</a>
                     </div>
                 </div>
             </div>
