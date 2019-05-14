@@ -4,79 +4,59 @@
     Kontent buku
 </div>
 <div class="container">
-	<div class="row">
-	    <div class="col-sm-3">
-            <div class="card">
-                <img src="img/berbagi.jpeg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, totam.</p>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">Last updated 3 mins ago</small>
-                </div>
-            </div>
+    <div class="row">
+        <div class="col-sm-2">
+            <img src="<?= base_url('assets/img/book.svg') ?>" alt="" width="100px" height="100px">
         </div>
-        <div class="col-sm-3">
-            <div class="card">
-                <img src="img/berbagi.jpeg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, totam.</p>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">Last updated 3 mins ago</small>
-                </div>
-            </div>
-        </div>		
-        <div class="col-sm-3">
-            <div class="card">
-                <img src="img/berbagi.jpeg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, totam.</p>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">Last updated 3 mins ago</small>
-                </div>
-            </div>
+        <div class="col-sm-10 homebook">
+            <p>Judul buku dan Pakar</p>
         </div>
-        <div class="col-sm-3">
-            <div class="card">
-                <img src="img/berbagi.jpeg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, totam.</p>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">Last updated 3 mins ago</small>
-                </div>
-            </div>
+    </div>
+    <p>Jumlah Viewer</p>
+    <div class="row">
+        <div class="col-sm-2">
+            <img src="<?= base_url('assets/img/book.svg') ?>" alt="" width="100px" height="100px">
         </div>
-        <div class="col-sm-3">
-            <div class="card">
-                <img src="img/berbagi.jpeg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, totam.</p>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">Last updated 3 mins ago</small>
-                </div>
-            </div>
+        <div class="col-sm-10 homebook">
+            <p>Judul buku dan Pakar</p>
         </div>
-        <div class="col-sm-3">
-            <div class="card">
-                <img src="img/berbagi.jpeg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, totam.</p>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">Last updated 3 mins ago</small>
-                </div>
-            </div>
+    </div>
+    <p>Jumlah Viewer</p>
+    <div class="row">
+        <div class="col-sm-2">
+            <img src="<?= base_url('assets/img/book.svg') ?>" alt="" width="100px" height="100px">
         </div>
-	</div>
+        <div class="col-sm-10 homebook">
+            <p>Judul buku dan Pakar</p>
+        </div>
+    </div>
+    <p>Jumlah Viewer</p>
+    <div class="row">
+        <div class="col-sm-2">
+            <img src="<?= base_url('assets/img/book.svg') ?>" alt="" width="100px" height="100px">
+        </div>
+        <div class="col-sm-10 homebook">
+            <p>Judul buku dan Pakar</p>
+        </div>
+    </div>
+    <p>Jumlah Viewer</p>
+    <div class="row">
+        <div class="col-sm-2">
+            <img src="<?= base_url('assets/img/book.svg') ?>" alt="" width="100px" height="100px">
+        </div>
+        <div class="col-sm-10 homebook">
+            <p>Judul buku dan Pakar</p>
+        </div>
+    </div>
+    <p>Jumlah Viewer</p>
+    <div class="row">
+        <div class="col-sm-2">
+            <img src="<?= base_url('assets/img/book.svg') ?>" alt="" width="100px" height="100px">
+        </div>
+        <div class="col-sm-10 homebook">
+            <p>Judul buku dan Pakar</p>
+        </div>
+    </div>
+    <p>Jumlah Viewer</p>
 </div>
 		

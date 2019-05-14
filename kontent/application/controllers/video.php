@@ -11,4 +11,12 @@ class Video extends CI_Controller {
         $this->load->view('video/home_video');
 		$this->load->view('footer');
 	}
+	public function pencarian()
+	{
+        
+		$this->load->helper(array('url'));
+        $this->load->view('header');
+        $this->load->view('video/pencarian_video');
+		$this->load->view('footer');
+	}
 }
