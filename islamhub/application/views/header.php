@@ -38,6 +38,7 @@
                         <a class="nav-item btn tombol1" href="<?=base_url()?>buku/">Books</a>
                         <a class="nav-item btn tombol1" href="<?=base_url()?>Dashboard/">Private Consult</a>
                         <a class="nav-item btn tombol1" href="<?=base_url()?>Forum/">Forum</a>
+                        <a class="nav-item btn tombol1" href="<?=base_url()?>Forum/">Login</a>
                     </div>
                 </div>
             </div>
