@@ -1,6 +1,6 @@
-*,html,body{
-    margin: 0;
-    padding: 0;
+body{
+    background-image: url(/islamhub/assets/img/asd.jpg);
+    background-size: cover;
 }
 header{
     background-color: #414a4c;
@@ -131,6 +131,7 @@ header{
         line-height: 50px;
         border: 2px solid black;
         margin: 20px 0 ;
+        background-color: #FFFFFF;
       }
       .desckon p{
         display: inline-block;
@@ -146,4 +147,5 @@ header{
         display: inline-block;
         vertical-align: middle;
         line-height: normal;
+        background-color: #FFFFFF;
       }

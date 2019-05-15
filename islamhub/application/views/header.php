@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Bootstrap Example</title>
+    <title>IslamHub</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -16,7 +16,7 @@
     <link href="http://localhost/islamhub/islamhub/assets/css/kontent.css" rel="stylesheet" />
 
 </head>
-<body>
+<body style="background-image: url(http://localhost/islamhub/islamhub/assets/img/asd.jpg);">
     <header>
         <nav class="navbar navbar-expand-md navbar-dark">
             <div class="container-fluid">
