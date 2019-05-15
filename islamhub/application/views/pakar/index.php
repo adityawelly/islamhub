@@ -25,7 +25,7 @@
         </div>
        <div class="row " style="padding-bottom:50px; ">
            <div class="col-md-3">
-               <img src="<?php echo base_url('assets/img/user.jpg'); ?>" class="img-responsive img-thumbnail" />
+               <img src="<?php echo base_url('assets/img/faces/marc.jpg'); ?>" class="img-responsive img-thumbnail" />
               
            </div>
            <div class="col-md-9">
@@ -58,7 +58,7 @@
                <div >
                 <h3><strong> Name:</strong> <?php echo $this->session->userdata('nama');?></h3>  
                   
-                 <h3> <strong> Registered On:</strong> 24th August 2014</h3>  
+                 <h3> <strong> Registered On:</strong> <?php echo $this->session->userdata('date_created');?></h3>  
                 <h3>  <strong>  Role: </strong>User</h3>  
 
                 <h3>  <strong> Social Links :</strong></h3>  

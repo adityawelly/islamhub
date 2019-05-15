@@ -168,9 +168,11 @@ class Profile extends CI_Controller{
         $data  = $validate->row_array();
         $nama  = $data['nama'];
         $email = $data['email'];
+        $date_created = $data['date_created'];
         $sesdata = array(
             'nama'  => $nama,
             'email'     => $email,
+            'date_created' => $date_created,
             'logged_in' => TRUE
         );
         $this->session->set_userdata($sesdata);
