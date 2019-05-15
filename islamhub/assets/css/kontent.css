@@ -1,0 +1,149 @@
+*,html,body{
+    margin: 0;
+    padding: 0;
+}
+header{
+    background-color: #414a4c;
+}
+/* Navbar */
+.navbar-brand{
+    font-family: Viga;
+    font-size: 32px;
+    opacity: 1;
+}
+.nav-link{
+    text-transform: uppercase;
+    margin-right: 30px;
+    color: white;
+    font-family: Karla;
+    opacity: 0.9;
+}
+.nav-link:hover::after{
+    content: '';
+    display: block;
+    border-bottom: 3px solid #4BC1DD;
+    width: 50%;
+    margin: auto;
+    padding-bottom: 5px;
+    margin-bottom: -8px;
+}
+.tombol{
+    background-color: white;
+    border-color: #4BC1DD;
+    text-transform: uppercase;
+    border-radius: 30px;
+    margin-left: 10px;
+    color:#4BC1DD;
+    font-family: Karla;
+}
+.tombol1{
+    background-color: #4BC1DD;
+    text-transform: uppercase;
+    border-radius: 30px;
+    margin-left: 10px;
+    color: white;
+    font-family: Karla;
+}
+.garis{
+    width: 1px;
+    height: 40px;
+    background-color: white;
+}
+.secondary{
+    background-color: #84B154;
+    box-shadow: 0px 0px 17px 0px;
+    transition: all 0.5s ease-in;
+}
+.searchbar{
+    margin-bottom: auto;
+    margin-top: auto;
+    background-color: #353b48;
+    border-radius: 30px;
+    }
+
+    .search_input{
+    color: white;
+    border: 0;
+    outline: 0;
+    background: none;
+    width: 0;
+    caret-color:transparent;
+    line-height: 40px;
+    transition: width 0.4s linear;
+    }
+
+    .searchbar:hover > .search_input{
+    padding: 0 10px;
+    width: 450px;
+    caret-color:red;
+    transition: width 0.4s linear;
+    }
+
+    .searchbar:hover > .search_icon{
+    background: white;
+    color: #e74c3c;
+    }
+
+    .search_icon{
+    height: 40px;
+    width: 40px;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color:white;
+    }
+    .card{
+        width: 90%;
+        padding: 0;
+        margin-bottom: 50px;
+        border-radius: 12px;
+        box-shadow: 0 3px 20px rgba(0,0,0,0.3);
+    }
+    .card img{
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        height: 180px;
+    }
+    @keyframes filling {
+        from{
+          background-position: center 25%;
+        }
+        to {
+          background-position: center 50%;
+        }
+      }
+      
+      .container-text {
+        background-image:  url(https://static.pexels.com/photos/4827/nature-forest-trees-fog.jpeg);
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        color:  #FFFFFF;
+        padding-top: 20px;
+        font-size: 100px;
+        text-align: center;
+        font-family: 'Bungee', cursive;
+        animation: filling 3s ease forwards;
+      }
+      .desckon{
+        height: 50px;
+        line-height: 50px;
+        border: 2px solid black;
+        margin: 20px 0 ;
+      }
+      .desckon p{
+        display: inline-block;
+        vertical-align: middle;
+        line-height: normal;
+      }
+      .homebook{
+        height: 50px;
+        line-height: 50px;
+        margin: 20px 0 ;
+      }
+      .homebook p{
+        display: inline-block;
+        vertical-align: middle;
+        line-height: normal;
+      }
