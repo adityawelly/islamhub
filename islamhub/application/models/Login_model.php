@@ -14,13 +14,6 @@ class Login_model extends CI_Model{
     $result = $this->db->get('users',1);
     return $result;
   }
- 
-  public function simpan($data)
-    {
-
-        $this->db->insert("tbl_users", $data);
-
-    }
 
     public function simpan_pakar($data)
     {
@@ -32,7 +25,7 @@ class Login_model extends CI_Model{
     public function simpan_user($data)
     {
 
-        $this->db->insert("user", $data);
+        $this->db->insert("users", $data);
 
     }
 

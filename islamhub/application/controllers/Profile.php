@@ -93,29 +93,38 @@ class Profile extends CI_Controller{
   }
 
   function r_user_b(){
-     $this->form_validation->set_rules('user_name','User Name','required');
-    $this->form_validation->set_rules('user_password','User Password','required');
-    $this->form_validation->set_rules('user_email','user_email','required');
-    $this->form_validation->set_rules('user_contact','User Contact','required');
-    $this->form_validation->set_rules('user_level','User Level','required');
-
+     $this->form_validation->set_rules('username','User Name','required');
+    $this->form_validation->set_rules('password','User Password','required');
+    $this->form_validation->set_rules('email','user_email','required');
     if($this->form_validation->run() == TRUE)
     {
-      $user_name = $this->input->post('user_name',TRUE);
-      $user_password      = md5($this->input->post('user_password',TRUE));
-      $user_email  = $this->input->post('user_email',TRUE);
-      $user_contact  = $this->input->post('user_contact',TRUE);
-      $user_level   = $this->input->post('user_level',TRUE);
-      
+      $username = $this->input->post('username',TRUE);
+      $password      = md5($this->input->post('password',TRUE));
+      $email  = $this->input->post('email',TRUE);
+      $avatar  = $this->input->post('avatar',TRUE);
+      $created_at  = '1';
+      $update_at  = '1';
+      $update_by  = '0';
+      $is_admin  = '1';
+      $is_moderator  = '1';
+      $is_confirmed  = '1';
+      $is_deleted  = '1';
+
 
       $data = array(
-            'user_name' => $user_name,
-            'user_password'      => $user_password,
-            'user_email'  => $user_email,
-            'user_contact'  => $user_contact,
-            'user_level'    => $user_level,
+            'username' => $username,
+            'password'      => $password,
+            'email'  => $email,
+            'avatar' => $avatar,
+            'created_at' => $created_at,
+            'updated_at' => $update_at,
+            'updated_by' => $update_by,
+            'is_admin' => $is_admin,
+            'is_moderator' => $is_moderator,
+            'is_confirmed' => $is_confirmed,
+            'is_deleted' => $is_deleted,
       );
-      $this->login_model->simpan($data);
+      $this->login_model->simpan_user($data);
 
       $this->session->set_flashdata('msg_berhasil','Anda berhasil Daftar');
       redirect(base_url('profile/r_user_b'));
@@ -187,16 +196,14 @@ class Profile extends CI_Controller{
   function auth_u(){
     $email    = $this->input->post('email',TRUE);
     $password = md5($this->input->post('password',TRUE));
-    $validate = $this->login_model->validate($email,$password);
+    $validate = $this->login_model->validate_u($email,$password);
     if($validate->num_rows() > 0){
         $data  = $validate->row_array();
-        $name  = $data['user_name'];
-        $email = $data['user_email'];
-        $level = $data['user_level'];
+        $name  = $data['username'];
+        $email = $data['email'];
         $sesdata = array(
             'username'  => $name,
             'email'     => $email,
-            'level'     => $level,
             'logged_in' => TRUE
         );
         $this->session->set_userdata($sesdata);

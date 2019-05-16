@@ -31,11 +31,11 @@
               
 
 <div class="form-group">
-  <label class="col-md-4 control-label">Full Name</label>  
+  <label class="col-md-4 control-label">User Name</label>  
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input  name="user_name" placeholder="Full Name" class="form-control"  type="text">
+  <input  name="username" placeholder="Full Name" class="form-control"  type="text">
     </div>
   </div>
 </div>
@@ -92,7 +92,7 @@
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input name="user_password" placeholder="Password" class="form-control"  type="password">
+  <input name="password" placeholder="Password" class="form-control"  type="password">
     </div>
   </div>
 </div>
@@ -115,7 +115,7 @@
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-  <input name="user_email" placeholder="E-Mail Address" class="form-control"  type="text">
+  <input name="email" placeholder="E-Mail Address" class="form-control"  type="text">
     </div>
   </div>
 </div>
@@ -124,11 +124,11 @@
 <!-- Text input-->
        
 <div class="form-group">
-  <label class="col-md-4 control-label">Contact No.</label>  
+  <label class="col-md-4 control-label">Avatar</label>  
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-  <input name="user_contact" placeholder="(+62)" class="form-control" type="text">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input name="avatar" placeholder="avatar" class="form-control" type="text">
     </div>
   </div>
 </div>
