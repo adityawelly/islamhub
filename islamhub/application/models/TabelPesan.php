@@ -54,4 +54,17 @@ class TabelPesan extends CI_Model {
 		return $this->db->get($this->table);
 	}
 
+	public function hitungPesan()
+{   
+    $query = $this->db->get('pesan');
+    if($query->num_rows()>0)
+    {
+      return $query->num_rows();
+    }
+    else
+    {
+      return 0;
+    }
+}
+
 }
