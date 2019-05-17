@@ -25,7 +25,7 @@
         </div>
        <div class="row " style="padding-bottom:50px; ">
            <div class="col-md-3">
-               <img src="<?php echo base_url('assets/img/user.jpg'); ?>" class="img-responsive img-thumbnail" />
+               <img src="<?php echo base_url('assets/img/faces/avatar.jpg'); ?>" class="img-responsive img-thumbnail" />
               
            </div>
            <div class="col-md-9">
