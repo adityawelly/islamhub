@@ -179,11 +179,13 @@ class Profile extends CI_Controller{
         $email = $data['email'];
         $date_created = $data['date_created'];
         $biodata = $data['biodata'];
+        $univ = $data['universitas'];
         $sesdata = array(
             'nama'  => $nama,
             'email'     => $email,
             'date_created' => $date_created,
             'biodata' => $biodata,
+            'universitas' => $univ,
             'logged_in' => TRUE
         );
         $this->session->set_userdata($sesdata);
@@ -201,10 +203,10 @@ class Profile extends CI_Controller{
     $validate = $this->login_model->validate_u($email,$password);
     if($validate->num_rows() > 0){
         $data  = $validate->row_array();
-        $name  = $data['username'];
+        $nama  = $data['username'];
         $email = $data['email'];
         $sesdata = array(
-            'username'  => $name,
+            'username'  => $nama,
             'email'     => $email,
             'logged_in' => TRUE
         );

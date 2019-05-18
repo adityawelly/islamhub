@@ -11,7 +11,7 @@
     <title>Bootstrap Profile Template</title>
     <!-- BOOTSTRAP CORE STYLE CSS -->
     <link href="<?php echo base_url('assets/css/bootstrap.css');?>" rel="stylesheet" />
-
+    <link href="<?php echo base_url('assets/css/profile.css');?>" rel="stylesheet" />
 
 </head>
 <body>
@@ -26,10 +26,10 @@
        <div class="row " style="padding-bottom:50px; ">
            <div class="col-md-3">
                <img src="<?php echo base_url('assets/img/faces/marc.jpg'); ?>" class="img-responsive img-thumbnail" />
-              
+               <a href="#" class="btn btn-primary" >Kirim Pesan <i class="glyphicon glyphicon-play"></i></a>
            </div>
            <div class="col-md-9">
-               <div class="alert alert-info">
+               <!-- <div class="alert alert-info">
                    Your profile is only 45% complete, to enjoy full feaures you have to complete it 100%. 
                    <br /><br />
                    <div class="progress" style="height:5px">
@@ -38,7 +38,7 @@
   </div>
 </div>
                    To complete your profile please <a href="#">click here</a> .
-               </div>
+               </div> -->
              <div class="btn-group pull-right">
   <button type="button" class="btn btn-success">My Settings</button>
   <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
@@ -60,6 +60,7 @@
                   
                  <h3> <strong> Registered On:</strong> <?php echo $this->session->userdata('date_created');?></h3>  
                 <h3>  <strong>  Email: </strong><?php echo $this->session->userdata('email');?> </h3>  
+                <h3>  <strong>  Universitas: </strong><?php echo $this->session->userdata('universitas');?> </h3>  
 
                 <h3>  <strong> Social Links :</strong></h3>  
                    <br />
@@ -80,15 +81,11 @@
 
            </div>
            <div class="col-md-6" style="padding-bottom:80px;">
-              <h3>Registered Address  :</h3> 
-               <hr />
-               <h5>568/90 - New Lane Street </h5>  
-                  
-                 <h5>Free Way Society</h5>  
-                <h5>  United States - 2098-89-00</h5>  
+              <h3>Registered On  :</h3> 
+               <?php echo $this->session->userdata('date_created');?> 
            </div>
 
-            <div class="row">
+            <!-- <div class="row">
         <div class="col-md-4"><img src="<?php echo base_url('assets/img/faces/marc.jpg'); ?>" class="img-responsive img-thumbnail" /><br>
           <center><h3>Konten 1</h3></center> <br> <center>Deskripsi Singkat</center> <br>
           <center>
@@ -113,7 +110,75 @@
                    <a href="#" class="btn btn-info" >Delete <i class="glyphicon glyphicon-play"></i></a>
           </center>
         </div>
+      </div> -->
+
+       <div class="row">
+        <div class="col-md-6">
+         <center><h3><strong>VIDEO KONTEN</strong></h3></center>
+         <div class="row">
+        <div class="col-md-6">
+            <a href="#"><center>
+            <img src="<?php echo base_url('assets/img/vid.png'); ?>" class="img-responsive profile-vid" />
+            
+            </center></a>
+        </div>
+            <div class="col-md-6">
+            <a href="#"><center>
+            <img src="<?php echo base_url('assets/img/vid.png'); ?>" class="img-responsive profile-vid" />
+            </center></a>
+        </div>
+         <div class="col-md-6">
+            <a href="#"><center>
+            <img src="<?php echo base_url('assets/img/vid.png'); ?>" class="img-responsive profile-vid" />
+            </center></a>
+        </div>
+            <div class="col-md-6">
+           <a href="#"><center>
+            <img src="<?php echo base_url('assets/img/vid.png'); ?>" class="img-responsive profile-vid" />
+            </center></a>
+        </div>
+
       </div>
+        </div>
+
+        <div class="col-md-6">
+        <center><h3><strong>JURNAL</strong></h3></center>
+        <div class="row">
+        <div class="col-md-4">
+        <a href="#"><center>
+            <img src="<?php echo base_url('assets/img/dok.png'); ?>" class="img-responsive profile-vid" />
+            
+            </center></a>
+        </div>
+        <div class="col-md-4">
+          <a href="#"><center>
+            <img src="<?php echo base_url('assets/img/dok.png'); ?>" class="img-responsive profile-vid" />
+            </center></a>
+        </div>
+        <div class="col-md-4">
+          <a href="#"><center>
+            <img src="<?php echo base_url('assets/img/dok.png'); ?>" class="img-responsive profile-vid" />
+            </center></a>
+        </div>
+         <div class="col-md-4">
+          <a href="#"><center>
+            <img src="<?php echo base_url('assets/img/dok.png'); ?>" class="img-responsive profile-vid" />
+            </center></a>
+        </div>
+         <div class="col-md-4">
+          <a href="#"><center>
+            <img src="<?php echo base_url('assets/img/dok.png'); ?>" class="img-responsive profile-vid" />
+            </center></a>
+        </div>
+         <div class="col-md-4">
+          <a href="#"><center>
+            <img src="<?php echo base_url('assets/img/dok.png'); ?>" class="img-responsive profile-vid" />
+            </center></a>
+        </div>
+      </div>
+        </div>
+      </div>
+
        </div>
        
    </div>
