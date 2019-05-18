@@ -59,7 +59,7 @@
                 <h3><strong> Name:</strong> <?php echo $this->session->userdata('nama');?></h3>  
                   
                  <h3> <strong> Registered On:</strong> <?php echo $this->session->userdata('date_created');?></h3>  
-                <h3>  <strong>  Role: </strong>User</h3>  
+                <h3>  <strong>  Email: </strong><?php echo $this->session->userdata('email');?> </h3>  
 
                 <h3>  <strong> Social Links :</strong></h3>  
                    <br />
@@ -75,11 +75,7 @@
              <h3>Small Biography :</h3>  
                <hr />
                <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                   Mauris ac nisl tempus, sollicitudin elit vel, pellentesque lorem. 
-                   Maecenas hendrerit laoreet lectus a feugiat. Nunc sodales id ipsum ut maximus. 
-                   Morbi pellentesque quis diam nec ullamcorper. Nulla facilisi. Donec non nunc augue. 
-                   Integer tincidunt consequat porta.
+                <h4> <?php echo $this->session->userdata('biodata');?> </h4>  
                </p>
 
            </div>
@@ -91,6 +87,33 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                  <h5>Free Way Society</h5>  
                 <h5>  United States - 2098-89-00</h5>  
            </div>
+
+            <div class="row">
+        <div class="col-md-4"><img src="<?php echo base_url('assets/img/faces/marc.jpg'); ?>" class="img-responsive img-thumbnail" /><br>
+          <center><h3>Konten 1</h3></center> <br> <center>Deskripsi Singkat</center> <br>
+          <center>
+            <a href="#" class="btn btn-primary" >Open <i class="glyphicon glyphicon-play"></i></a>
+                   <a href="#" class="btn btn-danger" >Update <i class="glyphicon glyphicon-play"></i></a>
+                   <a href="#" class="btn btn-info" >Delete <i class="glyphicon glyphicon-play"></i></a>
+          </center>
+        </div>
+        <div class="col-md-4"><img src="<?php echo base_url('assets/img/faces/marc.jpg'); ?>" class="img-responsive img-thumbnail" />
+        <center><h3>Konten 2</h3></center> <br> <center>Deskripsi Singkat</center> <br>
+          <center>
+            <a href="#" class="btn btn-primary" >Open <i class="glyphicon glyphicon-play"></i></a>
+                   <a href="#" class="btn btn-danger" >Update <i class="glyphicon glyphicon-play"></i></a>
+                   <a href="#" class="btn btn-info" >Delete <i class="glyphicon glyphicon-play"></i></a>
+          </center>
+        </div>
+        <div class="col-md-4"><img src="<?php echo base_url('assets/img/faces/marc.jpg'); ?>" class="img-responsive img-thumbnail" />
+        <center><h3>Konten 3</h3></center> <br> <center>Deskripsi Singkat</center> <br>
+          <center>
+            <a href="#" class="btn btn-primary" >Open <i class="glyphicon glyphicon-play"></i></a>
+                   <a href="#" class="btn btn-danger" >Update <i class="glyphicon glyphicon-play"></i></a>
+                   <a href="#" class="btn btn-info" >Delete <i class="glyphicon glyphicon-play"></i></a>
+          </center>
+        </div>
+      </div>
        </div>
        
    </div>
