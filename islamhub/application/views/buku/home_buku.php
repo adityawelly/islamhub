@@ -4,6 +4,46 @@
     Kontent buku
 </div>
 
+    <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#add">UPLOAD EBOOK</button><p>
+<div id="add" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">UPLOAD EBOOK</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+
+      <form action="" enctype="multipart/form-data" class="form-horizontal" method="POST">
+        <fieldset>
+          
+            <div class="form-group row">
+                <label class="col-md-3 control-label">Judul</label>
+                <div class="col-md-9">
+                  <input class="form-control" type="text" name="judul" required placeholder="Judul" required="">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-md-3 control-label">Buku</label>
+                <div class="col-md-9">
+                    <input class="form-control" type="file" name="buku" required placeholder="Buku" required="">
+                </div>
+            </div>
+        </fieldset>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button class="btn btn-primary" type="submit">
+      <i class="fa fa-save"></i>
+      Submit
+    </button>
+      </form>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="container">
     <div class="row">
         <div class="col-sm-2">
