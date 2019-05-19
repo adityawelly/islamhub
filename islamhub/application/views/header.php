@@ -35,7 +35,7 @@
                                 </div>
                             </div>
                         </div>
-                        <a class="nav-item btn tombol" href="<?=base_url()?>video/">Videos</a>
+                        <a class="nav-item btn tombol" href="<?=base_url()?>allvideo/">Videos</a>
                         <a class="nav-item btn tombol1" href="<?=base_url()?>buku/">Books</a>
                         <a class="nav-item btn tombol1" href="<?=base_url()?>Dashboard/">Private Consult</a>
                         <a class="nav-item btn tombol1" href="<?=base_url()?>Forum/">Forum</a>
