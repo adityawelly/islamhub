@@ -25,6 +25,14 @@
             </div>
 
             <div class="form-group row">
+                <label class="col-md-3 control-label">Penulis</label>
+                <div class="col-md-9">
+                  <input class="form-control" type="text" name="penulis" required placeholder="penulis" required="">
+                </div>
+            </div>
+
+
+            <div class="form-group row">
                 <label class="col-md-3 control-label">Buku</label>
                 <div class="col-md-9">
                     <input class="form-control" type="file" name="buku" required placeholder="Buku" required="">
@@ -43,7 +51,7 @@
     </div>
   </div>
 </div>
-
+<!-- 
 <div class="container">
     <div class="row">
         <div class="col-sm-2">
@@ -111,5 +119,23 @@
 
     <p>Jumlah Viewer</p>
     
+</div> -->
+
+<div class="container" style="margin-top: 20px">
+    <div class="row">
+        <div class="col-md-12">
+            <table id="table_id" class="table table-striped table-bordered" cellspacing="0" width="100%">
+              <thead>
+                <tr>
+                    <th>N0</th>
+                    <th>Judul</th>
+                    <th>Penulis</th>
+               <th style="width:125px;">Action
+                  </p></th>
+                </tr>
+              </thead>
+
+            </table>
+        </div>
+    </div>
 </div>
-		
