@@ -14,9 +14,8 @@
       </div>
       <div class="modal-body">
 
-      <form action="" enctype="multipart/form-data" class="form-horizontal" method="POST">
+      <form method="POST" action="<?php echo base_url(); ?>file/insert" enctype="multipart/form-data">
         <fieldset>
-          
             <div class="form-group row">
                 <label class="col-md-3 control-label">Judul</label>
                 <div class="col-md-9">
@@ -35,7 +34,7 @@
             <div class="form-group row">
                 <label class="col-md-3 control-label">Buku</label>
                 <div class="col-md-9">
-                    <input class="form-control" type="file" name="buku" required placeholder="Buku" required="">
+                    <input class="form-control" type="file" name="upload" required placeholder="Buku" required="">
                 </div>
             </div>
         </fieldset>
@@ -130,11 +129,26 @@
                     <th>N0</th>
                     <th>Judul</th>
                     <th>Penulis</th>
+                    <th>Buku</th>
                <th style="width:125px;">Action
                   </p></th>
                 </tr>
               </thead>
-
+              <tbody>
+                        <?php
+                        foreach($files as $file){
+                            ?>
+                            <tr>
+                                <td><?php echo $file->id; ?></td>
+                                <td><?php echo $file->judul; ?></td>
+                                <td><?php echo $file->penulis; ?></td>
+                                <td><?php echo $file->filename; ?></td>
+                                <td><a href="<?php echo base_url().'file/download/'.$file->id; ?>" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-download-alt"></a></td>
+                                </tr>
+                                <?php
+                            }
+                            ?>
+                        </tbody>
             </table>
         </div>
     </div>
