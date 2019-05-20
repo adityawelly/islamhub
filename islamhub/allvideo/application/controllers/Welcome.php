@@ -70,5 +70,6 @@ class Welcome extends CI_Controller {
 			'halaman'   	=> $this->pagination->create_links(),
 		);
 		$this->load->view('frontend/home',$data);
+		$this->load->view('chat');
 	}
 }

@@ -11,8 +11,7 @@ class File extends CI_Controller {
         $this->load->model('files_model');
     }
 	public function index()
-	{
-        
+	{        
 		$this->load->helper(array('url'));
         $this->load->view('header');
         // $this->load->view('buku/home_buku');
@@ -20,9 +19,11 @@ class File extends CI_Controller {
 		$this->load->library('session');
 			//fetch all files i the database
 		$data['files'] = $this->files_model->getAllFiles();
+		// buat kondisi jika yg login user 
 		$this->load->view('buku/home_buku', $data);
-	
-		$this->load->view('footer');
+		// else jika pakar 
+		// $this->load->view('buku/home_buku', $data);
+		$this->load->view('buku/footer');
 	}
 	public function insert(){
 		//load session library to use flashdata
@@ -32,7 +33,7 @@ class File extends CI_Controller {
       if(!empty($_FILES['upload']['name'])){
         $config['upload_path'] = 'upload/';
             //restrict uploads to this mime types
-        $config['allowed_types'] = 'jpg|jpeg|png|gif|doc|docx|pdf';
+        $config['allowed_types'] = 'pdf';
         $config['file_name'] = $_FILES['upload']['name'];
         
             //Load upload library and initialize configuration
@@ -66,7 +67,7 @@ class File extends CI_Controller {
 			header('location:'.base_url().$this->index());
 			$this->session->set_flashdata('error','Cannot upload empty file.');
 		}
-
+		redirect('file');
 	}
 
 	public function download($id){
