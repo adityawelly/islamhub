@@ -75,7 +75,8 @@
                 <div class="card-footer">
                     <small class="text-muted">Last updated 3 mins ago</small>
                 </div>
-            </div>
+                <!-- Start of LiveChat (www.livechatinc.com) code -->
+                          
         </div>
 	</div>
 </div>
