@@ -3,8 +3,10 @@
 <div class="container-text">
     Kontent buku
 </div>
-
-    <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#add">UPLOAD EBOOK</button><p>
+<div class="container">
+<button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#add">UPLOAD EBOOK</button><p>
+</div>
+    
 <div id="add" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -55,7 +57,7 @@
 <div class="container" style="margin-top: 20px">
     <div class="row">
         <div class="col-md-12">
-            <table id="table_id" class="table table-striped table-bordered" cellspacing="0" width="100%">
+            <table id="table_id" class="table table-striped table-bordered bgw" cellspacing="0" width="100%">
               <thead>
                 <tr>
                     <th style="text-align:center;" require>NO</th>
@@ -76,7 +78,7 @@
                                 <td><?php echo $file->judul; ?></td>
                                 <td><?php echo $file->penulis; ?></td>
                                 <!-- <td><?php echo $file->filename; ?></td> -->
-                                <td style="text-align:center;"><a href="<?php echo base_url().'file/download/'.$file->id; ?>" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-download-alt"></a></td>
+                                <td style="text-align:center;"><a href="<?php echo base_url().'file/download/'.$file->id; ?>" class="btn btn-success btn-sm"><span class="far fa-arrow-alt-circle-down"></a></td>
                                 </tr>
                                 <?php
                             }
