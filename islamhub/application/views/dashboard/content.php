@@ -6,9 +6,38 @@
               <div class="card-header card-header-icon" data-background-color="green">
                   <i class="material-icons">dashboard</i>
               </div>
+
               <div class="card-content">
-                  <h4 class="card-title"><?=$title?></h4>
+              	  <h4 class="card-title"><?=$title?></h4>
                   <div class="row" style='padding:30px;'>
+
+		<div class="row">
+			<div class="card col-md-4" style="width: 18rem;">
+				<img src="..." class="" style="height: 100px; width: 100%;">
+				<div class="card-body">
+					<h5 class="card-title">Card title</h5>
+					<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+					<a href="#" class="btn btn-primary">Chat</a>
+				</div>
+			</div>
+			<div class="card col-md-4" style="width: 18rem;">
+				<img src="..." class="" style="height: 100px; width: 100%;">
+				<div class="card-body">
+					<h5 class="card-title">Card title</h5>
+					<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+					<a href="#" class="btn btn-primary">Chat</a>
+				</div>
+			</div>
+			<div class="card col-md-4" style="width: 18rem;">
+				<img src="..." class="" style="height: 100px; width: 100%;">
+				<div class="card-body">
+					<h5 class="card-title">Card title</h5>
+					<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+					<a href="#" class="btn btn-primary">Chat</a>
+				</div>
+			</div>
+		</div>
+
                     
                         <div class="col-md-1">
                             <a href='#'><i  class='fas fa-comment-alt kotak' style='font-size:48px;  color:white; '></i></a>
