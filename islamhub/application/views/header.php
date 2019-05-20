@@ -39,6 +39,8 @@
                         <a class="nav-item btn tombol1" href="<?=base_url()?>file/">Books</a>
                         <a class="nav-item btn tombol1" href="<?=base_url()?>Dashboard/">Private Consult</a>
                         <a class="nav-item btn tombol1" href="<?=base_url()?>Forum/">Forum</a>
+                        
+                        <a class="nav-item btn tombol1" href="<?=base_url()?>Profile/">Login</a>
                     </div>
                 </div>
             </div>
