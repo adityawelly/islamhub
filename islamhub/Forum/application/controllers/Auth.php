@@ -5,10 +5,6 @@ class Auth extends CI_Controller {
 	function __construct(){
         parent::__construct();
         $this->load->model('Tbl_users');
-        $is_admin = $this->session->userdata('is_admin');
-        if ($is_admin == 1){
-        	redirect('Backend/Dashboard');
-		}
     }
 
 	function index(){
@@ -20,11 +16,8 @@ class Auth extends CI_Controller {
 	}
 
 	function Logout(){
-		$this->load->driver('cache');
 		$this->session->sess_destroy();
-		$this->cache->clean();
-		ob_clean();
-		redirect(base_url());
+		redirect('Auth');
 	}
 
 	function Verifikasi($username){
