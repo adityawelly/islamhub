@@ -3,8 +3,8 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 14, 2019 at 09:49 AM
--- Server version: 10.1.19-MariaDB
+-- Generation Time: 20 Mei 2019 pada 06.51
+-- Versi Server: 10.1.19-MariaDB
 -- PHP Version: 5.6.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -23,7 +23,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin`
+-- Struktur dari tabel `admin`
 --
 
 CREATE TABLE `admin` (
@@ -41,7 +41,7 @@ CREATE TABLE `admin` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `buku`
+-- Struktur dari tabel `buku`
 --
 
 CREATE TABLE `buku` (
@@ -54,7 +54,7 @@ CREATE TABLE `buku` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ci_sessions`
+-- Struktur dari tabel `ci_sessions`
 --
 
 CREATE TABLE `ci_sessions` (
@@ -65,7 +65,7 @@ CREATE TABLE `ci_sessions` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `ci_sessions`
+-- Dumping data untuk tabel `ci_sessions`
 --
 
 INSERT INTO `ci_sessions` (`id`, `ip_address`, `timestamp`, `data`) VALUES
@@ -78,7 +78,7 @@ INSERT INTO `ci_sessions` (`id`, `ip_address`, `timestamp`, `data`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `client`
+-- Struktur dari tabel `client`
 --
 
 CREATE TABLE `client` (
@@ -97,7 +97,7 @@ CREATE TABLE `client` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `client`
+-- Dumping data untuk tabel `client`
 --
 
 INSERT INTO `client` (`id_client`, `nama`, `jk`, `alamat`, `no_telp`, `biodata`, `foto`, `email`, `username`, `password`, `date_created`, `date_updated`) VALUES
@@ -107,7 +107,32 @@ INSERT INTO `client` (`id_client`, `nama`, `jk`, `alamat`, `no_telp`, `biodata`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `forums`
+-- Struktur dari tabel `files`
+--
+
+CREATE TABLE `files` (
+  `id` int(11) NOT NULL,
+  `filename` varchar(150) NOT NULL,
+  `judul` text NOT NULL,
+  `penulis` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `files`
+--
+
+INSERT INTO `files` (`id`, `filename`, `judul`, `penulis`) VALUES
+(6, 'sns1.jpg', 'First Upload', ''),
+(7, 'sns2.jpg', 'Second Upload', ''),
+(8, 'sns3.png', 'Last Upload', ''),
+(9, '1167050141.pdf', 'anjing', 'sia'),
+(10, '1167050032.pdf', 'anjing', 'sia'),
+(11, '1167050141.pdf', 'anjing', 'sia');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `forums`
 --
 
 CREATE TABLE `forums` (
@@ -120,7 +145,7 @@ CREATE TABLE `forums` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `forums`
+-- Dumping data untuk tabel `forums`
 --
 
 INSERT INTO `forums` (`id`, `title`, `slug`, `description`, `created_at`, `updated_at`) VALUES
@@ -129,7 +154,7 @@ INSERT INTO `forums` (`id`, `title`, `slug`, `description`, `created_at`, `updat
 -- --------------------------------------------------------
 
 --
--- Table structure for table `options`
+-- Struktur dari tabel `options`
 --
 
 CREATE TABLE `options` (
@@ -141,7 +166,7 @@ CREATE TABLE `options` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pakar`
+-- Struktur dari tabel `pakar`
 --
 
 CREATE TABLE `pakar` (
@@ -165,7 +190,7 @@ CREATE TABLE `pakar` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `pakar`
+-- Dumping data untuk tabel `pakar`
 --
 
 INSERT INTO `pakar` (`id_pakar`, `nama`, `nik`, `jk`, `alamat`, `tempat_lahir`, `tgl_lahir`, `no_telp`, `universitas`, `sertifikat`, `biodata`, `foto`, `email`, `username`, `password`, `date_created`, `date_updated`) VALUES
@@ -174,7 +199,7 @@ INSERT INTO `pakar` (`id_pakar`, `nama`, `nik`, `jk`, `alamat`, `tempat_lahir`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pesan`
+-- Struktur dari tabel `pesan`
 --
 
 CREATE TABLE `pesan` (
@@ -188,17 +213,18 @@ CREATE TABLE `pesan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `pesan`
+-- Dumping data untuk tabel `pesan`
 --
 
 INSERT INTO `pesan` (`id_pesan`, `pengirim`, `penerima`, `subjek`, `isi`, `date_created`, `date_updated`) VALUES
 (1, 2, 0, 'Test Pesan Private', '<p>Halo Pakar1</p>\r\n', '2019-05-13 17:00:00', '0000-00-00 00:00:00'),
-(2, 2, 1, 'Test Pesan Private 2', '<p>Halo Pakar</p>\r\n', '2019-05-13 17:00:00', '0000-00-00 00:00:00');
+(2, 2, 1, 'Test Pesan Private 2', '<p>Halo Pakar</p>\r\n', '2019-05-13 17:00:00', '0000-00-00 00:00:00'),
+(3, NULL, 1, 'asdfas', '<p>asdfwasdf</p>\r\n', '2019-05-19 17:00:00', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `posts`
+-- Struktur dari tabel `posts`
 --
 
 CREATE TABLE `posts` (
@@ -211,7 +237,7 @@ CREATE TABLE `posts` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `posts`
+-- Dumping data untuk tabel `posts`
 --
 
 INSERT INTO `posts` (`id`, `content`, `user_id`, `topic_id`, `created_at`, `updated_at`) VALUES
@@ -221,7 +247,7 @@ INSERT INTO `posts` (`id`, `content`, `user_id`, `topic_id`, `created_at`, `upda
 -- --------------------------------------------------------
 
 --
--- Table structure for table `topics`
+-- Struktur dari tabel `topics`
 --
 
 CREATE TABLE `topics` (
@@ -236,7 +262,7 @@ CREATE TABLE `topics` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `topics`
+-- Dumping data untuk tabel `topics`
 --
 
 INSERT INTO `topics` (`id`, `title`, `slug`, `created_at`, `updated_at`, `user_id`, `forum_id`, `is_sticky`) VALUES
@@ -245,7 +271,7 @@ INSERT INTO `topics` (`id`, `title`, `slug`, `created_at`, `updated_at`, `user_i
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Struktur dari tabel `users`
 --
 
 CREATE TABLE `users` (
@@ -264,7 +290,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `users`
+-- Dumping data untuk tabel `users`
 --
 
 INSERT INTO `users` (`id`, `username`, `email`, `password`, `avatar`, `created_at`, `updated_at`, `updated_by`, `is_admin`, `is_moderator`, `is_confirmed`, `is_deleted`) VALUES
@@ -274,7 +300,7 @@ INSERT INTO `users` (`id`, `username`, `email`, `password`, `avatar`, `created_a
 -- --------------------------------------------------------
 
 --
--- Table structure for table `video`
+-- Struktur dari tabel `video`
 --
 
 CREATE TABLE `video` (
@@ -312,6 +338,12 @@ ALTER TABLE `ci_sessions`
 --
 ALTER TABLE `client`
   ADD PRIMARY KEY (`id_client`);
+
+--
+-- Indexes for table `files`
+--
+ALTER TABLE `files`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `forums`
@@ -381,6 +413,11 @@ ALTER TABLE `buku`
 ALTER TABLE `client`
   MODIFY `id_client` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
+-- AUTO_INCREMENT for table `files`
+--
+ALTER TABLE `files`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+--
 -- AUTO_INCREMENT for table `forums`
 --
 ALTER TABLE `forums`
@@ -399,7 +436,7 @@ ALTER TABLE `pakar`
 -- AUTO_INCREMENT for table `pesan`
 --
 ALTER TABLE `pesan`
-  MODIFY `id_pesan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_pesan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `posts`
 --
