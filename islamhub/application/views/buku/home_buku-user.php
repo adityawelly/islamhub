@@ -4,54 +4,6 @@
     Kontent buku
 </div>
 
-    <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#add">UPLOAD EBOOK</button><p>
-<div id="add" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title">UPLOAD EBOOK</h4>
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-      </div>
-      <div class="modal-body">
-
-      <form method="POST" action="<?php echo base_url(); ?>file/insert" enctype="multipart/form-data">
-        <fieldset>
-            <div class="form-group row">
-                <label class="col-md-3 control-label">Judul</label>
-                <div class="col-md-9">
-                  <input class="form-control" type="text" name="judul" required placeholder="Judul" required="">
-                </div>
-            </div>
-
-            <div class="form-group row">
-                <label class="col-md-3 control-label">Penulis</label>
-                <div class="col-md-9">
-                  <input class="form-control" type="text" name="penulis" required placeholder="penulis" required="">
-                </div>
-            </div>
-
-
-            <div class="form-group row">
-                <label class="col-md-3 control-label">Buku</label>
-                <div class="col-md-9">
-										<input class="form-control" type="file" name="upload" required placeholder="Buku" required="">
-										NOTE : hanya extensi pdf
-                </div>
-            </div>
-        </fieldset>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button class="btn btn-primary" type="submit">
-      <i class="fa fa-save"></i>
-      Submit
-    </button>
-      </form>
-      </div>
-    </div>
-  </div>
-</div>
-
 <div class="container" style="margin-top: 20px">
     <div class="row">
         <div class="col-md-12">
@@ -82,7 +34,7 @@
                             }
                             ?>
                         <!-- Start of LiveChat (www.livechatinc.com) code -->
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 window.__lc = window.__lc || {};
 window.__lc.license = 10919362;
 (function() {
@@ -94,7 +46,7 @@ window.__lc.license = 10919362;
 <noscript>
 <a href="https://www.livechatinc.com/chat-with/10919362/" rel="nofollow">Chat with us</a>,
 powered by <a href="https://www.livechatinc.com/?welcome" rel="noopener nofollow" target="_blank">LiveChat</a>
-</noscript>
+</noscript> -->
 <!-- End of LiveChat code -->
                         </tbody>
             </table>
