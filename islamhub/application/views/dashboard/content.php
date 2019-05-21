@@ -9,8 +9,34 @@
               <div class="card-content">
                   <h4 class="card-title"><?=$title?></h4>
                   <div class="row" style='padding:30px;'>
-                    
-                        <div class="col-md-1">
+                     <div class="row">
+                        <div class="card col-md-4" style="width: 18rem;">
+                          <img src="..." class="" style="height: 100px; width: 100%;">
+                            <div class="card-body">
+                              <h5 class="card-title">Alwan Backend</h5>
+                              <p class="card-text">Biodata Pakar.</p>
+                              <a href="#" class="btn btn-primary">Chat</a>
+                            </div>
+                        </div>
+                        <div class="card col-md-4" style="width: 18rem;">
+                          <img src="..." class="" style="height: 100px; width: 100%;">
+                            <div class="card-body">
+                              <h5 class="card-title">Nama Pakar</h5>
+                              <p class="card-text">Biodata Pakar.</p>
+                              <a href="#" class="btn btn-primary">Chat</a>
+                            </div>
+                        </div>
+
+                        <div class="card col-md-4" style="width: 18rem;">
+                          <img src="..." class="" style="height: 100px; width: 100%;">
+                            <div class="card-body">
+                              <h5 class="card-title">Nama Pakar</h5>
+                              <p class="card-text">Biodata Pakar.</p>
+                              <a href="#" class="btn btn-primary">Chat</a>
+                            </div>
+                        </div>
+                      </div>
+                                            <div class="col-md-1">
                             <a href='#'><i  class='fas fa-comment-alt kotak' style='font-size:48px;  color:white; '></i></a>
                         </div>
                         <div class="col-md-1 cardd" >
