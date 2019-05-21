@@ -27,7 +27,6 @@
 <!-- /.modal -->
 
 <?php foreach ($tblPosts as $value): ?>
-
 <!-- Edit -->
 <div class="modal fade" id="edit-<?=$value->id ?>">
     <div class="modal-dialog">
