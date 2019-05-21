@@ -1,51 +1,62 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<!--[if IE 9]> <html class="no-js ie9 fixed-layout" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js " lang="en"> <!--<![endif]-->
 <head>
-    <title>IslamHub</title>
-    <meta charset="utf-8">
-    
-	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-	
-    <link href="http://localhost/islamhub/islamhub/assets/css/kontent.css" rel="stylesheet" />
 
-    <title>IslamHub</title>
+    <!-- Basic -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-	
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- Mobile Meta -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <!-- Site Meta -->
+    <title>IslamHub</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="<?=base_url()?>assets/dashboard/images/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="<?=base_url()?>assets/dashboard/images/apple-touch-icon.png">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,600,700" rel="stylesheet"> 
+
+    <!-- Custom & Default Styles -->
+    <link rel="stylesheet" href="<?=base_url()?>assets/dashboard/css/font-awesome.min.css">
+    <link rel="stylesheet" href="<?=base_url()?>assets/dashboard/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?=base_url()?>assets/dashboard/css/animate.css">
+    <link rel="stylesheet" href="<?=base_url()?>assets/dashboard/css/carousel.css">
+    <link rel="stylesheet" href="<?=base_url()?>assets/dashboard/style.css">
+
+    <!--[if lt IE 9]>
+        <script src="js/vendor/html5shiv.min.js"></script>
+        <script src="js/vendor/respond.min.js"></script>
+    <![endif]-->
+
 </head>
-<body style="background-image: url(http://localhost/islamhub/islamhub/assets/img/asd.jpg);">
-    <header>
-        <nav class="navbar navbar-expand-md navbar-dark">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="http://localhost/islamhub/islamhub/">IslamHub</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav ml-auto">
-                        <div class="container h-100">
-                            <div class="d-flex justify-content-center h-100">
-                                <div class="searchbar">
-                                    <input class="search_input" type="text" name="" placeholder="Search...">
-                                    <a href="pencarian" class="search_icon"><i class="fas fa-search"></i></a>
-                                </div>
-                            </div>
+<body>
+    <header class="header site-header">
+        <div class="container">
+            <nav class="navbar navbar-default yamm">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="<?=base_url()?>"><img src="<?=base_url()?>assets/dashboard/images/logo.png" alt="Aditya Welly"></a>
                         </div>
-                        <a class="nav-item btn tombol" href="<?=base_url()?>allvideo/">Videos</a>
-                        <a class="nav-item btn tombol1" href="<?=base_url()?>file/">Books</a>
-                        <a class="nav-item btn tombol1" href="<?=base_url()?>Dashboard/">Private Consult</a>
-                        <a class="nav-item btn tombol1" href="<?=base_url()?>Forum/">Forum</a>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    </header>
+                        <div id="navbar" class="navbar-collapse collapse">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="active"><a href="<?=base_url()?>">Beranda</a></li>
+                                <li><a href="<?=base_url()?>Forum/">Forum Diskusi</a></li>
+                                <li><a href="<?=base_url()?>Dashboard/">Private Chat</a></li>
+                                <li><a href="<?=base_url()?>allvideo/">Video</a></li>
+                                <li><a href="<?=base_url()?>file/">Buku</a></li>
+                                <li class="lastlink hidden-xs hidden-sm"><a class="btn btn-primary" href="<?=base_url()?>Login/">Masuk</a></li>
+                            </ul>
+                        </div><!--/.nav-collapse -->
+                    </div><!--/.container-fluid -->
+                </nav><!-- end nav -->
+            </div><!-- end container -->
+        </header><!-- end header -->
     <main id="site-content" role="main">
