@@ -17,11 +17,13 @@ class Profile extends CI_Controller{
    function pakar(){
     $this->load->view('pakar/dashboard_login');
     $this->load->view('pakar/login_view');
+    $this->load->view('footer');
   }
 
    function user_b(){
     $this->load->view('user_b/dashboard_login');
     $this->load->view('user_b/login_view');
+    $this->load->view('footer');
   }
 
   function u_pakar(){
@@ -88,6 +90,7 @@ class Profile extends CI_Controller{
         $data['image'] = $cap['image'];
         $this->load->view('pakar/dashboard_login');
       $this->load->view('pakar/registrasi',$data);
+      $this->load->view('footer');
 
     }
   }
@@ -131,42 +134,9 @@ class Profile extends CI_Controller{
     }else {
        $this->load->view('user_b/dashboard_login');
       $this->load->view('user_b/registrasi');
+      $this->load->view('footer');
     }
 
-  }
-
-  function auth(){
-    $email    = $this->input->post('email',TRUE);
-    $password = md5($this->input->post('password',TRUE));
-    $validate = $this->login_model->validate($email,$password);
-    if($validate->num_rows() > 0){
-        $data  = $validate->row_array();
-        $name  = $data['user_name'];
-        $email = $data['user_email'];
-        $level = $data['user_level'];
-        $sesdata = array(
-            'username'  => $name,
-            'email'     => $email,
-            'level'     => $level,
-            'logged_in' => TRUE
-        );
-        $this->session->set_userdata($sesdata);
-        // access login for admin
-        if($level === '1'){
-            redirect('page');
- 
-        // access login for staff
-        }elseif($level === '2'){
-            redirect('page/staff');
- 
-        // access login for author
-        }else{
-            redirect('page/author');
-        }
-    }else{
-        echo $this->session->set_flashdata('msg','Username or Password is Wrong');
-        redirect('profile');
-    }
   }
 
   function auth_p(){
@@ -222,7 +192,7 @@ class Profile extends CI_Controller{
  
   function logout(){
       $this->session->sess_destroy();
-      redirect('profile');
+      redirect('halaman_awal');
   }
  
 }
