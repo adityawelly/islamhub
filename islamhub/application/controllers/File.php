@@ -13,7 +13,7 @@ class File extends CI_Controller {
 	public function index()
 	{        
 		$this->load->helper(array('url'));
-        $this->load->view('header');
+        $this->load->view('buku/header_buku');
         // $this->load->view('buku/home_buku');
 		//load session library to use flashdata
 		$this->load->library('session');
