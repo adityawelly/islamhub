@@ -11,15 +11,15 @@
                   <div class="row" style='padding:30px;'>
                      <div class="row">
                         <div class="card col-md-4" style="width: 18rem;">
-                          <img src="..." class="" style="height: 100px; width: 100%;">
+                          <img src="<?php echo base_url('assets/img/arab.png') ?>" class="" style="height: 100px; width: 100%;">
                             <div class="card-body">
-                              <h5 class="card-title">Alwan Backend</h5>
+                              <h5 class="card-title">Nama Pakar</h5>
                               <p class="card-text">Biodata Pakar.</p>
                               <a href="#" class="btn btn-primary">Chat</a>
                             </div>
                         </div>
                         <div class="card col-md-4" style="width: 18rem;">
-                          <img src="..." class="" style="height: 100px; width: 100%;">
+                          <img src="<?php echo base_url('assets/img/arab.png') ?>" class="" style="height: 100px; width: 100%;">
                             <div class="card-body">
                               <h5 class="card-title">Nama Pakar</h5>
                               <p class="card-text">Biodata Pakar.</p>
@@ -28,7 +28,7 @@
                         </div>
 
                         <div class="card col-md-4" style="width: 18rem;">
-                          <img src="..." class="" style="height: 100px; width: 100%;">
+                          <img src="<?php echo base_url('assets/img/arab.png') ?>" class="" style="height: 100px; width: 100%;">
                             <div class="card-body">
                               <h5 class="card-title">Nama Pakar</h5>
                               <p class="card-text">Biodata Pakar.</p>
