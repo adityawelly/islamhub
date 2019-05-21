@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
--- https://www.phpmyadmin.net/
+-- version 4.5.1
+-- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 21, 2019 at 05:25 AM
--- Server version: 10.1.35-MariaDB
--- PHP Version: 7.2.9
+-- Generation Time: May 21, 2019 at 10:11 AM
+-- Server version: 10.1.19-MariaDB
+-- PHP Version: 5.6.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -91,9 +89,9 @@ CREATE TABLE `client` (
   `no_telp` varchar(15) DEFAULT NULL,
   `biodata` text,
   `foto` varchar(50) DEFAULT NULL,
-  `email` varchar(50) DEFAULT NULL,
+  `email_client` varchar(50) DEFAULT NULL,
   `username` varchar(20) DEFAULT NULL,
-  `password` varchar(100) DEFAULT NULL,
+  `password_client` varchar(100) DEFAULT NULL,
   `date_created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `date_updated` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -102,7 +100,7 @@ CREATE TABLE `client` (
 -- Dumping data for table `client`
 --
 
-INSERT INTO `client` (`id_client`, `nama`, `jk`, `alamat`, `no_telp`, `biodata`, `foto`, `email`, `username`, `password`, `date_created`, `date_updated`) VALUES
+INSERT INTO `client` (`id_client`, `nama`, `jk`, `alamat`, `no_telp`, `biodata`, `foto`, `email_client`, `username`, `password_client`, `date_created`, `date_updated`) VALUES
 (1, 'piscal', 'L', NULL, '089', NULL, NULL, 'piscalpratama@gmail.com', 'piscal02', '098f6bcd4621d373cade4e832627b4f6', '2019-05-14 06:06:46', '2019-05-14 06:06:46'),
 (2, NULL, NULL, NULL, NULL, NULL, NULL, 'alwan@gmail.com', NULL, '745afc946c17ac707d56348e85b5bb24', '2019-05-14 06:07:44', '2019-05-14 06:07:44');
 
@@ -202,31 +200,6 @@ INSERT INTO `pakar` (`id_pakar`, `nama`, `nik`, `jk`, `alamat`, `tempat_lahir`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pesan`
---
-
-CREATE TABLE `pesan` (
-  `id_pesan` int(11) NOT NULL,
-  `pengirim` int(11) DEFAULT NULL,
-  `penerima` int(11) DEFAULT NULL,
-  `subjek` varchar(200) DEFAULT NULL,
-  `isi` text,
-  `date_created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `date_updated` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `pesan`
---
-
-INSERT INTO `pesan` (`id_pesan`, `pengirim`, `penerima`, `subjek`, `isi`, `date_created`, `date_updated`) VALUES
-(1, 2, 0, 'Test Pesan Private', '<p>Halo Pakar1</p>\r\n', '2019-05-13 17:00:00', '0000-00-00 00:00:00'),
-(2, 2, 1, 'Test Pesan Private 2', '<p>Halo Pakar</p>\r\n', '2019-05-13 17:00:00', '0000-00-00 00:00:00'),
-(3, NULL, 1, 'asdfas', '<p>asdfwasdf</p>\r\n', '2019-05-19 17:00:00', '0000-00-00 00:00:00');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `posts`
 --
 
@@ -246,6 +219,33 @@ CREATE TABLE `posts` (
 INSERT INTO `posts` (`id`, `content`, `user_id`, `topic_id`, `created_at`, `updated_at`) VALUES
 (1, 'mantap nih mang , lajutkan', 1, 1, '2018-08-05 21:37:07', NULL),
 (2, 'edan dong reply', 1, 1, '2018-08-05 21:37:22', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `private_chat`
+--
+
+CREATE TABLE `private_chat` (
+  `id_chat` int(11) NOT NULL,
+  `pengirim_chat` int(11) DEFAULT NULL,
+  `penerima_chat` int(11) DEFAULT NULL,
+  `subjek` varchar(200) DEFAULT NULL,
+  `isi_chat` text,
+  `date_created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `date_updated` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
+  `status` varchar(191) NOT NULL,
+  `send_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `private_chat`
+--
+
+INSERT INTO `private_chat` (`id_chat`, `pengirim_chat`, `penerima_chat`, `subjek`, `isi_chat`, `date_created`, `date_updated`, `status`, `send_at`) VALUES
+(1, 2, 0, 'Test Pesan Private', '<p>Halo Pakar1</p>\r\n', '2019-05-13 17:00:00', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00'),
+(2, 2, 1, 'Test Pesan Private 2', '<p>Halo Pakar</p>\r\n', '2019-05-13 17:00:00', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00'),
+(3, NULL, 1, 'asdfas', '<p>asdfwasdf</p>\r\n', '2019-05-19 17:00:00', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -468,14 +468,14 @@ CREATE TABLE `tbl_video_details` (
 --
 
 INSERT INTO `tbl_video_details` (`no`, `id_video_detail`, `title`, `synopsis`, `status`, `broadcast`, `producer`, `score`, `photo`, `id_setting_season`, `id_setting_type`, `id_setting_year`, `created_at`, `updated_at`, `created_by`, `updated_by`) VALUES
-(1, '153530089310585', 'Boku no Hero Academia', 'The appearance of \"quirks,\" newly discovered super powers, has been steadily increasing over the years, with 80 percent of humanity possessing various abilities from manipulation of elements to shapeshifting. This leaves the remainder of the world completely powerless, and Izuku Midoriya is one such individual.\r\n\r\nSince he was a child, the ambitious middle schooler has wanted nothing more than to be a hero. Izuku\'s unfair fate leaves him admiring heroes and taking notes on them whenever he can. But it seems that his persistence has borne some fruit: Izuku meets the number one hero and his personal idol, All Might. All Might\'s quirk is a unique ability that can be inherited, and he has chosen Izuku to be his successor!\r\n\r\nEnduring many months of grueling training, Izuku enrolls in UA High, a prestigious high school famous for its excellent hero training program, and this year\'s freshmen look especially promising. With his bizarre but talented classmates and the looming threat of a villainous organization, Izuku will soon learn what it really means to be a hero.', '1', '2016-04-03', 'Dentsu, Mainichi Broadcasting System, Movic, TOHO animation, Shueisha', '8.43', '153530089210556.jpg', '15348684442381', '15348684513013', '15348684994841', '2018-08-26 16:28:13', '2018-08-26 16:28:13', '1534867854137', '1534867854137'),
+(1, '153530089310585', 'Boku no Hero Academia', 'The appearance of "quirks," newly discovered super powers, has been steadily increasing over the years, with 80 percent of humanity possessing various abilities from manipulation of elements to shapeshifting. This leaves the remainder of the world completely powerless, and Izuku Midoriya is one such individual.\r\n\r\nSince he was a child, the ambitious middle schooler has wanted nothing more than to be a hero. Izuku''s unfair fate leaves him admiring heroes and taking notes on them whenever he can. But it seems that his persistence has borne some fruit: Izuku meets the number one hero and his personal idol, All Might. All Might''s quirk is a unique ability that can be inherited, and he has chosen Izuku to be his successor!\r\n\r\nEnduring many months of grueling training, Izuku enrolls in UA High, a prestigious high school famous for its excellent hero training program, and this year''s freshmen look especially promising. With his bizarre but talented classmates and the looming threat of a villainous organization, Izuku will soon learn what it really means to be a hero.', '1', '2016-04-03', 'Dentsu, Mainichi Broadcasting System, Movic, TOHO animation, Shueisha', '8.43', '153530089210556.jpg', '15348684442381', '15348684513013', '15348684994841', '2018-08-26 16:28:13', '2018-08-26 16:28:13', '1534867854137', '1534867854137'),
 (2, '153530262010546', 'Boku no Hero Academia 2nd Season', 'At UA Academy, not even a violent attack can disrupt their most prestigious event: the school sports festival. Renowned across Japan, this festival is an opportunity for aspiring heroes to showcase their abilities, both to the public and potential recruiters.\r\n\r\nHowever, the path to glory is never easy, especially for Izuku Midoriya—whose quirk possesses great raw power but is also cripplingly inefficient. Pitted against his talented classmates, such as the fire and ice wielding Shouto Todoroki, Izuku must utilize his sharp wits and master his surroundings to achieve victory and prove to the world his worth.', '1', '2017-04-01', 'Dentsu, Yomiuri Telecasting, Movic, Sony Music Entertainment, TOHO animation, Shueisha', '8.75', '153530262010683.jpg', '15348684442381', '15348684513013', '15348684994243', '2018-08-26 16:57:00', '2018-08-26 16:57:00', '1534867854137', '1534867854137'),
 (3, '153530272110685', 'Boku no Hero Academia 3rd Season', 'Third season of Boku no Hero Academia.', '0', '2018-04-07', 'Shueisha', '8.85', '153530272110140.jpg', '15348684442381', '15348684513013', '15348684994188', '2018-08-26 16:58:41', '2018-08-26 16:58:41', '1534867854137', '1534867854137'),
-(4, '153530283510423', 'Boku no Hero Academia: Training of the Dead', 'OVA bundled with the 14th manga volume.\r\n\r\nStory about a joint practice session between Izuku\'s class and Isami High students at Yuuei Academy, takes place after the field training arc in the second season.', '1', '2017-06-02', 'None found', '7.58', '153530283510982.jpg', '15348684442248', '15348684513775', '15348684994243', '2018-08-26 17:00:35', '2018-08-26 17:00:35', '1534867854137', '1534867854137'),
+(4, '153530283510423', 'Boku no Hero Academia: Training of the Dead', 'OVA bundled with the 14th manga volume.\r\n\r\nStory about a joint practice session between Izuku''s class and Isami High students at Yuuei Academy, takes place after the field training arc in the second season.', '1', '2017-06-02', 'None found', '7.58', '153530283510982.jpg', '15348684442248', '15348684513775', '15348684994243', '2018-08-26 17:00:35', '2018-08-26 17:00:35', '1534867854137', '1534867854137'),
 (5, '153530291910559', 'Boku no Hero Academia The Movie: Futari no Hero', 'According to Kohei Horikoshi, the movie will delve into the backstory of an unknown character, in addition to featuring the characters of Class 1-A.', '1', '2018-08-03', 'Shueisha', '8.21', '153530291910886.jpg', '15348684442248', '15348684513182', '15348684994188', '2018-08-26 17:01:59', '2018-08-26 17:01:59', '1534867854137', '1534867854137'),
-(6, '153530301310848', 'Boku no Hero Academia: Sukue! Kyuujo Kunren!', 'UA High School must regain the public\'s confidence after the surprise villain attack during class 1-A\'s training session. Although some of the teachers were gravely injured in the attack, Izuku \"Deku\" Midoriya and his classmates must continue to learn and train, and utilize their quirks in varying environments and circumstances.\r\n\r\nBoku no Hero Academia: Sukue! Kyuujo Kunren! follows class 1-A as they attempt to finally complete their training. However, there\'s a masked figure roaming around the training center. Have the villains responsible for the previous incident returned to finish the job? If so, are the students ready to fight back?', '1', '2017-04-04', 'None found', '7.57', '153530301310147.jpg', '15348684442248', '15348684513775', '15348684994243', '2018-08-26 17:03:33', '2018-08-26 17:03:33', '1534867854137', '1534867854137'),
+(6, '153530301310848', 'Boku no Hero Academia: Sukue! Kyuujo Kunren!', 'UA High School must regain the public''s confidence after the surprise villain attack during class 1-A''s training session. Although some of the teachers were gravely injured in the attack, Izuku "Deku" Midoriya and his classmates must continue to learn and train, and utilize their quirks in varying environments and circumstances.\r\n\r\nBoku no Hero Academia: Sukue! Kyuujo Kunren! follows class 1-A as they attempt to finally complete their training. However, there''s a masked figure roaming around the training center. Have the villains responsible for the previous incident returned to finish the job? If so, are the students ready to fight back?', '1', '2017-04-04', 'None found', '7.57', '153530301310147.jpg', '15348684442248', '15348684513775', '15348684994243', '2018-08-26 17:03:33', '2018-08-26 17:03:33', '1534867854137', '1534867854137'),
 (7, '153530310510020', 'Boku no Hero Academia 2nd Season: Hero Note', 'Recap of Boku no Hero Academia that aired a week before the second season.', '1', '2017-03-25', 'None found', '7.39', '153530310510748.jpg', '15348684442248', '15348684513536', '15348684994243', '2018-08-26 17:05:05', '2018-08-26 17:05:05', '1534867854137', '1534867854137'),
-(8, '153537867510363', 'Asobi Asobase', 'Hanako, an athletically proficient, yet thick-headed student with a weird fashion sense, plays a game with the American transfer student Olivia. However, their vigor irritated their classmate Kasuki who dislikes playing games since she has always been teased by her sister for being bad at them. With a turn of events, it was found out that Hanako is terrible at English. Thus, she asked her foreign classmate Olivia to help her, but Olivia, who is only born and raised in Japan with foreign parents, can\'t actually speak English at all! Watch over these three girls\' surreal school-life comedy.', '0', '2018-07-08', 'None found', '7.84', '153537867510730.jpg', '15348684442425', '15348684513013', '15348684994188', '2018-08-27 14:04:35', '2018-08-27 14:04:35', '1534867854137', '1534867854137');
+(8, '153537867510363', 'Asobi Asobase', 'Hanako, an athletically proficient, yet thick-headed student with a weird fashion sense, plays a game with the American transfer student Olivia. However, their vigor irritated their classmate Kasuki who dislikes playing games since she has always been teased by her sister for being bad at them. With a turn of events, it was found out that Hanako is terrible at English. Thus, she asked her foreign classmate Olivia to help her, but Olivia, who is only born and raised in Japan with foreign parents, can''t actually speak English at all! Watch over these three girls'' surreal school-life comedy.', '0', '2018-07-08', 'None found', '7.84', '153537867510730.jpg', '15348684442425', '15348684513013', '15348684994188', '2018-08-27 14:04:35', '2018-08-27 14:04:35', '1534867854137', '1534867854137');
 
 -- --------------------------------------------------------
 
@@ -665,7 +665,6 @@ CREATE TABLE `video` (
 
 --
 -- Stand-in structure for view `view_video_details`
--- (See below for the actual view)
 --
 CREATE TABLE `view_video_details` (
 `no` int(10)
@@ -693,7 +692,6 @@ CREATE TABLE `view_video_details` (
 
 --
 -- Stand-in structure for view `view_video_genres`
--- (See below for the actual view)
 --
 CREATE TABLE `view_video_genres` (
 `no` int(10)
@@ -711,7 +709,6 @@ CREATE TABLE `view_video_genres` (
 
 --
 -- Stand-in structure for view `view_video_reports`
--- (See below for the actual view)
 --
 CREATE TABLE `view_video_reports` (
 `no` int(10)
@@ -804,16 +801,16 @@ ALTER TABLE `pakar`
   ADD PRIMARY KEY (`id_pakar`);
 
 --
--- Indexes for table `pesan`
---
-ALTER TABLE `pesan`
-  ADD PRIMARY KEY (`id_pesan`);
-
---
 -- Indexes for table `posts`
 --
 ALTER TABLE `posts`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `private_chat`
+--
+ALTER TABLE `private_chat`
+  ADD PRIMARY KEY (`id_chat`);
 
 --
 -- Indexes for table `tbl_setting_genres`
@@ -934,133 +931,111 @@ ALTER TABLE `video`
 --
 ALTER TABLE `admin`
   MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `buku`
 --
 ALTER TABLE `buku`
   MODIFY `ID_BUKU` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `client`
 --
 ALTER TABLE `client`
   MODIFY `id_client` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
 --
 -- AUTO_INCREMENT for table `files`
 --
 ALTER TABLE `files`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
-
 --
 -- AUTO_INCREMENT for table `forums`
 --
 ALTER TABLE `forums`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
 -- AUTO_INCREMENT for table `options`
 --
 ALTER TABLE `options`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `pakar`
 --
 ALTER TABLE `pakar`
   MODIFY `id_pakar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `pesan`
---
-ALTER TABLE `pesan`
-  MODIFY `id_pesan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
 --
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
+--
+-- AUTO_INCREMENT for table `private_chat`
+--
+ALTER TABLE `private_chat`
+  MODIFY `id_chat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `tbl_setting_genres`
 --
 ALTER TABLE `tbl_setting_genres`
   MODIFY `no` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
-
 --
 -- AUTO_INCREMENT for table `tbl_setting_seasons`
 --
 ALTER TABLE `tbl_setting_seasons`
   MODIFY `no` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
 --
 -- AUTO_INCREMENT for table `tbl_setting_types`
 --
 ALTER TABLE `tbl_setting_types`
   MODIFY `no` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
 --
 -- AUTO_INCREMENT for table `tbl_setting_years`
 --
 ALTER TABLE `tbl_setting_years`
   MODIFY `no` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
-
 --
 -- AUTO_INCREMENT for table `tbl_users`
 --
 ALTER TABLE `tbl_users`
   MODIFY `no` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
 --
 -- AUTO_INCREMENT for table `tbl_video_details`
 --
 ALTER TABLE `tbl_video_details`
   MODIFY `no` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
 --
 -- AUTO_INCREMENT for table `tbl_video_genres`
 --
 ALTER TABLE `tbl_video_genres`
   MODIFY `no` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
 --
 -- AUTO_INCREMENT for table `tbl_video_locations`
 --
 ALTER TABLE `tbl_video_locations`
   MODIFY `no` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
 --
 -- AUTO_INCREMENT for table `tbl_video_reports`
 --
 ALTER TABLE `tbl_video_reports`
   MODIFY `no` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
-
 --
 -- AUTO_INCREMENT for table `tbl_video_viewers`
 --
 ALTER TABLE `tbl_video_viewers`
   MODIFY `no` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
-
 --
 -- AUTO_INCREMENT for table `topics`
 --
 ALTER TABLE `topics`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
 --
 -- AUTO_INCREMENT for table `video`
 --
 ALTER TABLE `video`
   MODIFY `ID_VIDEO` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- Constraints for dumped tables
 --
@@ -1131,7 +1106,6 @@ ALTER TABLE `tbl_video_reports`
 --
 ALTER TABLE `tbl_video_viewers`
   ADD CONSTRAINT `tbl_video_viewers_ibfk_1` FOREIGN KEY (`id_video_location`) REFERENCES `tbl_video_locations` (`id_video_location`) ON UPDATE CASCADE;
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
