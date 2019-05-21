@@ -27,8 +27,8 @@ class Login extends CI_Controller {
 		}else{
 			if($this->input->post('sebagai') == "client"){
 				$data = array(
-					'EMAIL_CLIENT' => $this->input->post('email'),
-					'PASSWORD_CLIENT' => md5(md5($this->input->post('password'))),
+					'email_client' => $this->input->post('email'),
+					'password_client' => md5(md5($this->input->post('password'))),
 				);
 				$tabelLogin = $this->TabelClient->whereAnd($data);
 				if ($tabelLogin->num_rows() > 0) {
@@ -37,9 +37,9 @@ class Login extends CI_Controller {
 						'logged' 		=> TRUE,
 						'pakar'			=> FALSE,
 						'client'			=> TRUE,
-                        'id'		=> $tabelLogin->ID_CLIENT,
-						'email'		=> $tabelLogin->EMAIL_CLIENT,
-						'nama'		=> $tabelLogin->NAMA_CLIENT,
+                        'id'		=> $tabelLogin->id_client,
+						'email'		=> $tabelLogin->email_client,
+						'nama'		=> $tabelLogin->nama,
                     );
                     $this->session->set_userdata($data);
                     redirect('Dashboard');
@@ -50,8 +50,8 @@ class Login extends CI_Controller {
 				}
 			}else{
 				$data = array(
-					'EMAIL_PAKAR' => $this->input->post('email'),
-					'PASSWORD_PAKAR' => md5(md5($this->input->post('password'))),
+					'email' => $this->input->post('email'),
+					'password' => md5(md5($this->input->post('password'))),
 				);
 				$tabelLogin = $this->TabelPakar->whereAnd($data);
 				if ($tabelLogin->num_rows() > 0) {
@@ -60,9 +60,9 @@ class Login extends CI_Controller {
 						'logged' 		=> TRUE, 
 						'pakar'			=> TRUE,
 						'client'			=> FALSE,
-                        'id'		=> $tabelLogin->ID_PAKAR,
-						'email'		=> $tabelLogin->EMAIL_PAKAR,
-						'nama'		=> $tabelLogin->NAMA_PAKAR,
+                        'id'		=> $tabelLogin->id_pakar,
+						'email'		=> $tabelLogin->email,
+						'nama'		=> $tabelLogin->nama,
                     );
                     $this->session->set_userdata($data);
                     redirect('Dashboard');

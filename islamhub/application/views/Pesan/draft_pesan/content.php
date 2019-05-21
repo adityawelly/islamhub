@@ -23,10 +23,10 @@
                             <tbody>
                                 <?php foreach($tblPesan as $value): ?>
                                     <tr>
-                                        <td><?=$value->PENGIRIM_CHAT?></td>
-                                        <td><?=$value->SUBJEK?></td>
-                                        <td><?=$value->ISI_CHAT?></td>
-                                        <td><?=$value->SEND_AT?></td>
+                                        <td><?=$value->pengirim_chat?></td>
+                                        <td><?=$value->subjek?></td>
+                                        <td><?=$value->isi_chat?></td>
+                                        <td><?=$value->date_created?></td>
                                         <td>
                                             <div class="dropdown">
                                                 <button href="#" class="dropdown-toggle btn btn-primary btn-round" data-toggle="dropdown">Action
@@ -34,7 +34,7 @@
                                                 </button>
                                                 <ul class="dropdown-menu dropdown-menu-left">
                                                     <li>
-                                                        <a href="<?=base_url('Pesan/KirimUlang/'.$value->ID_CHAT)?>" onclick="return confirm('Kirim Ulang Pesan ?')">Kirim Ulang</a>
+                                                        <a href="<?=base_url('Pesan/KirimUlang/'.$value->id_chat)?>" onclick="return confirm('Kirim Ulang Pesan ?')">Kirim Ulang</a>
                                                     </li>
                                                 </ul>
                                             </div>
