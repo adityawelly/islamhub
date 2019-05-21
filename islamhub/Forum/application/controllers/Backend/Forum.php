@@ -222,26 +222,4 @@ class Forum extends CI_Controller {
             redirect('Backend/Forum');
         }
 	}
-
-	private function fakultas($level, $id_fakultas){
-        if ($level == "FAKULTAS"){
-            $rules = array(
-                'select'    => null,
-                'where'     => array('id_fakultas' => $id_fakultas),
-                'or_where'  => null,
-                'order'     => null,
-                'limit'     => null,
-                'pagging'   => null,
-            );
-            $tblSFakultas = $this->Tbl_setting_fakultas->where($rules)->row();
-            $keterangan = json_encode(array(
-                'id_fakultas'	=> $tblSFakultas->id_fakultas,
-                'fakultas' 		=> $tblSFakultas->fakultas,
-            ));
-        }else{
-            $keterangan = '-';
-        }
-        return $keterangan;
-    }
-
 }
