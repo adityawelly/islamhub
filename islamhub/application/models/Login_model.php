@@ -29,6 +29,10 @@ class Login_model extends CI_Model{
 
     }
 
+    function input_data($data,$table){
+        $this->db->insert($table,$data);
+    }
+
     function changeActiveState($key)
     {
     $this->load->database();
@@ -41,4 +45,6 @@ class Login_model extends CI_Model{
     
     return true;
     }
+
+
 }

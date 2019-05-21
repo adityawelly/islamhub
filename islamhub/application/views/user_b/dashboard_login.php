@@ -17,12 +17,11 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="<?php echo base_url('profile'); ?>">LOGO</a>
+              <a class="navbar-brand" href="<?php echo base_url('profile'); ?>">Kembali</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
                 <!--ACCESS MENUS FOR ADMIN-->
-                  <li class="active"><a href="#">Dashboard</a></li>
                   <li><a href="<?php echo base_url('profile/user_b');?>">login</a></li>
                   <li><a href="<?php echo base_url('profile/r_user_b');?>">register</a></li>
                 

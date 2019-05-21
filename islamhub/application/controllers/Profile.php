@@ -14,6 +14,7 @@ class Profile extends CI_Controller{
     $this->load->view('login_view');
   }
 
+
    function pakar(){
     $this->load->view('pakar/dashboard_login');
     $this->load->view('pakar/login_view');
@@ -24,11 +25,7 @@ class Profile extends CI_Controller{
     $this->load->view('user_b/login_view');
   }
 
-  function u_pakar(){
-    $this->load->view('pakar/dashboard_login');
-    $this->load->view('pakar/index_u');
-  }
- 
+
   function r_pakar(){
     $this->form_validation->set_rules('username','User Name','required');
     $this->form_validation->set_rules('password','User Password','required');
@@ -135,39 +132,6 @@ class Profile extends CI_Controller{
 
   }
 
-  function auth(){
-    $email    = $this->input->post('email',TRUE);
-    $password = md5($this->input->post('password',TRUE));
-    $validate = $this->login_model->validate($email,$password);
-    if($validate->num_rows() > 0){
-        $data  = $validate->row_array();
-        $name  = $data['user_name'];
-        $email = $data['user_email'];
-        $level = $data['user_level'];
-        $sesdata = array(
-            'username'  => $name,
-            'email'     => $email,
-            'level'     => $level,
-            'logged_in' => TRUE
-        );
-        $this->session->set_userdata($sesdata);
-        // access login for admin
-        if($level === '1'){
-            redirect('page');
- 
-        // access login for staff
-        }elseif($level === '2'){
-            redirect('page/staff');
- 
-        // access login for author
-        }else{
-            redirect('page/author');
-        }
-    }else{
-        echo $this->session->set_flashdata('msg','Username or Password is Wrong');
-        redirect('profile');
-    }
-  }
 
   function auth_p(){
     $email    = $this->input->post('email',TRUE);
@@ -176,6 +140,15 @@ class Profile extends CI_Controller{
     if($validate->num_rows() > 0){
         $data  = $validate->row_array();
         $nama  = $data['nama'];
+        $username = $data['username'];
+        $nik  = $data['nik'];
+        $jk  = $data['jk'];
+        $alamat  = $data['alamat'];
+        $tempat_lahir  = $data['tempat_lahir'];
+        $tgl_lahir  = $data['tgl_lahir'];
+        $no_telp  = $data['no_telp'];
+        $sertifikat = $data['sertifikat'];
+        $foto  = $data['foto'];
         $email = $data['email'];
         $date_created = $data['date_created'];
         $biodata = $data['biodata'];
@@ -183,19 +156,31 @@ class Profile extends CI_Controller{
         $sesdata = array(
             'nama'  => $nama,
             'email'     => $email,
+            'username'  => $username,
+            'nik'  => $nik,
+            'jk'  => $jk,
+            'alamat'  => $alamat,
+            'tempat_lahir'  => $tempat_lahir,
+            'no_telp'  => $no_telp,
+            'sertifikat'  => $sertifikat,
+            'foto'  => $foto,
             'date_created' => $date_created,
             'biodata' => $biodata,
             'universitas' => $univ,
             'logged_in' => TRUE
         );
         $this->session->set_userdata($sesdata);
-         $this->load->view('pakar/dashboard_view');
          $this->load->view('pakar/index');
     }else{
         echo $this->session->set_flashdata('msg','Username or Password is Wrong');
         redirect('profile');
     }
   }
+
+    function u_pakar(){
+    $this->load->view('pakar/index_u');
+  }
+ 
 
   function auth_u(){
     $email    = $this->input->post('email',TRUE);
@@ -211,14 +196,66 @@ class Profile extends CI_Controller{
             'logged_in' => TRUE
         );
         $this->session->set_userdata($sesdata);
-        // access login for admin
-        $this->load->view('user_b/dashboard_view');
         $this->load->view('user_b/index');
     }else{
         echo $this->session->set_flashdata('msg','Username or Password is Wrong');
         redirect('profile');
     }
   }
+
+
+   function u_user_b(){
+      $this->load->view('user_b/index_u');
+  }
+
+  function tambah_aksi_user(){
+    $nama = $this->input->post('username');
+    $email = $this->input->post('email');
+    $password = $this->input->post('password');
+ 
+    $data = array(
+      'username' => $nama,
+      'email' => $email,
+      'password' => $password
+      );
+    $this->login_model->input_data($data,'users');
+    redirect('profile/auth_u');
+  }
+
+  function tambah_aksi_pakar(){
+    $nama = $this->input->post('nama');
+    $username = $this->input->post('username');
+    $email = $this->input->post('email');
+    $password = $this->input->post('password');
+    $nik = $this->input->post('nik');
+    $jk = $this->input->post('jk');
+    $alamat = $this->input->post('alamat');
+    $tempat_lahir = $this->input->post('tempat_lahir');
+    $tgl_lahir = $this->input->post('tgl_lahir');
+    $no_telp = $this->input->post('no_telp');
+    $universitas = $this->input->post('universitas');
+    $sertifikat = $this->input->post('sertifikat');
+    $biodata = $this->input->post('biodata');
+ 
+    $data = array(
+      'nama' => $nama,
+      'username' => $username,
+      'email' => $email,
+      'password' => $password,
+      'nik' => $nik,
+      'jk' => $jk,
+      'alamat' => $alamat,
+      'tempat_lahir' => $tempat_lahir,
+      'tgl_lahir' => $tgl_lahir,
+      'no_telp' => $no_telp,
+      'universitas' => $universitas,
+      'sertifikat' => $sertifikat,
+      'biodata' => $biodata
+      );
+    $this->login_model->input_data($data,'pakar');
+    redirect('profile/auth_p');
+  }
+
  
   function logout(){
       $this->session->sess_destroy();
