@@ -150,34 +150,29 @@ class Forum extends CI_Controller {
 	}
 
 	function Create(){
-		$rules[] = array('field' => 'username',	'label' => 'Username',  'rules' => 'required');
-		$rules[] = array('field' => 'password',	'label' => 'Password',  'rules' => 'required');
-		$rules[] = array('field' => 'nama',     'label' => 'Nama',      'rules' => 'required');
-		$rules[] = array('field' => 'level',	'label' => 'Level',     'rules' => 'required');
+		$rules[] = array('field' => 'title',	'label' => 'title',  'rules' => 'required');
+		$rules[] = array('field' => 'slug',	'label' => 'slug',  'rules' => 'required');
+		$rules[] = array('field' => 'description',     'label' => 'description',      'rules' => 'required');
 		$this->form_validation->set_rules($rules);
 		if ($this->form_validation->run() == FALSE){
 			$this->session->set_flashdata('message',validation_errors());
 			$this->session->set_flashdata('type_message','danger');
-			redirect('Settings/Users/');
+			redirect('Backend/Forum/');
 		}else{
 		    try{
-		        $level = $this->input->post('level');
-                $keterangan = $this->fakultas($level, $this->input->post('id_fakultas'));
                 $data = array(
-                    'username'	=> strtolower(str_replace(' ', '', $this->input->post('username')).'@'.$this->input->post('level')),
-                    'password'	=> md5(md5($this->input->post('password'))),
-                    'nama'		=> strtoupper($this->input->post('nama')),
-                    'level'		=> $level,
-                    'keterangan'=> $keterangan,
+                    'title'	=> $this->input->post('title'),
+					'slug' => $this->input->post('slug'),
+					'description' => $this->input->post('description'),
                 );
-                $this->Tbl_setting_users->create($data);
+                $this->Tbl_forums->create($data);
                 $this->session->set_flashdata('message','Data berhasil disimpan.');
                 $this->session->set_flashdata('type_message','success');
-                redirect('Settings/Users/');
+                redirect('Backend/Forum/');
             }catch (Exception $e){
                 $this->session->set_flashdata('message', $e->getMessage());
                 $this->session->set_flashdata('type_message','danger');
-                redirect('Settings/Users/');
+                redirect('Backend/Forum/');
             }
 		}
 	}
@@ -230,15 +225,15 @@ class Forum extends CI_Controller {
 
 	function Delete($id){
 	    try{
-	        $rules = array('id_users' => $id);
-            $this->Tbl_setting_users->delete($rules);
+	        $rules = array('id' => $id);
+            $this->Tbl_forums->delete($rules);
             $this->session->set_flashdata('message','Data berhasil dihapus.');
             $this->session->set_flashdata('type_message','success');
-            redirect('Settings/Users');
+            redirect('Backend/Forum');
         }catch (Exception $e){
             $this->session->set_flashdata('message', $e->getMessage());
             $this->session->set_flashdata('type_message','danger');
-            redirect('Settings/Users');
+            redirect('Backend/Forum');
         }
 	}
 
