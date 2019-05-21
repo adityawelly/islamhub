@@ -178,47 +178,33 @@ class Forum extends CI_Controller {
 	}
 
 	function Update($id){
-        $rules[] = array('field' => 'username',	'label' => 'Username',  'rules' => 'required');
-        $rules[] = array('field' => 'nama',     'label' => 'Nama',      'rules' => 'required');
-        $rules[] = array('field' => 'level',	'label' => 'Level',     'rules' => 'required');
+        $rules[] = array('field' => 'title',	'label' => 'title',  'rules' => 'required');
+        $rules[] = array('field' => 'slug',     'label' => 'slug',      'rules' => 'required');
+        $rules[] = array('field' => 'descrption',	'label' => 'descrption',     'rules' => 'required');
 		$this->form_validation->set_rules($rules);
 		if ($this->form_validation->run() == FALSE){
 			$this->session->set_flashdata('message',validation_errors());
 			$this->session->set_flashdata('type_message','danger');
-			redirect('Settings/Users/');
+			redirect('Backend/Forum/');
 		}else{
 		    try{
-                $level = $this->input->post('level');
-                $keterangan = $this->fakultas($level, $this->input->post('id_fakultas'));
-                $password = $this->input->post('password');
-                if (!empty($password)) {
-                    $data = array(
-                        'username'	=> strtolower(str_replace(' ', '', $this->input->post('username')).'@'.$this->input->post('level')),
-                        'password'	=> md5(md5($password)),
-                        'nama'		=> strtoupper($this->input->post('nama')),
-                        'level'		=> $level,
-                        'keterangan'=> $keterangan,
-                    );
-                }else{
-                    $data = array(
-                        'username'	=> strtolower(str_replace(' ', '', $this->input->post('username')).'@'.$this->input->post('level')),
-                        'nama'		=> strtoupper($this->input->post('nama')),
-                        'level'		=> $level,
-                        'keterangan'=> $keterangan,
-                    );
-                }
                 $rules = array(
                     'where' => array('id_users' => $id),
-                    'data'  => $data,
+                    'data'  => array(
+                        
+						'title'	=> $this->input->post('title'),
+						'slug' => $this->input->post('slug'),
+						'description' => $this->input->post('description'),
+					),
                 );
-                $this->Tbl_setting_users->update($rules);
+                $this->Tbl_forums->update($rules);
                 $this->session->set_flashdata('message','Data berhasil diubah.');
                 $this->session->set_flashdata('type_message','success');
-                redirect('Settings/Users/');
+                redirect('Backend/Forum/');
             }catch (Exception $e){
                 $this->session->set_flashdata('message', $e->getMessage());
                 $this->session->set_flashdata('type_message','danger');
-                redirect('Settings/Users/');
+                redirect('Backend/Forum/');
             }
 		}
 	}
