@@ -65,21 +65,11 @@
 				<a href="<?= base_url('create_forum') ?>" class="btn btn-default">Create a new forum</a>
 			</div>
 		<?php endif; ?>
-		<!-- Start of LiveChat (www.livechatinc.com) code -->
-<script type="text/javascript">
-window.__lc = window.__lc || {};
-window.__lc.license = 10919362;
-(function() {
-  var lc = document.createElement('script'); lc.type = 'text/javascript'; lc.async = true;
-  lc.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.livechatinc.com/tracking.js';
-  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(lc, s);
-})();
-</script>
-<noscript>
-<a href="https://www.livechatinc.com/chat-with/10919362/" rel="nofollow">Chat with us</a>,
-powered by <a href="https://www.livechatinc.com/?welcome" rel="noopener nofollow" target="_blank">LiveChat</a>
-</noscript>
-<!-- End of LiveChat code -->
+  <!-- Start of LiveChat (www.livechatinc.com) code -->
+            <div class="static">
+            <div id="tlkio" data-channel="islamhub" data-theme="theme--day" style="width:300px;height:400px;"></div>
+            <script async src="http://tlk.io/embed.js" type="text/javascript"></script>
+            <!-- End of LiveChat code -->
 	</div><!-- .row -->
 </div><!-- .container -->
 

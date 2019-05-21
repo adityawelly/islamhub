@@ -1,4 +1,13 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<style>
+div.static {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 300px;
+  border: 3px solid #543535;
+}
+</style>
 
 <div class="container-text">
     Kontent buku
@@ -83,21 +92,12 @@
                                 <?php
                             }
                             ?>
-                        <!-- Start of LiveChat (www.livechatinc.com) code -->
-<script type="text/javascript">
-window.__lc = window.__lc || {};
-window.__lc.license = 10919362;
-(function() {
-  var lc = document.createElement('script'); lc.type = 'text/javascript'; lc.async = true;
-  lc.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.livechatinc.com/tracking.js';
-  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(lc, s);
-})();
-</script>
-<noscript>
-<a href="https://www.livechatinc.com/chat-with/10919362/" rel="nofollow">Chat with us</a>,
-powered by <a href="https://www.livechatinc.com/?welcome" rel="noopener nofollow" target="_blank">LiveChat</a>
-</noscript>
-<!-- End of LiveChat code -->
+            <!-- Start of LiveChat (www.livechatinc.com) code -->
+            <div class="static">
+            <div id="tlkio" data-channel="islamhub" data-theme="theme--pop" style="width:300px;height:400px;"></div>
+            <script async src="http://tlk.io/embed.js" type="text/javascript"></script>
+            </div>
+            <!-- End of LiveChat code -->
                         </tbody>
             </table>
         </div>
