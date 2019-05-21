@@ -15,6 +15,11 @@
         <div class="box">
             <div class="box-header with-border">
                 <h3 class="box-title">Tabel Forum</h3>
+                <div class="pull-right">
+                    <button type="button" class="btn btn-sm btn-primary" id="tambah_tooltip" data-toggle="modal" data-target="#tambah" title="Tambah">
+                        <i class="fa fa-plus"></i>
+                    </button>
+                </div>
             </div>
             <div class="box-body">
                 <div class="table-responsive">

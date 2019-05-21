@@ -103,4 +103,10 @@
             <div class="image col-md-4 hidden-sm hidden-xs">
                 <img src="<?=base_url()?>assets/dashboard/images/nguping.png" alt="" />
             </div>
+            <!-- Start of LiveChat (www.livechatinc.com) code -->
+            <div class="static">
+            <div id="tlkio" data-channel="islamhub" data-theme="theme--day" style="width:300px;height:400px;"></div>
+            <script async src="http://tlk.io/embed.js" type="text/javascript"></script>
+            <!-- End of LiveChat code -->
+            </div>
         </section>

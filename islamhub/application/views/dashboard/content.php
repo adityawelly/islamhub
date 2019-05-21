@@ -2,6 +2,16 @@
   <div class="row">
       <div class="col-md-12">
       <?php $this->load->view('notification')?>
+      <style>
+div.static {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 300px;
+  border: 3px solid #543535;
+}
+</style>
+
           <div class="card">
               <div class="card-header card-header-icon" data-background-color="green">
                   <i class="material-icons">dashboard</i>
@@ -35,6 +45,8 @@
                               <a href="#" class="btn btn-primary">Chat</a>
                             </div>
                         </div>
+
+
                       </div>
                                             <div class="col-md-1">
                             <a href='#'><i  class='fas fa-comment-alt kotak' style='font-size:48px;  color:white; '></i></a>
@@ -43,25 +55,15 @@
                             <h4 class="text-p">Pesan</h4>
                             <b><p class="text-p" style="font-size: 50px;"><?=$total;?></p>
                         </div>
-                        <!-- Start of LiveChat (www.livechatinc.com) code -->
-<script type="text/javascript">
-window.__lc = window.__lc || {};
-window.__lc.license = 10919362;
-(function() {
-  var lc = document.createElement('script'); lc.type = 'text/javascript'; lc.async = true;
-  lc.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.livechatinc.com/tracking.js';
-  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(lc, s);
-})();
-</script>
-<noscript>
-<a href="https://www.livechatinc.com/chat-with/10919362/" rel="nofollow">Chat with us</a>,
-powered by <a href="https://www.livechatinc.com/?welcome" rel="noopener nofollow" target="_blank">LiveChat</a>
-</noscript>
-<!-- End of LiveChat code -->
-                    
+           <!-- Start of LiveChat (www.livechatinc.com) code -->
+            <div class="static">
+            <div id="tlkio" data-channel="islamhub" data-theme="theme--pop" style="width:300px;height:400px;"></div>
+            <script async src="http://tlk.io/embed.js" type="text/javascript"></script>
+            </div>
+            <!-- End of LiveChat code -->
                   </div>
               </div>
           </div>
       </div>
+               
   </div>
-</div>
