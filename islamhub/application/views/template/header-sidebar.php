@@ -6,12 +6,12 @@
     -->
     <div class="logo">
         <a href="http://www.creative-tim.com" class="simple-text">
-            Helpdesk
+            ISLAMHUB
         </a>
     </div>
     <div class="logo logo-mini">
         <a href="http://www.creative-tim.com" class="simple-text">
-            HD
+            PC
         </a>
     </div>
     <div class="sidebar-wrapper">

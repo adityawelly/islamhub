@@ -31,8 +31,8 @@ class Pesan extends CI_Controller {
     function PesanMasuk()
 	{
         $where = array(
-            'PENERIMA_CHAT' => $this->session->userdata('email'),
-            'STATUS'    => '1',
+            'penerima_chat' => $this->session->userdata('email'),
+            'status'    => '1',
         );
         $tblPesan = $this->TabelPesan->whereAnd($where)->result();
 
@@ -51,8 +51,8 @@ class Pesan extends CI_Controller {
     function PesanTerkirim()
 	{
         $where = array(
-            'PENGIRIM_CHAT' => $this->session->userdata('email'),
-            'STATUS'    => '1',
+            'pengirim_chat' => $this->session->userdata('email'),
+            'status'    => '1',
         );
         $tblPesan = $this->TabelPesan->whereAnd($where)->result();
 
@@ -71,8 +71,8 @@ class Pesan extends CI_Controller {
     function DraftPesan()
 	{
         $where = array(
-            'PENGIRIM_CHAT' => $this->session->userdata('email'),
-            'STATUS'    => '0',
+            'pengirim_chat' => $this->session->userdata('email'),
+            'status'    => '0',
         );
         $tblPesan = $this->TabelPesan->whereAnd($where)->result();
 
@@ -91,12 +91,11 @@ class Pesan extends CI_Controller {
     function Kirim(){
         if($this->input->post('btn-submit') == "draft"){
             $data = array(
-                'PENGIRIM_CHAT'  => $this->session->userdata('email'),
-                'PENERIMA_CHAT'  => $this->input->post('penerima'),
-                'SUBJEK'    => $this->input->post('subjek'),
-                'ISI_CHAT'       => $this->input->post('isi'),
-                'STATUS'    => '0',
-                'SEND_AT' => date('Y-m-d'),
+                'pengirim_chat'  => $this->session->userdata('email'),
+                'penerima_chat'  => $this->input->post('penerima'),
+                'subjek'    => $this->input->post('subjek'),
+                'isi_chat'       => $this->input->post('isi'),
+                'status'    => '0',
             );
             if ($this->TabelPesan->create($data)) {
                 $this->session->set_flashdata('message','Pesan Berhasil Disimpan.');
@@ -109,12 +108,11 @@ class Pesan extends CI_Controller {
             }
         }else{
             $data = array(
-                'PENGIRIM_CHAT'  => $this->session->userdata('email'),
-                'PENERIMA_CHAT'  => $this->input->post('penerima'),
-                'SUBJEK'    => $this->input->post('subjek'),
-                'ISI_CHAT'       => $this->input->post('isi'),
-                'STATUS'    => '1',
-                'SEND_AT' => date('Y-m-d'),
+                'pengirim_chat'  => $this->session->userdata('email'),
+                'penerima_chat'  => $this->input->post('penerima'),
+                'subjek'    => $this->input->post('subjek'),
+                'isi_chat'       => $this->input->post('isi'),
+                'status'    => '1',
             );
             if ($this->TabelPesan->create($data)) {
                 $this->session->set_flashdata('message','Pesan Berhasil Dikirim.');
@@ -130,11 +128,11 @@ class Pesan extends CI_Controller {
 
     function KirimUlang($id){
         $where = array(
-            'ID_CHAT'   => $id
+            'id_chat'   => $id
         );
         $data = array(
-            'STATUS'    => '1',
-            'SEND_AT' => date('Y-m-d'),
+            'status'    => '1',
+            'date_updated' => date('Y-m-d H:i:s'),
         );
         if ($this->TabelPesan->update($where, $data)) {
             $this->session->set_flashdata('message','Pesan Berhasil Dikirim.');
