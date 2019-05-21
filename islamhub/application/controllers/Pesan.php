@@ -6,6 +6,7 @@ class Pesan extends CI_Controller {
 	public function __construct(){
         parent::__construct();
         $this->load->model('TabelPakar');
+        $this->load->model('TabelClient');
         $this->load->model('TabelPesan');
     }
 
@@ -22,6 +23,7 @@ class Pesan extends CI_Controller {
             'javascript'=> 'Pesan/tambah_pesan/javascript',
             
             'tblPakar'   => $this->TabelPakar->read()->result(),
+            'tblClient'   => $this->TabelClient->read()->result(),
 		);
 		$this->load->view('index', $data);
     }
@@ -29,8 +31,8 @@ class Pesan extends CI_Controller {
     function PesanMasuk()
 	{
         $where = array(
-            'penerima' => $this->session->userdata('id'),
-            //'status'    => '1',
+            'PENERIMA_CHAT' => $this->session->userdata('email'),
+            'STATUS'    => '1',
         );
         $tblPesan = $this->TabelPesan->whereAnd($where)->result();
 
@@ -49,8 +51,8 @@ class Pesan extends CI_Controller {
     function PesanTerkirim()
 	{
         $where = array(
-            'pengirim' => $this->session->userdata('id'),
-            //'status'    => '1',
+            'PENGIRIM_CHAT' => $this->session->userdata('email'),
+            'STATUS'    => '1',
         );
         $tblPesan = $this->TabelPesan->whereAnd($where)->result();
 
@@ -69,8 +71,8 @@ class Pesan extends CI_Controller {
     function DraftPesan()
 	{
         $where = array(
-            'pengirim' => $this->session->userdata('id'),
-            //'status'    => '0',
+            'PENGIRIM_CHAT' => $this->session->userdata('email'),
+            'STATUS'    => '0',
         );
         $tblPesan = $this->TabelPesan->whereAnd($where)->result();
 
@@ -87,22 +89,61 @@ class Pesan extends CI_Controller {
     }
     
     function Kirim(){
-        $data = array(
-            'pengirim'  => $this->session->userdata('id'),
-            'penerima'  => $this->input->post('penerima'),
-            'subjek'    => $this->input->post('subjek'),
-            'isi'       => $this->input->post('isi'),
-            //'status'    => '1',
-            'date_created' => date('Y-m-d'),
+        if($this->input->post('btn-submit') == "draft"){
+            $data = array(
+                'PENGIRIM_CHAT'  => $this->session->userdata('email'),
+                'PENERIMA_CHAT'  => $this->input->post('penerima'),
+                'SUBJEK'    => $this->input->post('subjek'),
+                'ISI_CHAT'       => $this->input->post('isi'),
+                'STATUS'    => '0',
+                'SEND_AT' => date('Y-m-d'),
+            );
+            if ($this->TabelPesan->create($data)) {
+                $this->session->set_flashdata('message','Pesan Berhasil Disimpan.');
+                $this->session->set_flashdata('type_message','success');
+                redirect('Pesan/DraftPesan');
+            }else{
+                $this->session->set_flashdata('message','Pesan Gagal Disimpan.');
+                $this->session->set_flashdata('type_message','danger');
+                redirect('Pesan/DraftPesan');
+            }
+        }else{
+            $data = array(
+                'PENGIRIM_CHAT'  => $this->session->userdata('email'),
+                'PENERIMA_CHAT'  => $this->input->post('penerima'),
+                'SUBJEK'    => $this->input->post('subjek'),
+                'ISI_CHAT'       => $this->input->post('isi'),
+                'STATUS'    => '1',
+                'SEND_AT' => date('Y-m-d'),
+            );
+            if ($this->TabelPesan->create($data)) {
+                $this->session->set_flashdata('message','Pesan Berhasil Dikirim.');
+                $this->session->set_flashdata('type_message','success');
+                redirect('Pesan/PesanTerkirim');
+            }else{
+                $this->session->set_flashdata('message','Pesan Gagal Dikirim.');
+                $this->session->set_flashdata('type_message','danger');
+                redirect('Pesan/PesanTerkirim');
+            }
+        }
+    }
+
+    function KirimUlang($id){
+        $where = array(
+            'ID_CHAT'   => $id
         );
-        if ($this->TabelPesan->create($data)) {
+        $data = array(
+            'STATUS'    => '1',
+            'SEND_AT' => date('Y-m-d'),
+        );
+        if ($this->TabelPesan->update($where, $data)) {
             $this->session->set_flashdata('message','Pesan Berhasil Dikirim.');
             $this->session->set_flashdata('type_message','success');
-            redirect('PesanTerkirim');
+            redirect('Pesan/PesanTerkirim');
         }else{
             $this->session->set_flashdata('message','Pesan Gagal Dikirim.');
             $this->session->set_flashdata('type_message','danger');
-            redirect('PesanTerkirim');
+            redirect('Pesan/PesanTerkirim');
         }
     }
 }

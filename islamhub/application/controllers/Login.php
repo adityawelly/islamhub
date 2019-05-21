@@ -25,11 +25,11 @@ class Login extends CI_Controller {
             $this->session->set_flashdata('type_message','danger');
 			redirect('Login');
 		}else{
-			$data = array(
-				'email' => $this->input->post('email'),
-				'password' => md5(md5($this->input->post('password'))),
-			);
 			if($this->input->post('sebagai') == "client"){
+				$data = array(
+					'EMAIL_CLIENT' => $this->input->post('email'),
+					'PASSWORD_CLIENT' => md5(md5($this->input->post('password'))),
+				);
 				$tabelLogin = $this->TabelClient->whereAnd($data);
 				if ($tabelLogin->num_rows() > 0) {
 					$tabelLogin = $tabelLogin->row();
@@ -37,9 +37,9 @@ class Login extends CI_Controller {
 						'logged' 		=> TRUE,
 						'pakar'			=> FALSE,
 						'client'			=> TRUE,
-                        'id'		=> $tabelLogin->id_client,
-						'email'		=> $tabelLogin->email,
-						'nama'		=> $tabelLogin->nama,
+                        'id'		=> $tabelLogin->ID_CLIENT,
+						'email'		=> $tabelLogin->EMAIL_CLIENT,
+						'nama'		=> $tabelLogin->NAMA_CLIENT,
                     );
                     $this->session->set_userdata($data);
                     redirect('Dashboard');
@@ -49,6 +49,10 @@ class Login extends CI_Controller {
 					redirect('Login');
 				}
 			}else{
+				$data = array(
+					'EMAIL_PAKAR' => $this->input->post('email'),
+					'PASSWORD_PAKAR' => md5(md5($this->input->post('password'))),
+				);
 				$tabelLogin = $this->TabelPakar->whereAnd($data);
 				if ($tabelLogin->num_rows() > 0) {
 					$tabelLogin = $tabelLogin->row();
@@ -56,9 +60,9 @@ class Login extends CI_Controller {
 						'logged' 		=> TRUE, 
 						'pakar'			=> TRUE,
 						'client'			=> FALSE,
-                        'id'		=> $tabelLogin->id_pakar,
-						'email'		=> $tabelLogin->email,
-						'nama'		=> $tabelLogin->nama,
+                        'id'		=> $tabelLogin->ID_PAKAR,
+						'email'		=> $tabelLogin->EMAIL_PAKAR,
+						'nama'		=> $tabelLogin->NAMA_PAKAR,
                     );
                     $this->session->set_userdata($data);
                     redirect('Dashboard');

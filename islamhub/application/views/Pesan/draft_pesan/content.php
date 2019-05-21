@@ -17,17 +17,28 @@
                                     <th>Subjek</th>
                                     <th>Isi</th>
                                     <th>Tanggal</th>
-                                    <th class="disabled-sorting text-right">Actions</th>
+                                    <th class="disabled-sorting">Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php foreach($tblPesan as $value): ?>
                                     <tr>
-                                        <td><?=$value->pengirim?></td>
-                                        <td><?=$value->subjek?></td>
-                                        <td><?=$value->isi?></td>
-                                        <td><?=$value->date_created?></td>
-                                        <td></td>
+                                        <td><?=$value->PENGIRIM_CHAT?></td>
+                                        <td><?=$value->SUBJEK?></td>
+                                        <td><?=$value->ISI_CHAT?></td>
+                                        <td><?=$value->SEND_AT?></td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <button href="#" class="dropdown-toggle btn btn-primary btn-round" data-toggle="dropdown">Action
+                                                    <b class="caret"></b>
+                                                </button>
+                                                <ul class="dropdown-menu dropdown-menu-left">
+                                                    <li>
+                                                        <a href="<?=base_url('Pesan/KirimUlang/'.$value->ID_CHAT)?>" onclick="return confirm('Kirim Ulang Pesan ?')">Kirim Ulang</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </td>
                                     </tr>
                                 <?php endforeach; ?>
                             <tbody>

@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 class TabelPesan extends CI_Model {
 
-    protected $table = "pesan";
+    protected $table = "private_chat";
 
 	public function create($data){
 		if($this->db->insert($this->table,$data)){
@@ -56,7 +56,7 @@ class TabelPesan extends CI_Model {
 
 	public function hitungPesan()
 {   
-    $query = $this->db->get('pesan');
+    $query = $this->db->get('private_chat');
     if($query->num_rows()>0)
     {
       return $query->num_rows();
