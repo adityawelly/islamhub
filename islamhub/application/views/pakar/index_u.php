@@ -80,7 +80,7 @@
                    <br />
                    <a href="#" class="btn btn-primary" >Facebook <i class="glyphicon glyphicon-play"></i></a>
                    <a href="#" class="btn btn-danger" >Google <i class="glyphicon glyphicon-play"></i></a>
-                   <a href="#" class="btn btn-info" >Twitter <i class="glyphicon glyphicon-play"></i></a>
+                   <a href="#" class="btn btn-info " >Twitter <i class="glyphicon glyphicon-play"></i></a>
                    </div>
                    <br>
                
