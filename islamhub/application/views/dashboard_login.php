@@ -3,6 +3,12 @@
   <head>
     <meta charset="utf-8">
     <title>Welcome</title>
+    
+    <link rel="stylesheet" href="<?=base_url()?>assets/dashboard/css/font-awesome.min.css">
+    <link rel="stylesheet" href="<?=base_url()?>assets/dashboard/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?=base_url()?>assets/dashboard/css/animate.css">
+    <link rel="stylesheet" href="<?=base_url()?>assets/dashboard/css/carousel.css">
+    <link rel="stylesheet" href="<?=base_url()?>assets/dashboard/style.css">
     <link href="<?php echo base_url('assets/css/bootstrap.min.css');?>" rel="stylesheet">
   </head>
   <body>
