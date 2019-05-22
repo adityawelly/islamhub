@@ -45,6 +45,7 @@
     <span class="caret"></span>
     <span class="sr-only">Toggle Dropdown</span>
   </button>
+  
   <ul class="dropdown-menu" role="menu">
     <li><a href="<?php echo base_url('profile/u_user_b');?>">Update Profile</a></li>
     <li class="divider"></li>
