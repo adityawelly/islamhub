@@ -223,6 +223,7 @@ class Forum extends CI_Controller {
                     'data'  => array(
 						'title'	=> $this->input->post('title'),
 						'slug' => $this->input->post('slug'),
+						$this->session->userdata('id')
 					),
                 );
                 $this->Tbl_topics->update($rules);
@@ -289,5 +290,4 @@ class Forum extends CI_Controller {
             redirect('Backend/Forum');
         }
 	}
-
 }

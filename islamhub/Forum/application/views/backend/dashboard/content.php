@@ -19,7 +19,7 @@
                 <h3 class="box-title">Dashboard</h3>
             </div>
             <div class="box-body">
-				<h3 class="text-center">Selamat Datang</h3>
+				<h3 class="text-center">Welcome Guys</h3>
             </div>
 			<div class="box-footer"></div>
         </div>
