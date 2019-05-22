@@ -61,12 +61,10 @@
                 </div>
               </div>
               <div class="col-md-4">
-                <!-- Start of LiveChat (www.livechatinc.com) code -->
-                <div id="tlkio" data-channel="islamhub" data-theme="theme--pop" style="width:300px;height:400px;"></div>
-                <script async src="http://tlk.io/embed.js" type="text/javascript"></script>
-                <!-- End of LiveChat code -->
+
               </div>
             </div>
+            
 					</div>
 				</div>
 			</div>

@@ -65,11 +65,7 @@
 				<a href="<?= base_url('create_forum') ?>" class="btn btn-default">Create a new forum</a>
 			</div>
 		<?php endif; ?>
-  <!-- Start of LiveChat (www.livechatinc.com) code -->
-            <div class="static">
-            <div id="tlkio" data-channel="islamhub" data-theme="theme--day" style="width:300px;height:400px;"></div>
-            <script async src="http://tlk.io/embed.js" type="text/javascript"></script>
-            <!-- End of LiveChat code -->
+ <script id="cid0020000219487547742" data-cfasync="false" async src="//st.chatango.com/js/gz/emb.js" style="width: 200px;height: 300px;">{"handle":"rumahkonsultasi","arch":"js","styles":{"a":"009900","b":100,"c":"FFFFFF","d":"FFFFFF","k":"009900","l":"009900","m":"009900","n":"FFFFFF","p":"10","q":"009900","r":100,"pos":"br","cv":1,"cvbg":"009900","cvw":200,"cvh":30,"ticker":1,"fwtickm":1}}</script>
 	</div><!-- .row -->
 </div><!-- .container -->
 

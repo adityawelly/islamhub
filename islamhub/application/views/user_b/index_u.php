@@ -8,7 +8,7 @@
     <!--[if IE]>
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <![endif]-->
-    <title>Update Profile</title>
+    <title>Bootstrap Profile Template</title>
     <!-- BOOTSTRAP CORE STYLE CSS -->
     <link href="<?php echo base_url('assets/css/bootstrap.css');?>" rel="stylesheet" />
 
@@ -19,13 +19,13 @@
    <div class="container " >
         <div class="row text-center" style="padding-top:30px;">
             <div class="col-md-12">
-             <h1>  CLIENT PROFILE</h1> 
+             <h1> <strong> CLIENT PROFILE </strong></h1> 
                 <br />
            </div>
         </div>
        <div class="row " style="padding-bottom:50px; ">
            <div class="col-md-3">
-               <img src="<?php echo base_url('assets/img/user.jpg'); ?>" class="img-responsive img-thumbnail" />
+               <img src="<?php echo base_url('assets/img/faces/pp.jpg'); ?>" class="img-responsive img-thumbnail" />
               
            </div>
            <div class="col-md-9">
@@ -47,19 +47,18 @@
   </button>
   <ul class="dropdown-menu" role="menu">
     <li><a href="#">Update Profile</a></li>
+    <li><a href="#">Back</a></li>
     <li class="divider"></li>
-    <li><a href="<?php echo site_url('profile/auth_u');?>">Back</a></li>
+    <li><a href="<?php echo site_url('profile/logout');?>">Logout</a></li>
   </ul>
 </div>
                <br /><br />
                <hr />
                <div >
                 <form action="<?php echo base_url(). 'profile/tambah_aksi_user'; ?>" method="post">
-              <h3><strong> Name:</strong>  <input type="text" name="username" value="<?php echo $this->session->userdata('username');?>" class="form-control" style="width:300px; display:inline-block;"></h3>  
-                <h3><strong> Email:</strong>  <input type="text" name="email" value="<?php echo $this->session->userdata('email');?>" class="form-control" style="width:300px; display:inline-block;"></h3> 
-                <h3><strong> Password:</strong>  <input type="password" name="password" value="<?php echo $this->session->userdata('password');?>" class="form-control" style="width:300px; display:inline-block;"></h3> 
-               
-
+                <h5><strong> Name:</strong>  <input type="text" name="username" value="<?php echo $this->session->userdata('username');?>" class="form-control" style="width:300px; display:inline-block;"></h5>    
+                 <h5><strong> Email:</strong>  <input type="text" name="email" value="<?php echo $this->session->userdata('email');?>" class="form-control" style="width:300px; display:inline-block;"></h5>
+                <h5><strong> Password:</strong>  <input type="password" name="password" value="<?php echo $this->session->userdata('password');?>" class="form-control" style="width:300px; display:inline-block;"></h5>
                 <h3>  <strong> Social Links :</strong></h3>  
                    <br />
                    <a href="#" class="btn btn-primary" >Facebook <i class="glyphicon glyphicon-play"></i></a>
@@ -67,12 +66,11 @@
                    <a href="#" class="btn btn-info" >Twitter <i class="glyphicon glyphicon-play"></i></a>
                </div>
                <br>
-               
-                <input type="submit" name="edit" class="form-control" style="width:12.5%;"> 
-              </form>
+               <input type="submit" name="edit" class="form-control" style="width:12.5%;">
+               </form>
            </div>
        </div>
-      
+       
    </div>
        <!--  CORE SCRIPTS -->
     <script src="<?php echo base_url('assets/js/jquery-1.11.1.js'); ?>"></script>

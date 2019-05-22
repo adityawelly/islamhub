@@ -47,7 +47,7 @@
                                         <ul class="dropdown-menu">
                                             <li><a href="#" data-toggle="modal" data-target="#edit-<?=$value->id?>">Edit</a></li>
                                             <li role="separator" class="divider"></li>
-                                            <li><a href="<?=base_url('Backend/Forum/deleteTopic/'.$value->id)?>" onclick="return confirm('Apakah Anda Yakin ?')">Delete</i></a></li>
+                                            <li><a href="<?=base_url('Backend/Forum/DeleteTopic/'.$value->id)?>" onclick="return confirm('Apakah Anda Yakin ?')">Delete</i></a></li>
                                         </ul>
                                     </div>
                                 </td>

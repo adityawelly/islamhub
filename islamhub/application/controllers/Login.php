@@ -27,7 +27,11 @@ class Login extends CI_Controller {
 		}else{
 			if($this->input->post('sebagai') == "client"){
 				$data = array(
+<<<<<<< HEAD
 					'email_client' => $this->input->post('email'),
+=======
+					'email' => $this->input->post('email'),
+>>>>>>> 62b419cd196b62a3e9b222bf19d2264bb4221aa9
 					'password_client' => md5($this->input->post('password')),
 				);
 				$tabelLogin = $this->TabelClient->whereAnd($data);

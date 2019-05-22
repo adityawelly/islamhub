@@ -26,7 +26,7 @@
        <div class="row " style="padding-bottom:50px; ">
            <div class="col-md-3">
                <img src="<?php echo base_url('assets/img/faces/marc.jpg'); ?>" class="img-responsive img-thumbnail" />
-               <a href="#" class="btn btn-primary" >Kirim Pesan <i class="glyphicon glyphicon-play"></i></a>
+               <a href="<?php echo base_url('Dashboard');?>" class="btn btn-primary" >Live Chat <i class="glyphicon glyphicon-play"></i></a>
            </div>
            <div class="col-md-9">
                <!-- <div class="alert alert-info">
@@ -54,20 +54,20 @@
                <br /><br />
                <hr />
                <div >
-                <h3><strong> Nama:</strong> <?php echo $this->session->userdata('nama');?></h3> 
-                <h3><strong> Username:</strong> <?php echo $this->session->userdata('username');?></h3>
-                <h3><strong> NIK:</strong> <?php echo $this->session->userdata('nik');?></h3> 
-                <h3><strong> JK:</strong> <?php echo $this->session->userdata('jk');?></h3>
-                <h3><strong> Tempat lahir:</strong> <?php echo $this->session->userdata('tempat_lahir');?></h3>
-                <h3><strong> Tanggal lahir:</strong> <?php echo $this->session->userdata('tanggal_lahir');?></h3>
-                <h3><strong> No. Telp:</strong> <?php echo $this->session->userdata('no_telp');?></h3>
+                <h4><strong> Nama:</strong> <?php echo $this->session->userdata('nama');?></h4> 
+                <h4><strong> Username:</strong> <?php echo $this->session->userdata('username');?></h4>
+                <h4><strong> NIK:</strong> <?php echo $this->session->userdata('nik');?></h4> 
+                <h4><strong> JK:</strong> <?php echo $this->session->userdata('jk');?></h4>
+                <h4><strong> Tempat lahir:</strong> <?php echo $this->session->userdata('tempat_lahir');?></h4>
+                <h4><strong> Tanggal lahir:</strong> <?php echo $this->session->userdata('tanggal_lahir');?></h4>
+                <h4><strong> No. Telp:</strong> <?php echo $this->session->userdata('no_telp');?></h4>
                   
-                 <h3> <strong> Registered On:</strong> <?php echo $this->session->userdata('date_created');?></h3>  
-                <h3>  <strong>  Email: </strong><?php echo $this->session->userdata('email');?> </h3>  
-                <h3>  <strong>  Universitas: </strong><?php echo $this->session->userdata('universitas');?> </h3>  
-                <h3><strong> Sertifikat:</strong> <?php echo $this->session->userdata('sertifikat');?></h3>
+                 <h4> <strong> Registered On:</strong> <?php echo $this->session->userdata('date_created');?></h4>  
+                <h4>  <strong>  Email: </strong><?php echo $this->session->userdata('email');?> </h4>  
+                <h4>  <strong>  Universitas: </strong><?php echo $this->session->userdata('universitas');?> </h4>  
+                <h4><strong> Sertifikat:</strong> <?php echo $this->session->userdata('sertifikat');?></h4>
 
-                <h3>  <strong> Social Links :</strong></h3>  
+                <h4>  <strong> Social Links :</strong></h4>  
                    <br />
                    <a href="#" class="btn btn-primary" >Facebook <i class="glyphicon glyphicon-play"></i></a>
                    <a href="#" class="btn btn-danger" >Google <i class="glyphicon glyphicon-play"></i></a>
@@ -78,7 +78,7 @@
        </div>
        <div class="row " >
            <div class="col-md-6">
-             <h3>Small Biography :</h3>  
+             <h4>Small Biography :</h4>  
                <hr />
                <p>
                 <h4> <?php echo $this->session->userdata('biodata');?> </h4>  
@@ -86,7 +86,7 @@
 
            </div>
            <div class="col-md-6" style="padding-bottom:80px;">
-              <h3>Alamat  :</h3> 
+              <h4>Alamat  :</h4> 
               <hr/>
               <p>
                   <h4><?php echo $this->session->userdata('alamat');?> </h4>
@@ -96,7 +96,7 @@
 
             <!-- <div class="row">
         <div class="col-md-4"><img src="<?php echo base_url('assets/img/faces/marc.jpg'); ?>" class="img-responsive img-thumbnail" /><br>
-          <center><h3>Konten 1</h3></center> <br> <center>Deskripsi Singkat</center> <br>
+          <center><h4>Konten 1</h4></center> <br> <center>Deskripsi Singkat</center> <br>
           <center>
             <a href="#" class="btn btn-primary" >Open <i class="glyphicon glyphicon-play"></i></a>
                    <a href="#" class="btn btn-danger" >Update <i class="glyphicon glyphicon-play"></i></a>
@@ -104,7 +104,7 @@
           </center>
         </div>
         <div class="col-md-4"><img src="<?php echo base_url('assets/img/faces/marc.jpg'); ?>" class="img-responsive img-thumbnail" />
-        <center><h3>Konten 2</h3></center> <br> <center>Deskripsi Singkat</center> <br>
+        <center><h4>Konten 2</h4></center> <br> <center>Deskripsi Singkat</center> <br>
           <center>
             <a href="#" class="btn btn-primary" >Open <i class="glyphicon glyphicon-play"></i></a>
                    <a href="#" class="btn btn-danger" >Update <i class="glyphicon glyphicon-play"></i></a>
@@ -112,7 +112,7 @@
           </center>
         </div>
         <div class="col-md-4"><img src="<?php echo base_url('assets/img/faces/marc.jpg'); ?>" class="img-responsive img-thumbnail" />
-        <center><h3>Konten 3</h3></center> <br> <center>Deskripsi Singkat</center> <br>
+        <center><h4>Konten 3</h4></center> <br> <center>Deskripsi Singkat</center> <br>
           <center>
             <a href="#" class="btn btn-primary" >Open <i class="glyphicon glyphicon-play"></i></a>
                    <a href="#" class="btn btn-danger" >Update <i class="glyphicon glyphicon-play"></i></a>
@@ -123,7 +123,7 @@
 
        <div class="row">
         <div class="col-md-6">
-         <center><h3><strong>VIDEO KONTEN</strong></h3></center>
+         <center><h4><strong>VIDEO KONTEN</strong></h4></center>
          <div class="row">
         <div class="col-md-6">
             <a href="#"><center>
@@ -146,12 +146,15 @@
             <img src="<?php echo base_url('assets/img/vid.png'); ?>" class="img-responsive profile-vid" />
             </center></a>
         </div>
-
+        <center>
+      
+              <a href="<?=base_url()?>video/" class="btn btn-primary" >Tambah Video <i class="glyphicon glyphicon-play"></i></a>
+        </center>
       </div>
         </div>
 
         <div class="col-md-6">
-        <center><h3><strong>JURNAL</strong></h3></center>
+        <center><h4><strong>JURNAL</strong></h4></center>
         <div class="row">
         <div class="col-md-4">
         <a href="#"><center>
@@ -186,6 +189,10 @@
         </div>
       </div>
         </div>
+        <center>
+        
+              <a href="<?=base_url()?>file/" class="btn btn-primary" >Tambah Jurnal <i class="glyphicon glyphicon-play"></i></a>
+        </center>
       </div>
 
        </div>
