@@ -203,6 +203,69 @@ function auth_u(){
         redirect('profile');
     }
   }
+
+   function tambah_aksi_user(){
+    $nama = $this->input->post('username');
+    $email = $this->input->post('email');
+    $password = $this->input->post('password');
+ 
+    $data = array(
+      'username' => $nama,
+      'email' => $email,
+      'password' => $password
+      );
+    $this->login_model->input_data($data,'users');
+    redirect('profile/auth_u');
+  }
+
+   function tambah_aksi_user(){
+    $nama = $this->input->post('username');
+    $email = $this->input->post('email');
+    $password = $this->input->post('password');
+ 
+    $data = array(
+      'username' => $nama,
+      'email' => $email,
+      'password' => $password
+      );
+    $this->login_model->input_data($data,'users');
+    redirect('profile/auth_u');
+  }
+
+  function tambah_aksi_pakar(){
+    $nama = $this->input->post('nama');
+    $username = $this->input->post('username');
+    $email = $this->input->post('email');
+    $password = $this->input->post('password');
+    $nik = $this->input->post('nik');
+    $jk = $this->input->post('jk');
+    $alamat = $this->input->post('alamat');
+    $tempat_lahir = $this->input->post('tempat_lahir');
+    $tgl_lahir = $this->input->post('tgl_lahir');
+    $no_telp = $this->input->post('no_telp');
+    $universitas = $this->input->post('universitas');
+    $sertifikat = $this->input->post('sertifikat');
+    $biodata = $this->input->post('biodata');
+ 
+    $data = array(
+      'nama' => $nama,
+      'username' => $username,
+      'email' => $email,
+      'password' => $password,
+      'nik' => $nik,
+      'jk' => $jk,
+      'alamat' => $alamat,
+      'tempat_lahir' => $tempat_lahir,
+      'tgl_lahir' => $tgl_lahir,
+      'no_telp' => $no_telp,
+      'universitas' => $universitas,
+      'sertifikat' => $sertifikat,
+      'biodata' => $biodata
+      );
+    $this->login_model->input_data($data,'pakar');
+    redirect('profile/auth_p');
+  }
+
  
   function logout(){
       $this->session->sess_destroy();
