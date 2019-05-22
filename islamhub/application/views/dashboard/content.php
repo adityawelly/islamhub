@@ -22,31 +22,16 @@
 					<div class="row" style='padding:30px;'>
 						<div class="row">
 							<div class="col-md-12">
-								<div class="card col-md-4" style="width: 18rem;">
-									<img src="<?php echo base_url('assets/img/arab.png') ?>" class="" style="height: 100px; width: 100%;">
-									<div class="card-body">
-										<h5 class="card-title">Nama Pakar</h5>
-										<p class="card-text">Biodata Pakar.</p>
-										<a href="#" class="btn btn-primary">Chat</a>
+								<?php foreach($tblPakar as $value){ ?>
+									<div class="card col-md-4" style="width: 18rem;">
+										<img src="<?php echo base_url('assets/img/arab.png') ?>" class="" style="height: 100px; width: 100%;">
+										<div class="card-body">
+											<h5 class="card-title"><?=$value->nama?></h5>
+											<p class="card-text">-</p>
+											<a href="#" class="btn btn-primary">Chat</a>
+										</div>
 									</div>
-								</div>
-								<div class="card col-md-4" style="width: 18rem;">
-									<img src="<?php echo base_url('assets/img/arab.png') ?>" class="" style="height: 100px; width: 100%;">
-									<div class="card-body">
-										<h5 class="card-title">Nama Pakar</h5>
-										<p class="card-text">Biodata Pakar.</p>
-										<a href="#" class="btn btn-primary">Chat</a>
-									</div>
-								</div>
-
-								<div class="card col-md-4" style="width: 18rem;">
-									<img src="<?php echo base_url('assets/img/arab.png') ?>" class="" style="height: 100px; width: 100%;">
-									<div class="card-body">
-										<h5 class="card-title">Nama Pakar</h5>
-										<p class="card-text">Biodata Pakar.</p>
-										<a href="#" class="btn btn-primary">Chat</a>
-									</div>
-								</div>
+								<?php } ?>
 							</div>
 						</div>
             <div class="row">
