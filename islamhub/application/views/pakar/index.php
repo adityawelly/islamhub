@@ -26,7 +26,7 @@
        <div class="row " style="padding-bottom:50px; ">
            <div class="col-md-3">
                <img src="<?php echo base_url('assets/img/faces/marc.jpg'); ?>" class="img-responsive img-thumbnail" />
-               <a href="#" class="btn btn-primary" >Kirim Pesan <i class="glyphicon glyphicon-play"></i></a>
+               <a href="<?php echo base_url('Dashboard');?>" class="btn btn-primary" >Live Chat <i class="glyphicon glyphicon-play"></i></a>
            </div>
            <div class="col-md-9">
                <!-- <div class="alert alert-info">
@@ -146,7 +146,10 @@
             <img src="<?php echo base_url('assets/img/vid.png'); ?>" class="img-responsive profile-vid" />
             </center></a>
         </div>
-
+        <center>
+      
+              <a href="<?=base_url()?>video/" class="btn btn-primary" >Tambah Video <i class="glyphicon glyphicon-play"></i></a>
+        </center>
       </div>
         </div>
 
@@ -186,6 +189,10 @@
         </div>
       </div>
         </div>
+        <center>
+        
+              <a href="<?=base_url()?>file/" class="btn btn-primary" >Tambah Jurnal <i class="glyphicon glyphicon-play"></i></a>
+        </center>
       </div>
 
        </div>
