@@ -55,39 +55,19 @@
                <br /><br />
                <hr />
                <div >
-               <h3><strong> Name: </strong> <?php echo $this->session->userdata('username');?></h3>    
-               <h3> <strong> Registered On:</strong> 24th August 2014</h3>  
-                <h3>  <strong>  Role: </strong>Client</h3>  
-
+                <form action="<?php echo base_url(). 'profile/tambah_aksi_user'; ?>" method="post">
+                <h5><strong> Name:</strong>  <input type="text" name="username" value="<?php echo $this->session->userdata('username');?>" class="form-control" style="width:300px; display:inline-block;"></h5>    
+                 <h5><strong> Email:</strong>  <input type="text" name="email" value="<?php echo $this->session->userdata('email');?>" class="form-control" style="width:300px; display:inline-block;"></h5>
+                <h5><strong> Password:</strong>  <input type="password" name="password" value="<?php echo $this->session->userdata('password');?>" class="form-control" style="width:300px; display:inline-block;"></h5>
                 <h3>  <strong> Social Links :</strong></h3>  
                    <br />
                    <a href="#" class="btn btn-primary" >Facebook <i class="glyphicon glyphicon-play"></i></a>
                    <a href="#" class="btn btn-danger" >Google <i class="glyphicon glyphicon-play"></i></a>
                    <a href="#" class="btn btn-info" >Twitter <i class="glyphicon glyphicon-play"></i></a>
                </div>
-               
-           </div>
-       </div>
-       <div class="row " >
-           <div class="col-md-6">
-             <h3>Small Biography :</h3>  
-               <hr />
-               <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                   Mauris ac nisl tempus, sollicitudin elit vel, pellentesque lorem. 
-                   Maecenas hendrerit laoreet lectus a feugiat. Nunc sodales id ipsum ut maximus. 
-                   Morbi pellentesque quis diam nec ullamcorper. Nulla facilisi. Donec non nunc augue. 
-                   Integer tincidunt consequat porta.
-               </p>
-
-           </div>
-           <div class="col-md-6" style="padding-bottom:80px;">
-              <h3>Registered Address  :</h3> 
-               <hr />
-               <h5>568/90 - New Lane Street </h5>  
-                  
-                 <h5>Free Way Society</h5>  
-                <h5>  United States - 2098-89-00</h5>  
+               <br>
+               <input type="submit" name="edit" class="form-control" style="width:12.5%;">
+               </form>
            </div>
        </div>
        
