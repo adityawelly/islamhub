@@ -19,7 +19,7 @@
    <div class="container " >
         <div class="row text-center" style="padding-top:30px;">
             <div class="col-md-12">
-             <h1>  USER PROFILE</h1> 
+             <h1>  CLIENT PROFILE</h1> 
                 <br />
            </div>
         </div>
