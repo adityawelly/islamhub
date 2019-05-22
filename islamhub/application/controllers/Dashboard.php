@@ -5,7 +5,14 @@ class Dashboard extends CI_Controller {
 
 	public function __construct(){
 		parent::__construct();
-			$this->load->model('TabelPesan');
+
+		if($this->session->userdata('logged') != TRUE){
+            $this->session->set_flashdata('message','Login terlebih dahulu.');
+            $this->session->set_flashdata('type_message','danger');
+            redirect('Login');
+        }
+		$this->load->model('TabelPesan');
+
     }
 
 	public function index()

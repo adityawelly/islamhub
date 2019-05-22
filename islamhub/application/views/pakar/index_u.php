@@ -58,25 +58,25 @@
                <hr />
                <div >
                 <form action="<?php echo base_url(). 'profile/tambah_aksi_pakar'; ?>" method="post">
-                  <h3><strong> Name:</strong>  <input type="text" name="nama" value="<?php echo $this->session->userdata('nama');?>" class="form-control" style="width:300px; display:inline-block;"></h3>
-                  <h3><strong> Username:</strong>  <input type="text" name="username" value="<?php echo $this->session->userdata('username');?>" class="form-control" style="width:300px; display:inline-block;"></h3>  
-                  <h3><strong> Password:</strong>  <input type="password" name="password" value="<?php echo $this->session->userdata('password');?>" class="form-control" style="width:300px; display:inline-block;"></h3>
-                  <h3><strong> Email:</strong>  <input type="text" name="email" value="<?php echo $this->session->userdata('email');?>" class="form-control" style="width:300px; display:inline-block;"></h3>
-                  <h3><strong> NIK:</strong>  <input type="number" name="nik" value="<?php echo $this->session->userdata('nik');?>" class="form-control" style="width:300px; display:inline-block;"></h3>  
-                  <h3><strong> JK:</strong>  <input type="text" name="jk" value="<?php echo $this->session->userdata('jk');?>" class="form-control" style="width:300px; display:inline-block;"></h3>  
-                  <h3><strong> Alamat:</strong>  <input type="text" name="alamat" value="<?php echo $this->session->userdata('alamat');?>" class="form-control" style="width:300px; display:inline-block;"></h3>  
-                  <h3><strong> Tempat lahir:</strong>  <input type="text" name="tempat_lahir" value="<?php echo $this->session->userdata('username');?>" class="form-control" style="width:300px; display:inline-block;"></h3>  
-                  <h3><strong> Tanggal lahir:</strong>  <input type="text" name="tgl_lahir" value="<?php echo $this->session->userdata('tgl_lahir');?>" class="form-control" style="width:300px; display:inline-block;"></h3>  
-                  <h3><strong> No. Telp:</strong>  <input type="text" name="no_telp" value="<?php echo $this->session->userdata('no_telp');?>" class="form-control" style="width:300px; display:inline-block;"></h3>
-                <h3><strong> Universitas:</strong>  <input type="text" name="universitas" value="<?php echo $this->session->userdata('universitas');?>" class="form-control" style="width:300px; display:inline-block;"></h3>  
-                <h3><strong> Sertifikat:</strong>  <input type="text" name="sertifikat" value="<?php echo $this->session->userdata('sertifikat');?>" class="form-control" style="width:300px; display:inline-block;"></h3>   
-                <h3><strong> Small Biography:</strong>  <input type="text" name="biodata" value="<?php echo $this->session->userdata('biodata');?>" class="form-control" style="width:300px; display:inline-block;"></h3>
+                  <h5><strong> Name:</strong>  <input type="text" name="nama" value="<?php echo $this->session->userdata('nama');?>" class="form-control" style="width:300px; display:inline-block;"></h5>
+                  <h5><strong> Username:</strong>  <input type="text" name="username" value="<?php echo $this->session->userdata('username');?>" class="form-control" style="width:300px; display:inline-block;"></h5>  
+                  <h5><strong> Password:</strong>  <input type="password" name="password" value="<?php echo $this->session->userdata('password');?>" class="form-control" style="width:300px; display:inline-block;"></h5>
+                  <h5><strong> Email:</strong>  <input type="text" name="email" value="<?php echo $this->session->userdata('email');?>" class="form-control" style="width:300px; display:inline-block;"></h5>
+                  <h5><strong> NIK:</strong>  <input type="number" name="nik" value="<?php echo $this->session->userdata('nik');?>" class="form-control" style="width:300px; display:inline-block;"></h5>  
+                  <h5><strong> JK:</strong>  <input type="text" name="jk" value="<?php echo $this->session->userdata('jk');?>" class="form-control" style="width:300px; display:inline-block;"></h5>  
+                  <h5><strong> Alamat:</strong>  <input type="text" name="alamat" value="<?php echo $this->session->userdata('alamat');?>" class="form-control" style="width:300px; display:inline-block;"></h5>  
+                  <h5><strong> Tempat lahir:</strong>  <input type="text" name="tempat_lahir" value="<?php echo $this->session->userdata('username');?>" class="form-control" style="width:300px; display:inline-block;"></h5>  
+                  <h5><strong> Tanggal lahir:</strong>  <input type="text" name="tgl_lahir" value="<?php echo $this->session->userdata('tgl_lahir');?>" class="form-control" style="width:300px; display:inline-block;"></h5>  
+                  <h5><strong> No. Telp:</strong>  <input type="text" name="no_telp" value="<?php echo $this->session->userdata('no_telp');?>" class="form-control" style="width:300px; display:inline-block;"></h5>
+                <h5><strong> Universitas:</strong>  <input type="text" name="universitas" value="<?php echo $this->session->userdata('universitas');?>" class="form-control" style="width:300px; display:inline-block;"></h5>  
+                <h5><strong> Sertifikat:</strong>  <input type="text" name="sertifikat" value="<?php echo $this->session->userdata('sertifikat');?>" class="form-control" style="width:300px; display:inline-block;"></h5>   
+                <h5><strong> Small Biography:</strong>  <input type="text" name="biodata" value="<?php echo $this->session->userdata('biodata');?>" class="form-control" style="width:300px; display:inline-block;"></h5>
 
            
 
 
 
-                <h3>  <strong> Social Links :</strong></h3>  
+                <h5>  <strong> Social Links :</strong></h5>  
                    <br />
                    <a href="#" class="btn btn-primary" >Facebook <i class="glyphicon glyphicon-play"></i></a>
                    <a href="#" class="btn btn-danger" >Google <i class="glyphicon glyphicon-play"></i></a>
