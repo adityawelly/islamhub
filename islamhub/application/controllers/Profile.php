@@ -218,19 +218,6 @@ function auth_u(){
     redirect('profile/auth_u');
   }
 
-   function tambah_aksi_user(){
-    $nama = $this->input->post('username');
-    $email = $this->input->post('email');
-    $password = $this->input->post('password');
- 
-    $data = array(
-      'username' => $nama,
-      'email' => $email,
-      'password' => $password
-      );
-    $this->login_model->input_data($data,'users');
-    redirect('profile/auth_u');
-  }
 
   function tambah_aksi_pakar(){
     $nama = $this->input->post('nama');
