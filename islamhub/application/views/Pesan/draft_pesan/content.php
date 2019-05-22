@@ -22,8 +22,21 @@
                             </thead>
                             <tbody>
                                 <?php foreach($tblPesan as $value): ?>
+                                <?php
+                                    if($this->session->userdata('pakar') == TRUE){
+                                        $where = array(
+                                            'id_client' => $value->pengirim_chat
+                                        );
+                                        $tblBio = $this->TabelClient->whereAnd($where)->row();
+                                    }else{
+                                        $where = array(
+                                            'id_pakar' => $value->pengirim_chat
+                                        );
+                                        $tblBio = $this->TabelPakar->whereAnd($where)->row();
+                                    }
+                                ?>
                                     <tr>
-                                        <td><?=$value->pengirim_chat?></td>
+                                        <td><?=$tblBio->nama?></td>
                                         <td><?=$value->subjek?></td>
                                         <td><?=$value->isi_chat?></td>
                                         <td><?=$value->date_created?></td>
@@ -34,7 +47,7 @@
                                                 </button>
                                                 <ul class="dropdown-menu dropdown-menu-left">
                                                     <li>
-                                                        <a href="<?=base_url('Pesan/KirimUlang/'.$value->id_chat)?>" onclick="return confirm('Kirim Ulang Pesan ?')">Kirim Ulang</a>
+                                                        <a href="<?=base_url('Pesan/KirimUlang/'.$value->penerima_chat)?>" onclick="return confirm('Kirim Ulang Pesan ?')">Kirim Ulang</a>
                                                     </li>
                                                 </ul>
                                             </div>

@@ -22,8 +22,21 @@
                             </thead>
                             <tbody>
                                 <?php foreach($tblPesan as $value): ?>
+                                <?php
+                                    if($this->session->userdata('pakar') == TRUE){
+                                        $where = array(
+                                            'id_client' => $value->pengirim_chat
+                                        );
+                                        $tblBio = $this->TabelClient->whereAnd($where)->row();
+                                    }else{
+                                        $where = array(
+                                            'id_pakar' => $value->pengirim_chat
+                                        );
+                                        $tblBio = $this->TabelPakar->whereAnd($where)->row();
+                                    }
+                                ?>
                                     <tr>
-                                        <td><?=$value->pengirim_chat?></td>
+                                        <td><?=$tblBio->nama?></td>
                                         <td><?=$value->subjek?></td>
                                         <td><?=$value->isi_chat?></td>
                                         <td><?=$value->date_created?></td>
@@ -34,12 +47,41 @@
                                                 </button>
                                                 <ul class="dropdown-menu dropdown-menu-left">
                                                     <li>
-                                                        <a href="<?=base_url('Pesan/LihatPesan/'.$value->id_chat)?>">Lihat Pesan</a>
+                                                        <a href="#" data-toggle="modal" data-target="#modalBalas<?=$value->id_chat?>">Balas Pesan?</a>
                                                     </li>
                                                 </ul>
                                             </div>
                                         </td>
                                     </tr>
+
+                                    <div class="modal fade" id="modalBalas<?=$value->id_chat?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                                        <i class="material-icons">clear</i>
+                                                    </button>
+                                                    <h4 class="modal-title"><?=$value->subjek?></h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <strong>Pengirim</strong> : <?=$tblBio->nama?><br>
+                                                    <strong>Pesan</strong> : <?=$value->isi_chat?>
+                                                    <form method="POST" action="<?=base_url('Pesan/Balas')?>">
+                                                        <input type="hidden" name="penerima" value="<?=$value->pengirim_chat?>" required="">
+                                                        <input type="hidden" name="subjek" value="<?=$value->subjek?>" required="">
+                                                        <div class="form-group label-floating">
+                                                            <label class="control-label">Isi</label>
+                                                            <textarea name="isi" id="isiPesan" required=""></textarea>
+                                                        </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="submit" class="btn btn-simple">Balas</button>
+                                                    <button type="button" class="btn btn-danger btn-simple" data-dismiss="modal">Tutup</button>
+                                                </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
                                 <?php endforeach; ?>
                             <tbody>
                         </table>
