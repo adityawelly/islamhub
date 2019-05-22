@@ -180,7 +180,7 @@ class Forum extends CI_Controller {
 	function Update($id){
         $rules[] = array('field' => 'title',	'label' => 'title',  'rules' => 'required');
         $rules[] = array('field' => 'slug',     'label' => 'slug',      'rules' => 'required');
-        $rules[] = array('field' => 'descrption',	'label' => 'descrption',     'rules' => 'required');
+        $rules[] = array('field' => 'description',	'label' => 'description',     'rules' => 'required');
 		$this->form_validation->set_rules($rules);
 		if ($this->form_validation->run() == FALSE){
 			$this->session->set_flashdata('message',validation_errors());
@@ -237,6 +237,32 @@ class Forum extends CI_Controller {
 		}
 	}
 
+	function Updatepost($id){
+        $rules[] = array('field' => 'content',	'label' => 'content',  'rules' => 'required');
+		$this->form_validation->set_rules($rules);
+		if ($this->form_validation->run() == FALSE){
+			$this->session->set_flashdata('message',validation_errors());
+			$this->session->set_flashdata('type_message','danger');
+			redirect('Backend/Forum/');
+		}else{
+		    try{
+                $rules = array(
+                    'where' => array('id' => $id),
+                    'data'  => array(
+						'content'	=> $this->input->post('content'),
+					),
+                );
+                $this->Tbl_posts->update($rules);
+                $this->session->set_flashdata('message','Data berhasil diubah.');
+                $this->session->set_flashdata('type_message','success');
+                redirect('Backend/Forum/');
+            }catch (Exception $e){
+                $this->session->set_flashdata('message', $e->getMessage());
+                $this->session->set_flashdata('type_message','danger');
+                redirect('Backend/Forum/');
+            }
+		}
+	}
 	function Delete($id){
 	    try{
 	        $rules = array('id' => $id);
@@ -250,4 +276,18 @@ class Forum extends CI_Controller {
             redirect('Backend/Forum');
         }
 	}
+	function Deletetopic($id){
+	    try{
+	        $rules = array('id' => $id);
+            $this->Tbl_topics->delete($rules);
+            $this->session->set_flashdata('message','Data berhasil dihapus.');
+            $this->session->set_flashdata('type_message','success');
+            redirect('Backend/Forum');
+        }catch (Exception $e){
+            $this->session->set_flashdata('message', $e->getMessage());
+            $this->session->set_flashdata('type_message','danger');
+            redirect('Backend/Forum');
+        }
+	}
+
 }

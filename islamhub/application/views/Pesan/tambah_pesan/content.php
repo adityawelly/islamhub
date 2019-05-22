@@ -16,11 +16,11 @@
                                 <option disabled selected>--Pilih--</option>
                                 <?php if($this->session->userdata('client') == TRUE){ ?>
                                     <?php foreach($tblPakar as $value): ?>
-                                        <option value="<?=$value->email?>"><?=$value->nama?></option>
+                                        <option value="<?=$value->id_pakar?>"><?=$value->nama?></option>
                                     <?php endforeach; ?>
                                 <?php }else if($this->session->userdata('pakar') == TRUE){ ?>
                                     <?php foreach($tblClient as $value): ?>
-                                        <option value="<?=$value->email?>"><?=$value->nama?></option>
+                                        <option value="<?=$value->id_client?>"><?=$value->nama?></option>
                                     <?php endforeach; ?>
                                 <?php } ?>
                             </select>
