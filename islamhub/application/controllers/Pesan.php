@@ -5,6 +5,11 @@ class Pesan extends CI_Controller {
 
 	public function __construct(){
         parent::__construct();
+        if($this->session->userdata('logged') != TRUE){
+            $this->session->set_flashdata('message','Login terlebih dahulu.');
+            $this->session->set_flashdata('type_message','danger');
+            redirect('Login');
+        }
         $this->load->model('TabelPakar');
         $this->load->model('TabelClient');
         $this->load->model('TabelPesan');
@@ -28,10 +33,49 @@ class Pesan extends CI_Controller {
 		$this->load->view('index', $data);
     }
 
+    function LihatPesan($penerima){
+        $where = array(
+            'pengirim_chat' => $this->session->userdata('id'),
+            'penerima_chat' => $penerima,
+            'status'    => '1',
+        );
+        $tblPesan = $this->TabelPesan->whereAnd($where)->result();
+
+		$data = array(
+			'title'		=> 'Riwayat Pesan',
+			'content' 	=> 'Pesan/riwayat_pesan/content',
+			'css' 		=> 'Pesan/riwayat_pesan/css',
+			'modal' 	=> 'Pesan/riwayat_pesan/modal',
+            'javascript'=> 'Pesan/riwayat_pesan/javascript',
+            
+            'tblPesan'   => $tblPesan,
+		);
+		$this->load->view('index', $data);
+    }
+
+    function Balas(){
+        $data = array(
+            'pengirim_chat'  => $this->session->userdata('id'),
+            'penerima_chat'  => $this->input->post('penerima'),
+            'subjek'    => $this->input->post('subjek'),
+            'isi_chat'       => $this->input->post('isi'),
+            'status'    => '1',
+        );
+        if ($this->TabelPesan->create($data)) {
+            $this->session->set_flashdata('message','Pesan Berhasil Dibalas.');
+            $this->session->set_flashdata('type_message','success');
+            redirect('Pesan/PesanTerkirim');
+        }else{
+            $this->session->set_flashdata('message','Pesan Gagal Dikirim.');
+            $this->session->set_flashdata('type_message','danger');
+            redirect('Pesan/PesanTerkirim');
+        }
+    }
+
     function PesanMasuk()
 	{
         $where = array(
-            'penerima_chat' => $this->session->userdata('email'),
+            'penerima_chat' => $this->session->userdata('id'),
             'status'    => '1',
         );
         $tblPesan = $this->TabelPesan->whereAnd($where)->result();
@@ -51,7 +95,7 @@ class Pesan extends CI_Controller {
     function PesanTerkirim()
 	{
         $where = array(
-            'pengirim_chat' => $this->session->userdata('email'),
+            'pengirim_chat' => $this->session->userdata('id'),
             'status'    => '1',
         );
         $tblPesan = $this->TabelPesan->whereAnd($where)->result();
@@ -71,7 +115,7 @@ class Pesan extends CI_Controller {
     function DraftPesan()
 	{
         $where = array(
-            'pengirim_chat' => $this->session->userdata('email'),
+            'pengirim_chat' => $this->session->userdata('id'),
             'status'    => '0',
         );
         $tblPesan = $this->TabelPesan->whereAnd($where)->result();
@@ -91,7 +135,7 @@ class Pesan extends CI_Controller {
     function Kirim(){
         if($this->input->post('btn-submit') == "draft"){
             $data = array(
-                'pengirim_chat'  => $this->session->userdata('email'),
+                'pengirim_chat'  => $this->session->userdata('id'),
                 'penerima_chat'  => $this->input->post('penerima'),
                 'subjek'    => $this->input->post('subjek'),
                 'isi_chat'       => $this->input->post('isi'),
@@ -108,7 +152,7 @@ class Pesan extends CI_Controller {
             }
         }else{
             $data = array(
-                'pengirim_chat'  => $this->session->userdata('email'),
+                'pengirim_chat'  => $this->session->userdata('id'),
                 'penerima_chat'  => $this->input->post('penerima'),
                 'subjek'    => $this->input->post('subjek'),
                 'isi_chat'       => $this->input->post('isi'),

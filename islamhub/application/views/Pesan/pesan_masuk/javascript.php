@@ -1,5 +1,8 @@
 <!--  DataTables.net Plugin    -->
 <script src="<?=base_url()?>assets/js/jquery.datatables.js"></script>
+
+<script src="<?=base_url('assets/plugins/ckeditor/styles.js')?>"></script>
+<script src="<?=base_url('assets/plugins/ckeditor/ckeditor.js')?>"></script>
 <script type="text/javascript">
     $(document).ready(function() {
         $('#tabelpesan').DataTable({
@@ -16,4 +19,7 @@
 
         });
     });
+</script>
+<script>
+    CKEDITOR.replace( 'isiPesan' );
 </script>
