@@ -19,13 +19,13 @@
    <div class="container " >
         <div class="row text-center" style="padding-top:30px;">
             <div class="col-md-12">
-             <h1>  CLIENT PROFILE</h1> 
+             <h1> <strong> CLIENT PROFILE </strong></h1> 
                 <br />
            </div>
         </div>
        <div class="row " style="padding-bottom:50px; ">
            <div class="col-md-3">
-               <img src="<?php echo base_url('assets/img/client.jpg'); ?>" class="img-responsive img-thumbnail" />
+               <img src="<?php echo base_url('assets/img/faces/pp.jpg'); ?>" class="img-responsive img-thumbnail" />
               
            </div>
            <div class="col-md-9">
@@ -47,8 +47,7 @@
   </button>
   <ul class="dropdown-menu" role="menu">
     <li><a href="#">Update Profile</a></li>
-    <li><a href="#">Recent Orders</a></li>
-    <li><a href="#">Support Tickets</a></li>
+    <li><a href="#">Back</a></li>
     <li class="divider"></li>
     <li><a href="<?php echo site_url('profile/logout');?>">Logout</a></li>
   </ul>
@@ -56,10 +55,9 @@
                <br /><br />
                <hr />
                <div >
-                <h3><strong> Name:</strong> <?php echo $this->session->userdata('username');?></h3>  
-                  
-                 <h3> <strong> Registered On:</strong> 24th August 2014</h3>  
-                <h3>  <strong>  Role: </strong>User</h3>  
+               <h3><strong> Name: </strong> <?php echo $this->session->userdata('username');?></h3>    
+               <h3> <strong> Registered On:</strong> 24th August 2014</h3>  
+                <h3>  <strong>  Role: </strong>Client</h3>  
 
                 <h3>  <strong> Social Links :</strong></h3>  
                    <br />
@@ -75,7 +73,7 @@
              <h3>Small Biography :</h3>  
                <hr />
                <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                    Mauris ac nisl tempus, sollicitudin elit vel, pellentesque lorem. 
                    Maecenas hendrerit laoreet lectus a feugiat. Nunc sodales id ipsum ut maximus. 
                    Morbi pellentesque quis diam nec ullamcorper. Nulla facilisi. Donec non nunc augue. 

@@ -87,7 +87,7 @@ class Auth extends CI_Controller {
 					if ($tblSUsers->is_admin == 1){
 						redirect('Backend/Dashboard');
 					}else{
-						redirect('Welcome');
+						redirect('Forum');
 					}
 				}catch (Exception $e){
 					$this->session->set_flashdata('message', $e->getMessage());
