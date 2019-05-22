@@ -223,6 +223,7 @@ class Forum extends CI_Controller {
                     'data'  => array(
 						'title'	=> $this->input->post('title'),
 						'slug' => $this->input->post('slug'),
+						$this->session->userdata('id')
 					),
                 );
                 $this->Tbl_topics->update($rules);
@@ -290,4 +291,17 @@ class Forum extends CI_Controller {
         }
 	}
 
+	function DeletePost($id){
+	    try{
+	        $rules = array('id' => $id);
+            $this->Tbl_posts->delete($rules);
+            $this->session->set_flashdata('message','Data berhasil dihapus.');
+            $this->session->set_flashdata('type_message','success');
+            redirect('Backend/Forum');
+        }catch (Exception $e){
+            $this->session->set_flashdata('message', $e->getMessage());
+            $this->session->set_flashdata('type_message','danger');
+            redirect('Backend/Forum');
+        }
+	}
 }
