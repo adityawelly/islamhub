@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Welcome</title>
+    <title>Profile</title>
     
     <link rel="stylesheet" href="<?=base_url()?>assets/dashboard/css/font-awesome.min.css">
     <link rel="stylesheet" href="<?=base_url()?>assets/dashboard/css/bootstrap.min.css">
