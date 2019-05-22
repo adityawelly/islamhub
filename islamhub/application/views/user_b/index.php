@@ -8,7 +8,7 @@
     <!--[if IE]>
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <![endif]-->
-    <title>User Biasa Profile</title>
+    <title>Client Profile</title>
     <!-- BOOTSTRAP CORE STYLE CSS -->
     <link href="<?php echo base_url('assets/css/bootstrap.css');?>" rel="stylesheet" />
     <link href="<?php echo base_url('assets/css/profile.css');?>" rel="stylesheet" />
@@ -19,7 +19,7 @@
    <div class="container " >
         <div class="row text-center" style="padding-top:30px;">
             <div class="col-md-12">
-             <h1>  USER PROFILE</h1> 
+             <h1>  CLIENT PROFILE</h1> 
                 <br />
            </div>
         </div>

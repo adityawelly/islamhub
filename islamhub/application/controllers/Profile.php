@@ -26,6 +26,10 @@ class Profile extends CI_Controller{
     $this->load->view('footer');
   }
 
+   function u_user_b(){
+      $this->load->view('user_b/index_u');
+  }
+
   function u_pakar(){
     $this->load->view('pakar/dashboard_login');
     $this->load->view('pakar/index_u');
