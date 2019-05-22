@@ -216,4 +216,30 @@ class Forum extends CI_Controller {
             }
 		}
 	}
+
+	function Createpost($forum_id, $topic_id){
+		$rules[] = array('field' => 'content',	'label' => 'content',  'rules' => 'required');
+		$this->form_validation->set_rules($rules);
+		if ($this->form_validation->run() == FALSE){
+			$this->session->set_flashdata('message',validation_errors());
+			$this->session->set_flashdata('type_message','danger');
+			redirect('Forum/Posts/'.$forum_id.'/'.$topic_id);
+		}else{
+		    try{
+                $data = array(
+                    'content'	=> $this->input->post('content'),
+					'user_id'=>$this->session->userdata('id'),
+					'topic_id'=>$topic_id,
+                );
+                $this->Tbl_posts->create($data);
+                $this->session->set_flashdata('message','Data berhasil disimpan.');
+                $this->session->set_flashdata('type_message','success');
+                redirect('Forum/Posts/'.$forum_id.'/'.$topic_id);
+            }catch (Exception $e){
+                $this->session->set_flashdata('message', $e->getMessage());
+                $this->session->set_flashdata('type_message','danger');
+                redirect('Forum/Posts/'.$forum_id.'/'.$topic_id);
+            }
+		}
+	}
 }
