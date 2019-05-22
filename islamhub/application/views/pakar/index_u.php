@@ -78,7 +78,7 @@
 
                 <h5>  <strong> Social Links :</strong></h5>  
                    <br />
-                   <a href="#" class="btn btn-primary" >Pacebook <i class="glyphicon glyphicon-play"></i></a>
+                   <a href="#" class="btn btn-primary" >Facebook <i class="glyphicon glyphicon-play"></i></a>
                    <a href="#" class="btn btn-danger" >Google <i class="glyphicon glyphicon-play"></i></a>
                    <a href="#" class="btn btn-info " >Twitter <i class="glyphicon glyphicon-play"></i></a>
                    </div>
