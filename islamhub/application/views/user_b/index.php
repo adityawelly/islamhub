@@ -8,7 +8,7 @@
     <!--[if IE]>
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <![endif]-->
-    <title>Bootstrap Profile Template</title>
+    <title>Client Profile</title>
     <!-- BOOTSTRAP CORE STYLE CSS -->
     <link href="<?php echo base_url('assets/css/bootstrap.css');?>" rel="stylesheet" />
     <link href="<?php echo base_url('assets/css/profile.css');?>" rel="stylesheet" />
@@ -19,7 +19,7 @@
    <div class="container " >
         <div class="row text-center" style="padding-top:30px;">
             <div class="col-md-12">
-             <h1>  USER PROFILE</h1> 
+             <h1>  CLIENT PROFILE</h1> 
                 <br />
            </div>
         </div>
@@ -47,8 +47,6 @@
   </button>
   <ul class="dropdown-menu" role="menu">
     <li><a href="<?php echo base_url('profile/u_user_b');?>">Update Profile</a></li>
-    <li><a href="#">Recent Orders</a></li>
-    <li><a href="#">Support Tickets</a></li>
     <li class="divider"></li>
     <li><a href="<?php echo site_url('profile/logout');?>">Logout</a></li>
   </ul>
@@ -56,10 +54,8 @@
                <br /><br />
                <hr />
                <div >
-                <h3><strong> Name:</strong> <?php echo $this->session->userdata('username');?></h3>  
-                  
-                 <h3> <strong> Registered On:</strong> <?php echo $this->session->userdata('date_created');?></h3>  
-                <h3>  <strong>  Email: </strong><?php echo $this->session->userdata('email');?> </h3>  
+                <h3><strong> Name: </strong> <?php echo $this->session->userdata('username');?></h3>  
+                <h3>  <strong>  Email: </strong> <?php echo $this->session->userdata('email');?> </h3>  
                 <!-- <h3>  <strong>  Universitas: </strong><?php echo $this->session->userdata('universitas');?> </h3>   -->
 
                 <h3>  <strong> Social Links :</strong></h3>  
@@ -71,19 +67,7 @@
                
            </div>
        </div>
-       <div class="row " >
-           <div class="col-md-6">
-             <h3>Small Biography :</h3>  
-               <hr />
-               <p>
-                <!-- <h4> <?php echo $this->session->userdata('biodata');?> </h4>   -->
-               </p>
-
-           </div>
-           <div class="col-md-6" style="padding-bottom:80px;">
-              <h3>Registered On  :</h3> 
-               <!-- <?php echo $this->session->userdata('date_created');?>  -->
-           </div>
+      
 
             <!-- <div class="row">
         <div class="col-md-4"><img src="<?php echo base_url('assets/img/faces/marc.jpg'); ?>" class="img-responsive img-thumbnail" /><br>
@@ -114,7 +98,7 @@
 
        <div class="row">
         <div class="col-md-6">
-         <center><h3><strong>VIDEO KONTEN</strong></h3></center>
+         <center><h3><strong>VIDEO TERSIMPAN</strong></h3></center>
          <div class="row">
         <div class="col-md-6">
             <a href="#"><center>
@@ -142,7 +126,7 @@
         </div>
 
         <div class="col-md-6">
-        <center><h3><strong>JURNAL</strong></h3></center>
+        <center><h3><strong>JURNAL TERSIMPAN</strong></h3></center>
         <div class="row">
         <div class="col-md-4">
         <a href="#"><center>
