@@ -290,7 +290,6 @@ class Forum extends CI_Controller {
             redirect('Backend/Forum');
         }
 	}
-<<<<<<< HEAD
 
 	function DeletePosts($id){
 	    try{
@@ -305,6 +304,4 @@ class Forum extends CI_Controller {
             redirect('Backend/Forum');
         }
 	}
-=======
->>>>>>> 471aa282cbe62b73502e3c5128ef5083c8dee596
 }
