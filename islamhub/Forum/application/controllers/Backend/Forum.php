@@ -290,4 +290,18 @@ class Forum extends CI_Controller {
             redirect('Backend/Forum');
         }
 	}
+
+	function DeletePosts($id){
+	    try{
+	        $rules = array('id' => $id);
+            $this->Tbl_posts->delete($rules);
+            $this->session->set_flashdata('message','Data berhasil dihapus.');
+            $this->session->set_flashdata('type_message','success');
+            redirect('Backend/Forum');
+        }catch (Exception $e){
+            $this->session->set_flashdata('message', $e->getMessage());
+            $this->session->set_flashdata('type_message','danger');
+            redirect('Backend/Forum');
+        }
+	}
 }
