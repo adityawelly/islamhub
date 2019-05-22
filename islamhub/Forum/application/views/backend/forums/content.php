@@ -39,7 +39,7 @@
                         <tbody>
                         <?php $no=1; foreach ($tblForum as $value): ?>
                             <tr>
-                                <td><?=$no++?></td>
+                            <td><?=$no++?></td>
                                 <td class="text-center">
                                     <div class="btn-group">
                                         <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -48,13 +48,13 @@
                                         <ul class="dropdown-menu">
                                             <li><a href="#" data-toggle="modal" data-target="#edit-<?=$value->id?>">Edit</a></li>
                                             <li role="separator" class="divider"></li>
-                                            <li><a href="<?=base_url('Backend/Forum/Delete/'.$value->id)?>" onclick="return confirm('Apakah Anda Yakin ?')">Delete</i></a></li>
+                                            <li><a href="<?=base_url('Backend/Forum/delete/'.$value->id)?>" onclick="return confirm('Apakah Anda Yakin ?')">Delete</i></a></li>
                                         </ul>
                                     </div>
                                 </td>
                                 <td><?=$value->title?></td>
                                 <td><?=$value->slug?></td>
-                                <td><?=htmlspecialchars_decode($value->description)?></td>
+                                <td><?=$value->description?></td>
                                 <td class="text-center">
 									<a class="btn btn-app" href="<?=base_url('Backend/Forum/Topics/'.$value->id)?>">
 										<span class="badge bg-green"><?=$topics[$value->id]?></span>
