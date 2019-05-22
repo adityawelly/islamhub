@@ -146,6 +146,15 @@ class Profile extends CI_Controller{
     if($validate->num_rows() > 0){
         $data  = $validate->row_array();
         $nama  = $data['nama'];
+        $username = $data['username'];
+        $nik  = $data['nik'];
+        $jk  = $data['jk'];
+        $alamat  = $data['alamat'];
+        $tempat_lahir  = $data['tempat_lahir'];
+        $tgl_lahir  = $data['tgl_lahir'];
+        $no_telp  = $data['no_telp'];
+        $sertifikat = $data['sertifikat'];
+        $foto  = $data['foto'];
         $email = $data['email'];
         $date_created = $data['date_created'];
         $biodata = $data['biodata'];
@@ -153,13 +162,20 @@ class Profile extends CI_Controller{
         $sesdata = array(
             'nama'  => $nama,
             'email'     => $email,
+            'username'  => $username,
+            'nik'  => $nik,
+            'jk'  => $jk,
+            'alamat'  => $alamat,
+            'tempat_lahir'  => $tempat_lahir,
+            'no_telp'  => $no_telp,
+            'sertifikat'  => $sertifikat,
+            'foto'  => $foto,
             'date_created' => $date_created,
             'biodata' => $biodata,
             'universitas' => $univ,
             'logged_in' => TRUE
         );
         $this->session->set_userdata($sesdata);
-         $this->load->view('pakar/dashboard_view');
          $this->load->view('pakar/index');
     }else{
         echo $this->session->set_flashdata('msg','Username or Password is Wrong');
@@ -167,7 +183,7 @@ class Profile extends CI_Controller{
     }
   }
 
-  function auth_u(){
+function auth_u(){
     $email    = $this->input->post('email',TRUE);
     $password = md5($this->input->post('password',TRUE));
     $validate = $this->login_model->validate_u($email,$password);
@@ -181,8 +197,6 @@ class Profile extends CI_Controller{
             'logged_in' => TRUE
         );
         $this->session->set_userdata($sesdata);
-        // access login for admin
-        $this->load->view('user_b/dashboard_view');
         $this->load->view('user_b/index');
     }else{
         echo $this->session->set_flashdata('msg','Username or Password is Wrong');

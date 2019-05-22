@@ -8,7 +8,7 @@
     <!--[if IE]>
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <![endif]-->
-    <title>Bootstrap Profile Template</title>
+    <title>Pakar Profile</title>
     <!-- BOOTSTRAP CORE STYLE CSS -->
     <link href="<?php echo base_url('assets/css/bootstrap.css');?>" rel="stylesheet" />
     <link href="<?php echo base_url('assets/css/profile.css');?>" rel="stylesheet" />
@@ -47,8 +47,6 @@
   </button>
   <ul class="dropdown-menu" role="menu">
     <li><a href="<?php echo base_url('profile/u_pakar');?>">Update Profile</a></li>
-    <li><a href="#">Recent Orders</a></li>
-    <li><a href="#">Support Tickets</a></li>
     <li class="divider"></li>
     <li><a href="<?php echo site_url('profile/logout');?>">Logout</a></li>
   </ul>
@@ -56,11 +54,18 @@
                <br /><br />
                <hr />
                <div >
-                <h3><strong> Name:</strong> <?php echo $this->session->userdata('nama');?></h3>  
+                <h3><strong> Nama:</strong> <?php echo $this->session->userdata('nama');?></h3> 
+                <h3><strong> Username:</strong> <?php echo $this->session->userdata('username');?></h3>
+                <h3><strong> NIK:</strong> <?php echo $this->session->userdata('nik');?></h3> 
+                <h3><strong> JK:</strong> <?php echo $this->session->userdata('jk');?></h3>
+                <h3><strong> Tempat lahir:</strong> <?php echo $this->session->userdata('tempat_lahir');?></h3>
+                <h3><strong> Tanggal lahir:</strong> <?php echo $this->session->userdata('tanggal_lahir');?></h3>
+                <h3><strong> No. Telp:</strong> <?php echo $this->session->userdata('no_telp');?></h3>
                   
                  <h3> <strong> Registered On:</strong> <?php echo $this->session->userdata('date_created');?></h3>  
                 <h3>  <strong>  Email: </strong><?php echo $this->session->userdata('email');?> </h3>  
                 <h3>  <strong>  Universitas: </strong><?php echo $this->session->userdata('universitas');?> </h3>  
+                <h3><strong> Sertifikat:</strong> <?php echo $this->session->userdata('sertifikat');?></h3>
 
                 <h3>  <strong> Social Links :</strong></h3>  
                    <br />
@@ -81,8 +86,12 @@
 
            </div>
            <div class="col-md-6" style="padding-bottom:80px;">
-              <h3>Registered On  :</h3> 
-               <?php echo $this->session->userdata('date_created');?> 
+              <h3>Alamat  :</h3> 
+              <hr/>
+              <p>
+                  <h4><?php echo $this->session->userdata('alamat');?> </h4>
+              </p>
+             
            </div>
 
             <!-- <div class="row">
