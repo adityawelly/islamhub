@@ -1,5 +1,13 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
-
+<style>
+div.static {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 300px;
+  border: 3px solid #543535;
+}
+</style>
         <section class="section transheader homepage parallax" data-stellar-background-ratio="0.5" style="background-image:url('<?=base_url()?>assets/dashboard/images/masjid.jpg');">
             <div class="container">
                 <div class="row">   
