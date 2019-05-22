@@ -12,16 +12,15 @@
             <div class="modal-body">
                 <div class="form-group">
                     <label for="recipient-username" class="control-label">username :</label>
-                    <input type="text" username="username" class="form-control" placeholder="username" required="">
+                    <input type="text" name="username" class="form-control" placeholder="username" required="">
                 </div>
                 <div class="form-group">
                     <label for="recipient-name" class="control-label">Password :</label>
                     <input type="password" name="password" class="form-control" placeholder="Password" required="">
                 </div>
                 <div class="form-group">
-                    <label for="recipient-email" class="control-label">email :</label>
-                    <input type="text" email="email" class="form-control" placeholder="email" required="">
-                </div>
+                    <label for="recipient-name" class="control-label">email :</label>
+                    <input type="text" name="email" class="form-control" placeholder="email" required="">
                 </div>
             </div>
             <div class="modal-footer">
@@ -51,11 +50,11 @@
             <div class="modal-body">
                 <div class="form-group">
                     <label for="recipient-username" class="control-label">username :</label>
-                    <input type="text" username="username" class="form-control" placeholder="username" value="<?=$value->username?>" required="">
+                    <input type="text" name="username" class="form-control" placeholder="username" value="<?=$value->username?>" required="">
                 </div>
                 <div class="form-group">
                     <label for="recipient-email" class="control-label">email :</label>
-                    <input type="text" email="email" class="form-control" placeholder="email" value="<?=$value->email?>" required="">
+                    <input type="text" name="email" class="form-control" placeholder="email" value="<?=$value->email?>" required="">
                 </div>
             </div>
             <div class="modal-footer">
