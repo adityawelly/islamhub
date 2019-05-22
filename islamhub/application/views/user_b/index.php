@@ -25,8 +25,8 @@
         </div>
        <div class="row " style="padding-bottom:50px; ">
            <div class="col-md-3">
-               <img src="<?php echo base_url('assets/img/faces/avatar.jpg'); ?>" class="img-responsive img-thumbnail" />
-               <a href="#" class="btn btn-primary" >Kirim Pesan <i class="glyphicon glyphicon-play"></i></a>
+               <img src="<?php echo base_url('assets/img/faces/pp.jpg'); ?>" class="img-responsive img-thumbnail" />
+               <a href="<?php echo base_url('Dashboard');?>" class="btn btn-primary" >Live Chat <i class="glyphicon glyphicon-play"></i></a>
            </div>
            <div class="col-md-9">
                <!-- <div class="alert alert-info">

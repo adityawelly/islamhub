@@ -24,7 +24,7 @@
                 <!--ACCESS MENUS FOR ADMIN-->
                   <li class="active"><a href="#">Dashboard</a></li>
                   <li><a href="<?php echo base_url('profile/pakar');?>">Pakar</a></li>
-                  <li><a href="<?php echo base_url('profile/user_b');?>">User Biasa</a></li>
+                  <li><a href="<?php echo base_url('profile/user_b');?>">Client</a></li>
                 
               </ul>
               <ul class="nav navbar-nav navbar-right">
