@@ -12,6 +12,7 @@ class Dashboard extends CI_Controller {
             redirect('Login');
         }
 		$this->load->model('TabelPesan');
+		$this->load->model('TabelPakar');
 
     }
 
@@ -25,6 +26,8 @@ class Dashboard extends CI_Controller {
 			'modal' 	=> 'dashboard/modal',
 			'javascript'=> 'dashboard/javascript',
 			'total' => $this->TabelPesan->hitungPesan(),
+
+			'tblPakar'   => $this->TabelPakar->read()->result(),
 		);
 		$this->load->view('index', $data);
 	}

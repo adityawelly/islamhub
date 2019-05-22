@@ -36,6 +36,7 @@ class TabelPesan extends CI_Model {
 
 	public function whereAnd($data){
 		$this->db->where($data);
+		$this->db->order_by('id_chat', 'DESC');
 		return $this->db->get($this->table);
 	}
 
