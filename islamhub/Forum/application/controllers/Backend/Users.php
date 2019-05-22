@@ -39,78 +39,62 @@ class Users extends CI_Controller {
 	function Create(){
 		$rules[] = array('field' => 'username',	'label' => 'Username',  'rules' => 'required');
 		$rules[] = array('field' => 'password',	'label' => 'Password',  'rules' => 'required');
-		$rules[] = array('field' => 'nama',     'label' => 'Nama',      'rules' => 'required');
+		$rules[] = array('field' => 'email',     'label' => 'email',      'rules' => 'required');
 		$rules[] = array('field' => 'level',	'label' => 'Level',     'rules' => 'required');
 		$this->form_validation->set_rules($rules);
 		if ($this->form_validation->run() == FALSE){
 			$this->session->set_flashdata('message',validation_errors());
 			$this->session->set_flashdata('type_message','danger');
-			redirect('Settings/Users/');
+			redirect('Backend/Users/');
 		}else{
 		    try{
 		        $level = $this->input->post('level');
                 $keterangan = $this->fakultas($level, $this->input->post('id_fakultas'));
                 $data = array(
                     'username'	=> strtolower(str_replace(' ', '', $this->input->post('username')).'@'.$this->input->post('level')),
-                    'password'	=> md5(md5($this->input->post('password'))),
-                    'nama'		=> strtoupper($this->input->post('nama')),
+                    'password'	=> $this->input->post('password'),
+                    'email'		=> $this->input->post('email'),
                     'level'		=> $level,
                     'keterangan'=> $keterangan,
                 );
                 $this->Tbl_setting_users->create($data);
                 $this->session->set_flashdata('message','Data berhasil disimpan.');
                 $this->session->set_flashdata('type_message','success');
-                redirect('Settings/Users/');
+                redirect('Backend/Users/');
             }catch (Exception $e){
                 $this->session->set_flashdata('message', $e->getMessage());
                 $this->session->set_flashdata('type_message','danger');
-                redirect('Settings/Users/');
+                redirect('Backend/Users/');
             }
 		}
 	}
 
 	function Update($id){
-        $rules[] = array('field' => 'username',	'label' => 'Username',  'rules' => 'required');
-        $rules[] = array('field' => 'nama',     'label' => 'Nama',      'rules' => 'required');
+        $rules[] = array('field' => 'username',	'label' => 'username',  'rules' => 'required');
+        $rules[] = array('field' => 'email',     'label' => 'email',      'rules' => 'required');
         $rules[] = array('field' => 'level',	'label' => 'Level',     'rules' => 'required');
 		$this->form_validation->set_rules($rules);
 		if ($this->form_validation->run() == FALSE){
 			$this->session->set_flashdata('message',validation_errors());
 			$this->session->set_flashdata('type_message','danger');
-			redirect('Settings/Users/');
+			redirect('Backend/Users/');
 		}else{
 		    try{
-                $level = $this->input->post('level');
-                $keterangan = $this->fakultas($level, $this->input->post('id_fakultas'));
-                $password = $this->input->post('password');
-                if (!empty($password)) {
-                    $data = array(
-                        'username'	=> strtolower(str_replace(' ', '', $this->input->post('username')).'@'.$this->input->post('level')),
-                        'password'	=> md5(md5($password)),
-                        'nama'		=> strtoupper($this->input->post('nama')),
-                        'level'		=> $level,
-                        'keterangan'=> $keterangan,
-                    );
-                }else{
-                    $data = array(
-                        'username'	=> strtolower(str_replace(' ', '', $this->input->post('username')).'@'.$this->input->post('level')),
-                        'nama'		=> strtoupper($this->input->post('nama')),
-                        'level'		=> $level,
-                        'keterangan'=> $keterangan,
-                    );
-                }
-                $rules = array(
-                    'where' => array('id_users' => $id),
-                    'data'  => $data,
+               $rules = array(
+                    'where' => array('id' => $id),
+                    'data'  => array(
+                        'username'  => $this->input->post('username'),
+                        'email' => $this->input->post('email'),
+                    ),
                 );
                 $this->Tbl_setting_users->update($rules);
                 $this->session->set_flashdata('message','Data berhasil diubah.');
                 $this->session->set_flashdata('type_message','success');
-                redirect('Settings/Users/');
+                redirect('Backend/Users/');
             }catch (Exception $e){
                 $this->session->set_flashdata('message', $e->getMessage());
                 $this->session->set_flashdata('type_message','danger');
-                redirect('Settings/Users/');
+                redirect('Backend/Users/');
             }
 		}
 	}
