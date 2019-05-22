@@ -23,14 +23,13 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="#">LOGO</a>
+              <a class="navbar-brand" href="<?=base_url()?>"><img src="<?=base_url()?>assets/dashboard/images/logo.png"></a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
                 <!--ACCESS MENUS FOR ADMIN-->
-                  <li class="active"><a href="#">Dashboard</a></li>
-                  <li><a href="<?php echo base_url('profile/pakar');?>">Pakar</a></li>
-                  <li><a href="<?php echo base_url('profile/user_b');?>">User Biasa</a></li>
+                  <!-- <li><a href="<?php echo base_url('profile/pakar');?>">Pakar</a></li>
+                  <li><a href="<?php echo base_url('profile/user_b');?>">Client</a></li> -->
                 
               </ul>
               <ul class="nav navbar-nav navbar-right">
