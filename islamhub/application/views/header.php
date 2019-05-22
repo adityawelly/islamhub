@@ -52,7 +52,7 @@
                                 <li><a href="<?=base_url()?>Dashboard/">Private Chat</a></li>
                                 <li><a href="<?=base_url()?>allvideo/">Video</a></li>
                                 <li><a href="<?=base_url()?>file/">Buku</a></li>
-                                <li class="lastlink hidden-xs hidden-sm"><a class="btn btn-primary" href="<?=base_url()?>Login/">Masuk</a></li>
+                                <li class="lastlink hidden-xs hidden-sm"><a class="btn btn-primary" href="<?=base_url()?>profile/">Masuk</a></li>
                             </ul>
                         </div><!--/.nav-collapse -->
                     </div><!--/.container-fluid -->
