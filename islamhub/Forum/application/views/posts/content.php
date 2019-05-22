@@ -22,11 +22,13 @@
 			<div class="box box-primary">
 				<div class="box-header with-border">
 					<h3 class="box-title"><?=$tblForum->title?></h3>
+					<?php if($this->session->userdata('username') != null): ?>
 					<div class="pull-right">
                     	<button type="button" class="btn btn-sm btn-primary" id="tambah_tooltip" data-toggle="modal" data-target="#tambah" title="Tambah">
                        		<i class="fa fa-plus"></i>
                     	</button>
                 	</div>
+					<?php endif; ?>
 				</div>
 				<div class="box-body">
 					<?=$tblForum->description?>
