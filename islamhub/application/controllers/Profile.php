@@ -36,68 +36,109 @@ class Profile extends CI_Controller{
     $this->load->view('pakar/index_u');
   }
  
-  function r_pakar(){
-    $this->form_validation->set_rules('username','User Name','required');
+  // function r_pakar(){
+  //   $this->form_validation->set_rules('password','User Password','required');
+  //   $this->form_validation->set_rules('email','user_email','required');
+  //   $this->form_validation->set_rules('no_telp','User Contact','required');
+
+  //   if($this->form_validation->run() == TRUE)
+  //   {
+  //     $nama = $this->input->post('nama',TRUE);
+  //     $nik = $this->input->post('nik',TRUE);
+  //     $jk = $this->input->post('jk',TRUE);
+  //     $alamat = $this->input->post('alamat',TRUE);
+  //     $tempat_lahir = $this->input->post('tempat_lahir',TRUE);
+  //     $tgl_lahir = $this->input->post('tgl_lahir',TRUE);
+  //     $universitas = $this->input->post('universitas',TRUE);
+  //     $sertifikat = $this->input->post('sertifikat',TRUE);
+  //     $biodata = $this->input->post('biodata',TRUE);
+  //     $foto = $this->input->post('foto',TRUE);
+  //     $password      = md5($this->input->post('password',TRUE));
+  //     $email  = $this->input->post('email',TRUE);
+  //     $no_telp  = $this->input->post('no_telp',TRUE);
+      
+  //     $data = array(
+  //           'nama' => $nama,
+  //           'nik' => $nik,
+  //           'jk' => $jk,
+  //           'alamat' => $alamat,
+  //           'tempat_lahir' => $tempat_lahir,
+  //           'tgl_lahir' => $tgl_lahir,
+  //           'universitas' => $universitas,
+  //           'sertifikat' => $sertifikat,
+  //           'biodata' => $biodata,
+  //           'foto' => $foto,
+  //           'password' => $password,
+  //           'email'  => $email,
+  //           'no_telp'  => $no_telp
+  //     );
+
+  //     $this->login_model->simpan_pakar($data);
+
+  //     $this->session->set_flashdata('msg_berhasil','Anda berhasil Daftar');
+  //     redirect(base_url('profile/r_pakar'));
+  //   }else {
+  //      $this->load->helper(array('captcha','url'));
+  //      $this->load->library('session');
+  //     $vals = array(
+  //       'img_path' => './captcha/',
+  //       'img_url' => base_url().'captcha/',
+  //       'img_width' => 170,
+  //       'img_height' => 45,
+  //       'expiration' => 7200
+  //       );
+  //       $cap = create_captcha($vals);
+  //       $this->session->set_userdata('keycode',md5($cap['word']));
+  //       $data['image'] = $cap['image'];
+  //       $this->load->view('pakar/dashboard_login');
+  //     $this->load->view('pakar/registrasi',$data);
+  //     $this->load->view('footer');
+
+  //   }
+  // }
+
+  function r_pakar_u(){
+     $this->form_validation->set_rules('username','User Name','required');
     $this->form_validation->set_rules('password','User Password','required');
     $this->form_validation->set_rules('email','user_email','required');
-    $this->form_validation->set_rules('no_telp','User Contact','required');
-
     if($this->form_validation->run() == TRUE)
     {
-      $nama = $this->input->post('nama',TRUE);
-      $nik = $this->input->post('nik',TRUE);
-      $jk = $this->input->post('jk',TRUE);
-      $alamat = $this->input->post('alamat',TRUE);
-      $tempat_lahir = $this->input->post('tempat_lahir',TRUE);
-      $tgl_lahir = $this->input->post('tgl_lahir',TRUE);
-      $universitas = $this->input->post('universitas',TRUE);
-      $sertifikat = $this->input->post('sertifikat',TRUE);
-      $biodata = $this->input->post('biodata',TRUE);
-      $foto = $this->input->post('foto',TRUE);
       $username = $this->input->post('username',TRUE);
       $password      = md5($this->input->post('password',TRUE));
       $email  = $this->input->post('email',TRUE);
-      $no_telp  = $this->input->post('no_telp',TRUE);
-      
+      $avatar  = $this->input->post('avatar',TRUE);
+      $created_at  = '0';
+      $update_at  = '0';
+      $update_by  = '0';
+      $is_admin  = '0';
+      $is_moderator  = '1';
+      $is_confirmed  = '0';
+      $is_deleted  = '0';
+
+
       $data = array(
-            'nama' => $nama,
-            'nik' => $nik,
-            'jk' => $jk,
-            'alamat' => $alamat,
-            'tempat_lahir' => $tempat_lahir,
-            'tgl_lahir' => $tgl_lahir,
-            'universitas' => $universitas,
-            'sertifikat' => $sertifikat,
-            'biodata' => $biodata,
-            'foto' => $foto,
             'username' => $username,
             'password' => $password,
             'email'  => $email,
-            'no_telp'  => $no_telp
+            'avatar' => $avatar,
+            'created_at' => $created_at,
+            'updated_at' => $update_at,
+            'updated_by' => $update_by,
+            'is_admin' => $is_admin,
+            'is_moderator' => $is_moderator,
+            'is_confirmed' => $is_confirmed,
+            'is_deleted' => $is_deleted,
       );
-
-      $this->login_model->simpan_pakar($data);
+      $this->login_model->simpan_user($data);
 
       $this->session->set_flashdata('msg_berhasil','Anda berhasil Daftar');
-      redirect(base_url('profile/r_pakar'));
+      redirect(base_url('profile/r_pakar_u'));
     }else {
-       $this->load->helper(array('captcha','url'));
-       $this->load->library('session');
-      $vals = array(
-        'img_path' => './captcha/',
-        'img_url' => base_url().'captcha/',
-        'img_width' => 170,
-        'img_height' => 45,
-        'expiration' => 7200
-        );
-        $cap = create_captcha($vals);
-        $this->session->set_userdata('keycode',md5($cap['word']));
-        $data['image'] = $cap['image'];
-        $this->load->view('pakar/dashboard_login');
-      $this->load->view('pakar/registrasi',$data);
+       $this->load->view('pakar/dashboard_login');
+      $this->load->view('pakar/registrasi1');
       $this->load->view('footer');
-
     }
+
   }
 
   function r_user_b(){
@@ -110,13 +151,13 @@ class Profile extends CI_Controller{
       $password      = md5($this->input->post('password',TRUE));
       $email  = $this->input->post('email',TRUE);
       $avatar  = $this->input->post('avatar',TRUE);
-      $created_at  = '1';
-      $update_at  = '1';
+      $created_at  = '0';
+      $update_at  = '0';
       $update_by  = '0';
-      $is_admin  = '1';
-      $is_moderator  = '1';
-      $is_confirmed  = '1';
-      $is_deleted  = '1';
+      $is_admin  = '0';
+      $is_moderator  = '0';
+      $is_confirmed  = '0';
+      $is_deleted  = '0';
 
 
       $data = array(
@@ -151,7 +192,6 @@ class Profile extends CI_Controller{
     if($validate->num_rows() > 0){
         $data  = $validate->row_array();
         $nama  = $data['nama'];
-        $username = $data['username'];
         $nik  = $data['nik'];
         $jk  = $data['jk'];
         $alamat  = $data['alamat'];
@@ -167,7 +207,6 @@ class Profile extends CI_Controller{
         $sesdata = array(
             'nama'  => $nama,
             'email'     => $email,
-            'username'  => $username,
             'nik'  => $nik,
             'jk'  => $jk,
             'alamat'  => $alamat,

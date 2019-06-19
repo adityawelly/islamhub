@@ -28,7 +28,7 @@
               <ul class="nav navbar-nav">
                 <!--ACCESS MENUS FOR ADMIN-->
                   <li><a href="<?php echo base_url('profile/pakar');?>">login</a></li>
-                  <li><a href="<?php echo base_url('profile/r_pakar');?>">Register</a></li>
+                  <li><a href="<?php echo base_url('profile/r_pakar_u');?>">Register</a></li>
                 
               </ul>
               <ul class="nav navbar-nav navbar-right">
