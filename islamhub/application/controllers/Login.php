@@ -28,7 +28,7 @@ class Login extends CI_Controller {
 		}else{
 			if($this->input->post('sebagai') == "client"){
 				$data = array(
-					'email' => $this->input->post('email'),
+					'username' => $this->input->post('email'),
 					'password' => md5($this->input->post('password')),
 					'is_moderator' => 0,
 					'is_admin' => 0,
@@ -54,7 +54,7 @@ class Login extends CI_Controller {
 				}
 			}else{
 				$data = array(
-					'email' => $this->input->post('email'),
+					'username' => $this->input->post('email'),
 					'password' => md5($this->input->post('password')),
 					'is_moderator' => 1,
 					'is_admin' => 0,
