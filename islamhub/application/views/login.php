@@ -91,7 +91,7 @@
                         <script>
                             document.write(new Date().getFullYear())
                         </script>
-                        <a href="http://islam-hub.web.id">PPL</a>, made with love for a better web
+                        <a href="http://islam-hub.web.id">ISLAM HUB</a>, made with love for a better web
                     </p>
                 </div>
             </footer>
