@@ -186,7 +186,7 @@ class Profile extends CI_Controller{
   }
 
   function auth_p(){
-    $email    = $this->input->post('email',TRUE);
+    /*$email    = $this->input->post('email',TRUE);
     $password = md5($this->input->post('password',TRUE));
     $validate = $this->login_model->validate_p($email,$password);
     if($validate->num_rows() > 0){
@@ -218,8 +218,21 @@ class Profile extends CI_Controller{
             'biodata' => $biodata,
             'universitas' => $univ,
             'logged_in' => TRUE
-        );
+        );*/
+      $email    = $this->input->post('email',TRUE);
+      $password = md5($this->input->post('password',TRUE));
+      $validate = $this->login_model->validate_p($email,$password);
+      if($validate->num_rows() > 0){
+          $data  = $validate->row_array();
+          $nama  = $data['username'];
+          $email = $data['email'];
+          $sesdata = array(
+              'username'  => $nama,
+              'email'     => $email,
+              'logged_in' => TRUE
+          );
         $this->session->set_userdata($sesdata);
+      
          $this->load->view('pakar/index');
     }else{
         echo $this->session->set_flashdata('msg','Username or Password is Wrong');
