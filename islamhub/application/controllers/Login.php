@@ -7,6 +7,7 @@ class Login extends CI_Controller {
         parent::__construct();
 
 		$this->load->model('TabelClient');
+		$this->load->model('TabelUsers');
 		$this->load->model('TabelPakar');
     }
 
@@ -27,19 +28,20 @@ class Login extends CI_Controller {
 		}else{
 			if($this->input->post('sebagai') == "client"){
 				$data = array(
-					'email_client' => $this->input->post('email'),
-					'password_client' => md5($this->input->post('password')),
+					'email' => $this->input->post('email'),
+					'password' => md5($this->input->post('password')),
 				);
-				$tabelLogin = $this->TabelClient->whereAnd($data);
+				$tabelLogin = $this->TabelUsers->whereAnd($data);
 				if ($tabelLogin->num_rows() > 0) {
 					$tabelLogin = $tabelLogin->row();
 					$data = array(
 						'logged' 		=> TRUE,
 						'pakar'			=> FALSE,
 						'client'			=> TRUE,
-                        'id'		=> $tabelLogin->id_client,
-						'email'		=> $tabelLogin->email_client,
-						'nama'		=> $tabelLogin->nama,
+						'id'		=> $tabelLogin->id,
+                        'username'		=> $tabelLogin->username,
+						'email'		=> $tabelLogin->email,
+						'foto'		=> $tabelLogin->foto,
                     );
                     $this->session->set_userdata($data);
                     redirect('Dashboard');
@@ -53,16 +55,17 @@ class Login extends CI_Controller {
 					'email' => $this->input->post('email'),
 					'password' => md5($this->input->post('password')),
 				);
-				$tabelLogin = $this->TabelPakar->whereAnd($data);
+				$tabelLogin = $this->TabelUsers->whereAnd($data);
 				if ($tabelLogin->num_rows() > 0) {
 					$tabelLogin = $tabelLogin->row();
 					$data = array(
 						'logged' 		=> TRUE, 
 						'pakar'			=> TRUE,
 						'client'			=> FALSE,
-                        'id'		=> $tabelLogin->id_pakar,
+                        'id'		=> $tabelLogin->id,
+						'username'		=> $tabelLogin->username,
 						'email'		=> $tabelLogin->email,
-						'nama'		=> $tabelLogin->nama,
+						'foto'		=> $tabelLogin->foto,
                     );
                     $this->session->set_userdata($data);
                     redirect('Dashboard');
