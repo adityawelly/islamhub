@@ -30,8 +30,8 @@ class Login extends CI_Controller {
 				$data = array(
 					'email' => $this->input->post('email'),
 					'password' => md5($this->input->post('password')),
-					'is_moderator' == '0',
-					'is_admin' == '0',
+					'is_moderator' => 0,
+					'is_admin' => 0,
 				);
 				$tabelLogin = $this->TabelUsers->whereAnd($data);
 				if ($tabelLogin->num_rows() > 0) {
@@ -56,8 +56,8 @@ class Login extends CI_Controller {
 				$data = array(
 					'email' => $this->input->post('email'),
 					'password' => md5($this->input->post('password')),
-					'is_moderator' == '1',
-					'is_admin' == '0',
+					'is_moderator' => 1,
+					'is_admin' => 0,
 				);
 				$tabelLogin = $this->TabelUsers->whereAnd($data);
 				if ($tabelLogin->num_rows() > 0) {
