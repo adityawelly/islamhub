@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-class Tabelusers extends CI_Model {
+class TabelUsers extends CI_Model {
 
     protected $table = "users";
 

@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-class Tabelpesan extends CI_Model {
+class TabelPesan extends CI_Model {
 
     protected $table = "private_chat";
 
