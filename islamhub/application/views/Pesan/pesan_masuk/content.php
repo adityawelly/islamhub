@@ -27,12 +27,12 @@
                                         $where = array(
                                             'id_client' => $value->pengirim_chat
                                         );
-                                        $tblBio = $this->Tabelclient->whereAnd($where)->row();
+                                        $tblBio = $this->TabelClient->whereAnd($where)->row();
                                     }else{
                                         $where = array(
                                             'id_pakar' => $value->pengirim_chat
                                         );
-                                        $tblBio = $this->Tabelpakar->whereAnd($where)->row();
+                                        $tblBio = $this->TabelPakar->whereAnd($where)->row();
                                     }
                                 ?>
                                     <tr>

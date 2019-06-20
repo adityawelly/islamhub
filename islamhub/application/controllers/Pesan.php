@@ -10,9 +10,9 @@ class Pesan extends CI_Controller {
             $this->session->set_flashdata('type_message','danger');
             redirect('Login');
         }
-        $this->load->model('Tabelpakar');
-        $this->load->model('Tabelclient');
-        $this->load->model('Tabelpesan');
+        $this->load->model('TabelPakar');
+        $this->load->model('TabelClient');
+        $this->load->model('TabelPesan');
     }
 
 	public function index()
@@ -27,8 +27,8 @@ class Pesan extends CI_Controller {
 			'modal' 	=> 'Pesan/tambah_pesan/modal',
             'javascript'=> 'Pesan/tambah_pesan/javascript',
             
-            'tblPakar'   => $this->Tabelpakar->read()->result(),
-            'tblClient'   => $this->Tabelclient->read()->result(),
+            'tblPakar'   => $this->TabelPakar->read()->result(),
+            'tblClient'   => $this->TabelClient->read()->result(),
 		);
 		$this->load->view('index', $data);
     }
@@ -39,7 +39,7 @@ class Pesan extends CI_Controller {
             'penerima_chat' => $penerima,
             'status'    => '1',
         );
-        $tblPesan = $this->Tabelpesan->whereAnd($where)->result();
+        $tblPesan = $this->TabelPesan->whereAnd($where)->result();
 
 		$data = array(
 			'title'		=> 'Riwayat Pesan',
@@ -61,7 +61,7 @@ class Pesan extends CI_Controller {
             'isi_chat'       => $this->input->post('isi'),
             'status'    => '1',
         );
-        if ($this->Tabelpesan->create($data)) {
+        if ($this->TabelPesan->create($data)) {
             $this->session->set_flashdata('message','Pesan Berhasil Dibalas.');
             $this->session->set_flashdata('type_message','success');
             redirect('Pesan/PesanTerkirim');
@@ -78,7 +78,7 @@ class Pesan extends CI_Controller {
             'penerima_chat' => $this->session->userdata('id'),
             'status'    => '1',
         );
-        $tblPesan = $this->Tabelpesan->whereAnd($where)->result();
+        $tblPesan = $this->TabelPesan->whereAnd($where)->result();
 
 		$data = array(
 			'title'		=> 'Pesan Masuk',
@@ -98,7 +98,7 @@ class Pesan extends CI_Controller {
             'pengirim_chat' => $this->session->userdata('id'),
             'status'    => '1',
         );
-        $tblPesan = $this->Tabelpesan->whereAnd($where)->result();
+        $tblPesan = $this->TabelPesan->whereAnd($where)->result();
 
 		$data = array(
 			'title'		=> 'Pesan Terkirim',
@@ -118,7 +118,7 @@ class Pesan extends CI_Controller {
             'pengirim_chat' => $this->session->userdata('id'),
             'status'    => '0',
         );
-        $tblPesan = $this->Tabelpesan->whereAnd($where)->result();
+        $tblPesan = $this->TabelPesan->whereAnd($where)->result();
 
 		$data = array(
 			'title'		=> 'Draft Pesan',
@@ -141,7 +141,7 @@ class Pesan extends CI_Controller {
                 'isi_chat'       => $this->input->post('isi'),
                 'status'    => '0',
             );
-            if ($this->Tabelpesan->create($data)) {
+            if ($this->TabelPesan->create($data)) {
                 $this->session->set_flashdata('message','Pesan Berhasil Disimpan.');
                 $this->session->set_flashdata('type_message','success');
                 redirect('Pesan/DraftPesan');
@@ -158,7 +158,7 @@ class Pesan extends CI_Controller {
                 'isi_chat'       => $this->input->post('isi'),
                 'status'    => '1',
             );
-            if ($this->Tabelpesan->create($data)) {
+            if ($this->TabelPesan->create($data)) {
                 $this->session->set_flashdata('message','Pesan Berhasil Dikirim.');
                 $this->session->set_flashdata('type_message','success');
                 redirect('Pesan/PesanTerkirim');
@@ -178,7 +178,7 @@ class Pesan extends CI_Controller {
             'status'    => '1',
             'date_updated' => date('Y-m-d H:i:s'),
         );
-        if ($this->Tabelpesan->update($where, $data)) {
+        if ($this->TabelPesan->update($where, $data)) {
             $this->session->set_flashdata('message','Pesan Berhasil Dikirim.');
             $this->session->set_flashdata('type_message','success');
             redirect('Pesan/PesanTerkirim');
