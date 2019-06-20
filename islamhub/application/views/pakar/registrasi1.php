@@ -17,7 +17,7 @@
 
 <?php form_open('profile/r_pakar_u');?>
 <!-- Form Name -->
-<legend><center><h2><b>Registration Form as Client</b></h2></center></legend><br>
+<legend><center><h2><b>Registration Form as Pakar</b></h2></center></legend><br>
 <?php if($this->session->flashdata('msg_berhasil')){ ?>
                 <div class="alert alert-success alert-dismissible" style="width:100%">
                     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
