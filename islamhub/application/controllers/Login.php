@@ -6,9 +6,9 @@ class Login extends CI_Controller {
     public function __construct(){
         parent::__construct();
 
-		$this->load->model('TabelClient');
-		$this->load->model('TabelUsers');
-		$this->load->model('TabelPakar');
+		$this->load->model('Tabelclient');
+		$this->load->model('Tabelusers');
+		$this->load->model('Tabelpakar');
     }
 
 	public function index()
@@ -33,7 +33,7 @@ class Login extends CI_Controller {
 					'is_moderator' => 0,
 					'is_admin' => 0,
 				);
-				$tabelLogin = $this->TabelUsers->whereAnd($data);
+				$tabelLogin = $this->Tabelusers->whereAnd($data);
 				if ($tabelLogin->num_rows() > 0) {
 					$tabelLogin = $tabelLogin->row();
 					$data = array(
@@ -59,7 +59,7 @@ class Login extends CI_Controller {
 					'is_moderator' => 1,
 					'is_admin' => 0,
 				);
-				$tabelLogin = $this->TabelUsers->whereAnd($data);
+				$tabelLogin = $this->Tabelusers->whereAnd($data);
 				if ($tabelLogin->num_rows() > 0) {
 					$tabelLogin = $tabelLogin->row();
 					$data = array(
