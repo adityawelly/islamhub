@@ -1,8 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-class TabelPakar extends CI_Model {
+class Tabelusers extends CI_Model {
 
-    protected $table = "pakar";
+    protected $table = "users";
 
 	public function create($data){
 		if($this->db->insert($this->table,$data)){

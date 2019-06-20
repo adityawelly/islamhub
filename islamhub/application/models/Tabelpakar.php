@@ -1,8 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-class TabelPesan extends CI_Model {
+class Tabelpakar extends CI_Model {
 
-    protected $table = "private_chat";
+    protected $table = "pakar";
 
 	public function create($data){
 		if($this->db->insert($this->table,$data)){
@@ -36,7 +36,6 @@ class TabelPesan extends CI_Model {
 
 	public function whereAnd($data){
 		$this->db->where($data);
-		$this->db->order_by('id_chat', 'DESC');
 		return $this->db->get($this->table);
 	}
 
@@ -54,18 +53,5 @@ class TabelPesan extends CI_Model {
 		$this->db->or_like($data);
 		return $this->db->get($this->table);
 	}
-
-	public function hitungPesan()
-{   
-    $query = $this->db->get('private_chat');
-    if($query->num_rows()>0)
-    {
-      return $query->num_rows();
-    }
-    else
-    {
-      return 0;
-    }
-}
 
 }

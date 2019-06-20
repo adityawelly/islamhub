@@ -43,10 +43,10 @@
                                     <div class="card-content">
                                         <div class="input-group">
                                             <span class="input-group-addon">
-                                                <i class="material-icons">email</i>
+                                                <i class="material-icons">account_circle</i>
                                             </span>
                                             <div class="form-group label-floating">
-                                                <label class="control-label">Email</label>
+                                                <label class="control-label">Username</label>
                                                 <input type="text" name="email" class="form-control">
                                             </div>
                                         </div>
@@ -91,7 +91,7 @@
                         <script>
                             document.write(new Date().getFullYear())
                         </script>
-                        <a href="http://ptipd.uinsgd.ac.id">PPL</a>, made with love for a better web
+                        <a href="http://islam-hub.web.id">ISLAM HUB</a>, made with love for a better web
                     </p>
                 </div>
             </footer>

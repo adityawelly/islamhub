@@ -15,12 +15,12 @@ class Pakar extends CI_Controller {
             $this->session->set_flashdata('type_message','danger');
             redirect('Profile');
         }
-        
+
     }
 	
     function index(){
         $data = array(
-            'pakar' => ,
+            'pakar' => null
         );
     	$this->load->view('pakar/index', $data);
     }
