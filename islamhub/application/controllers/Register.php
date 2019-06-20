@@ -27,8 +27,8 @@ class Register extends CI_Controller {
 			$data = array(
 			    'username' => set_value('username'),
             );
-			$TabelUsers	= $this->TabelUser->whereAnd($data);
-			if ($TabelUsers->num_rows() > 0) {
+			$Tabelusers	= $this->TabelUser->whereAnd($data);
+			if ($Tabelusers->num_rows() > 0) {
 				$this->session->set_flashdata('message','Username / Email telah terdaftar.');
 				$this->session->set_flashdata('type_message','red');
                 redirect('Register');

@@ -11,8 +11,8 @@ class Dashboard extends CI_Controller {
             $this->session->set_flashdata('type_message','danger');
             redirect('Login');
         }
-		$this->load->model('TabelPesan');
-		$this->load->model('TabelPakar');
+		$this->load->model('Tabelpesan');
+		$this->load->model('Tabelpakar');
 
     }
 
@@ -25,9 +25,9 @@ class Dashboard extends CI_Controller {
 			'css' 		=> 'dashboard/css',
 			'modal' 	=> 'dashboard/modal',
 			'javascript'=> 'dashboard/javascript',
-			'total' => $this->TabelPesan->hitungPesan(),
+			'total' => $this->Tabelpesan->hitungPesan(),
 
-			'tblPakar'   => $this->TabelPakar->read()->result(),
+			'tblPakar'   => $this->Tabelpakar->read()->result(),
 		);
 		$this->load->view('index', $data);
 	}
