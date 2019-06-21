@@ -37,9 +37,12 @@ class Users extends CI_Controller {
 	}
 
 	function Update($id){
-        $rules[] = array('field' => 'username',	'label' => 'username',  'rules' => 'required');
-        $rules[] = array('field' => 'email',     'label' => 'email',      'rules' => 'required');
-        $rules[] = array('field' => 'level',	'label' => 'Level',     'rules' => 'required');
+		$rules[] = array('field' => 'email',     'label' => 'Email',      'rules' => 'required');
+		$rules[] = array('field' => 'username',	'label' => 'Username',  'rules' => 'required');
+		$rules[] = array('field' => 'is_admin',     'label' => 'Admin',      'rules' => 'required');
+		$rules[] = array('field' => 'is_moderator',     'label' => 'Pakar',      'rules' => 'required');
+		$rules[] = array('field' => 'is_confirmed',     'label' => 'Confirmed',      'rules' => 'required');
+		$rules[] = array('field' => 'is_deleted',     'label' => 'Delete',      'rules' => 'required');
 		$this->form_validation->set_rules($rules);
 		if ($this->form_validation->run() == FALSE){
 			$this->session->set_flashdata('message',validation_errors());
@@ -47,14 +50,34 @@ class Users extends CI_Controller {
 			redirect('Backend/Users/');
 		}else{
 		    try{
-               $rules = array(
-                    'where' => array('id' => $id),
-                    'data'  => array(
-                        'username'  => $this->input->post('username'),
-                        'email' => $this->input->post('email'),
-                    ),
-                );
-                $this->Tbl_setting_users->update($rules);
+		    	$password = $this->input->post('password');
+		    	if (empty($password)){
+					$rules = array(
+						'where' => array('id' => $id),
+						'data'  => array(
+							'email' => $this->input->post('email'),
+							'username'  => $this->input->post('username'),
+							'is_admin' => $this->input->post('is_admin'),
+							'is_moderator' => $this->input->post('is_moderator'),
+							'is_confirmed' => $this->input->post('is_confirmed'),
+							'is_deleted' => $this->input->post('is_deleted'),
+						),
+					);
+				}else{
+					$rules = array(
+						'where' => array('id' => $id),
+						'data'  => array(
+							'email' => $this->input->post('email'),
+							'username'  => $this->input->post('username'),
+							'password'  => md5($password),
+							'is_admin' => $this->input->post('is_admin'),
+							'is_moderator' => $this->input->post('is_moderator'),
+							'is_confirmed' => $this->input->post('is_confirmed'),
+							'is_deleted' => $this->input->post('is_deleted'),
+						),
+					);
+				}
+                $this->Tbl_users->update($rules);
                 $this->session->set_flashdata('message','Data berhasil diubah.');
                 $this->session->set_flashdata('type_message','success');
                 redirect('Backend/Users/');

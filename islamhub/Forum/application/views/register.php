@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>Forum</title>
+		<title>IslamHub - Forum</title>
 		<!-- Tell the browser to be responsive to screen width -->
 		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
         <!-- Icon -->
@@ -27,7 +27,7 @@
 	<body class="hold-transition register-page">
 		<div class="register-box">
 			<div class="register-logo">
-				<a href="<?=base_url('Auth/')?>"><b>Forum</b></a>
+				<a href="http://islam-hub.web.id/"><b>IslamHub</b></a>
 			</div>
 			<div class="register-box-body">
 				<p class="login-box-msg">Register</p>

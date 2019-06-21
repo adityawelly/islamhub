@@ -23,6 +23,7 @@
 			<!-- Navbar Right Menu -->
 			<div class="navbar-custom-menu">
 				<ul class="nav navbar-nav">
+					<li><a href="http://islam-hub.web.id/">Back to IslamHub</a></li>
 					<?php if ($this->session->userdata('username') == null) : ?>
 					<li><a href="<?=base_url('Auth/')?>">Login / Register</a></li>
 					<?php else: ?>
