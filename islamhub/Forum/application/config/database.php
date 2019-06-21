@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => '103.55.33.16',
-	'username' => 'forum',
-	'password' => '1Sampai9!',
-	'database' => 'forum',
+	'hostname' => 'islam-hub.web.id',
+	'username' => 'islamhub_admin',
+	'password' => '!!!1Sampai9!!!',
+	'database' => 'islamhub_db',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
