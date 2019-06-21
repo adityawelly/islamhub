@@ -54,7 +54,7 @@
                <br /><br />
                <hr />
                <div >
-                <h4><strong> Nama:</strong> <?php echo $this->session->userdata('nama');?></h4> 
+                <h4><strong> Nama:</strong> <?=$pakar->nama?></h4> 
                 <h4><strong> Username:</strong> <?php echo $this->session->userdata('username');?></h4>
                 <h4><strong> NIK:</strong> <?php echo $this->session->userdata('nik');?></h4> 
                 <h4><strong> JK:</strong> <?php echo $this->session->userdata('jk');?></h4>

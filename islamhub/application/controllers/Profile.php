@@ -6,7 +6,8 @@ class Profile extends CI_Controller{
     $this->load->library(array('session', 'form_validation', 'email'));   
     $this->load->database();
     $this->load->model('login_model');
-
+    $this->load->model('TabelUsers');
+    $this->load->model('TabelPakar');
   }
  
   function index(){
@@ -186,54 +187,27 @@ class Profile extends CI_Controller{
   }
 
   function auth_p(){
-    /*$email    = $this->input->post('email',TRUE);
+    $email    = $this->input->post('email',TRUE);
     $password = md5($this->input->post('password',TRUE));
-    $validate = $this->login_model->validate_p($email,$password);
+    $validate = $this->login_model->validate_u($email,$password);
+    $data  = $validate->row_array();
     if($validate->num_rows() > 0){
-        $data  = $validate->row_array();
-        $nama  = $data['nama'];
-        $nik  = $data['nik'];
-        $jk  = $data['jk'];
-        $alamat  = $data['alamat'];
-        $tempat_lahir  = $data['tempat_lahir'];
-        $tgl_lahir  = $data['tgl_lahir'];
-        $no_telp  = $data['no_telp'];
-        $sertifikat = $data['sertifikat'];
-        $foto  = $data['foto'];
-        $email = $data['email'];
-        $date_created = $data['date_created'];
-        $biodata = $data['biodata'];
-        $univ = $data['universitas'];
+        
         $sesdata = array(
-            'nama'  => $nama,
-            'email'     => $email,
-            'nik'  => $nik,
-            'jk'  => $jk,
-            'alamat'  => $alamat,
-            'tempat_lahir'  => $tempat_lahir,
-            'no_telp'  => $no_telp,
-            'sertifikat'  => $sertifikat,
-            'foto'  => $foto,
-            'date_created' => $date_created,
-            'biodata' => $biodata,
-            'universitas' => $univ,
-            'logged_in' => TRUE
-        );*/
-      $email    = $this->input->post('email',TRUE);
-      $password = md5($this->input->post('password',TRUE));
-      $validate = $this->login_model->validate_p($email,$password);
-      if($validate->num_rows() > 0){
-          $data  = $validate->row_array();
-          $nama  = $data['username'];
-          $email = $data['email'];
-          $sesdata = array(
-              'username'  => $nama,
-              'email'     => $email,
-              'logged_in' => TRUE
-          );
+            'id' => $data['id'],
+            'username'  => $data['username'],
+            'email'  => $data['email'],
+            'avatar' => $data['avatar'],
+            'created_at' => $data['created_at'],
+            'update_at' => $data['update_at'],
+            'is_admin' => $data['is_admin'],
+            'is_moderator' => $data['is_moderator'],
+            'is_confirmed' => $data['is_confirmed'],
+            'is_deleted' => $data['is_deleted'],
+            'logged' => TRUE
+        );
         $this->session->set_userdata($sesdata);
-      
-         $this->load->view('pakar/index');
+        redirect('Pakar');
     }else{
         echo $this->session->set_flashdata('msg','Username or Password is Wrong');
         redirect('profile');
