@@ -43,7 +43,7 @@ class Login extends CI_Controller {
 						'id'		=> $tabelLogin->id,
                         'username'		=> $tabelLogin->username,
 						'email'		=> $tabelLogin->email,
-						'foto'		=> $tabelLogin->foto,
+						'foto'		=> $tabelLogin->avatar,
                     );
                     $this->session->set_userdata($data);
                     redirect('Dashboard');
@@ -69,7 +69,7 @@ class Login extends CI_Controller {
                         'id'		=> $tabelLogin->id,
 						'username'		=> $tabelLogin->username,
 						'email'		=> $tabelLogin->email,
-						'foto'		=> $tabelLogin->foto,
+						'foto'		=> $tabelLogin->avatar,
                     );
                     $this->session->set_userdata($data);
                     redirect('Dashboard');

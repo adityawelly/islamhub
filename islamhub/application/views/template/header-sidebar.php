@@ -22,21 +22,7 @@
             <div class="info">
                 <a data-toggle="collapse" href="#collapseExample" class="collapsed">
                     <?=$this->session->userdata('username')?>
-                    <b class="caret"></b>
                 </a>
-                <div class="collapse" id="collapseExample">
-                    <ul class="nav">
-                        <li>
-                            <a href="#">My Profile</a>
-                        </li>
-                        <li>
-                            <a href="#">Edit Profile</a>
-                        </li>
-                        <li>
-                            <a href="#">Settings</a>
-                        </li>
-                    </ul>
-                </div>
             </div>
         </div>
         <ul class="nav">
@@ -44,6 +30,12 @@
                 <a href="<?=base_url()?>Dashboard">
                     <i class="material-icons">dashboard</i>
                     <p>Dashboard</p>
+                </a>
+            </li>
+            <li class="">
+                <a href="<?=base_url()?>Profile2">
+                    <i class="material-icons">people</i>
+                    <p>Profile</p>
                 </a>
             </li>
             <?php if($this->session->userdata('client') == TRUE){ ?>
